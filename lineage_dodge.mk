@@ -42,3 +42,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2653 \
     SystemDevice=OP5D55L1 \
     SystemName=CPH2653
+
+# AxionAOSP Flags
+AXION_MAINTAINER := Kill3rEz
