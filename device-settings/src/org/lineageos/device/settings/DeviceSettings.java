@@ -66,7 +66,9 @@ public class DeviceSettings extends SettingsBasePreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.main);
-
+        
+        findPreference("slider").setVisible(false);
+        findPreference("refresh_rate").setVisible(false);
         mHbmController = HbmController.getInstance(getContext());
         mPwmController = PwmController.getInstance(getContext());
         mDisplayModeController = DisplayModeController.getInstance(getContext());
