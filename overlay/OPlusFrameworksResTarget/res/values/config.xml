@@ -77,6 +77,8 @@
     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
          Must be in the range specified by minimum and maximum. -->
+    <!-- Stock default brightness level 1433 (oplus,dsi-brightness-default-level)
+         = 1433/4094 -->
     <item type="dimen" name="config_screenBrightnessSettingDefaultFloat">0.35002443</item>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
@@ -84,6 +86,7 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
+    <!-- displayconfig.xml <autoBrightness> overrides these; kept in sync with it -->
     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
@@ -121,6 +124,9 @@
          backlight values for lux levels between these control points.
 
          Must be overridden in platform specific overlays -->
+    <!-- Stock OOS lux curve for this panel: lux_table id 31 ("Waffle") from
+         dodge_imgs system_ext/etc/display_brightness_config_common.xml, selected
+         by lux_table_mode in my_product/vendor/etc/display_brightness_config_P_3.xml. -->
     <integer-array name="config_autoBrightnessLevels">
         <item>2</item>
         <item>4</item>
@@ -171,6 +177,10 @@
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
+    <!-- Stock OOS nits for the lux levels above (lux_table id 31). Tops out at
+         800 nits full-white = the panel's backlight ceiling; the stock >800-nit
+         sunlight boost uses the oplus HBM interface which the backlight path
+         cannot reach (see displayconfig.xml). -->
     <array name="config_autoBrightnessDisplayValuesNits">
         <item>2.5</item>  <!--  0 - 2 -->
         <item>7.5</item>  <!--  2 - 4 -->
@@ -247,6 +257,11 @@
          lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
          the screen brightness is recalculated. See the config_ambientThresholdLevels
          description for how the constraint value is chosen. -->
+    <!-- The previous (akita) values needed the lux to rise 5-6x in dim rooms and
+         ~2x at 10-30 lux before brightness even recalculated - the main reason
+         auto brightness would not ramp up like stock. Keep enough deadband at
+         night to stay stable against the ALS picking up the screen's own glow,
+         then react to ~10-15% changes like OOS does. -->
     <integer-array name="config_ambientBrighteningThresholds">
         <item>2000</item>
         <item>1500</item>
