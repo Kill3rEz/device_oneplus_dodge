@@ -149,12 +149,28 @@
         </timing>                              //   HBM on for.
         <sdrHdrRatioMap>
             <point>
-                <sdrNits>2.000</sdrNits>
-                <hdrRatio>8.000</hdrRatio>
+                <sdrNits>2.0</sdrNits>
+                <hdrRatio>8.0</hdrRatio> 
             </point>
+            
             <point>
-                <sdrNits>500.000</sdrNits>
-                <hdrRatio>1.5</hdrRatio>
+                <sdrNits>15.0</sdrNits>
+                <hdrRatio>5.0</hdrRatio> 
+            </point>
+            
+            <point>
+                <sdrNits>50.0</sdrNits>
+                <hdrRatio>4.5</hdrRatio> 
+            </point>
+            
+            <point>
+                <sdrNits>200.0</sdrNits>
+                <hdrRatio>3.0</hdrRatio>
+            </point>
+            
+            <point>
+                <sdrNits>500.0</sdrNits>
+                <hdrRatio>1.5</hdrRatio> 
             </point>
         </sdrHdrRatioMap>
     </highBrightnessMode>
