@@ -14,23 +14,20 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Known-good bring-up: high_pwm feed + fusion consumer. Lux/bri work; CWB R/G/B
+# still 0 (client threadLoop neutered for boot safety).
+TARGET_FUSIONLIGHT_ENABLE := true
+
+
 PRODUCT_NAME := lineage_dodge
 PRODUCT_DEVICE := dodge
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2653
 
-#Lunaris Stuff
-LUNARIS_BUILD_TYPE := OFFICIAL
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DISABLE_EPPE := true
-WITH_GMS := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-TARGET_CUSTOM_UDFPS := true
-SURFACE_FLINGER_BOOST := true
-
-TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
 BYPASS_CHARGE_SUPPORTED := true
 
 EVO_BUILD_TYPE := Official
