@@ -14,8 +14,15 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Known-good bring-up: high_pwm feed + fusion consumer. Lux/bri work; CWB R/G/B
-# still 0 (client threadLoop neutered for boot safety).
+# Device config
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_DISABLE_EPPE := true
+BYPASS_CHARGE_SUPPORTED := true
+EVO_BUILD_TYPE := Official
+
+# Feed props ON. Keep persist.alpha.fusion_light seeded 0 — enable with
+# setprop after boot (never seed 1 until cold-boot proven).
 TARGET_FUSIONLIGHT_ENABLE := true
 
 
@@ -25,12 +32,7 @@ PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2653
 
-TARGET_HAS_UDFPS := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_DISABLE_EPPE := true
-BYPASS_CHARGE_SUPPORTED := true
 
-EVO_BUILD_TYPE := Official
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
