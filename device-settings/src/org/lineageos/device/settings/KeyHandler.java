@@ -30,6 +30,11 @@ import com.android.internal.os.DeviceKeyHandler;
 
 import java.util.Arrays;
 
+import org.lineageos.device.settings.Constants;
+import org.lineageos.device.settings.SliderControllerBase;
+import org.lineageos.device.settings.slider.AppLaunchController;
+import org.lineageos.device.settings.slider.NotificationController;
+import org.lineageos.device.settings.slider.FlashlightController;
 import org.lineageos.device.settings.slider.BrightnessController;
 import org.lineageos.device.settings.slider.FlashlightController;
 import org.lineageos.device.settings.slider.NotificationController;
@@ -48,6 +53,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private final RotationController mRotationController;
     private final RingerController mRingerController;
     private final NotificationRingerController mNotificationRingerController;
+    private final AppLaunchController mAppLaunchController;
 
     private SliderControllerBase mSliderController;
 
@@ -91,12 +97,20 @@ public class KeyHandler implements DeviceKeyHandler {
                     mSliderController = mNotificationRingerController;
                     mSliderController.update(actions);
                     break;
-                default:
-                    Log.w(TAG, "Unknown slider usage: " + usage);
-                    return;
+                case AppLaunchController.ID:
+                    mAppLaunchController.updatePackages(
+                            intent.getStringArrayExtra(Constants.EXTRA_SLIDER_APPS));
+                    mSliderController = mAppLaunchController;
+                    mSliderController.update(actions);
+                    break;
             }
 
-            mSliderController.restoreState(context, false);
+            // Don't "restore" the app-launch usage: that would open an app
+            // on every settings change and on boot instead of only on a
+            // real slider move.
+            if (!(mSliderController instanceof AppLaunchController)) {
+                mSliderController.restoreState(context, false);
+            }
         }
     };
 
@@ -109,6 +123,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mRotationController = new RotationController(mContext);
         mRingerController = new RingerController(mContext);
         mNotificationRingerController = new NotificationRingerController(mContext);
+        mAppLaunchController = new AppLaunchController(mContext);
 
         mContext.registerReceiver(mSliderUpdateReceiver,
                 new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS),
