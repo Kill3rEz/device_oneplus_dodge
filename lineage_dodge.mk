@@ -52,3 +52,9 @@ AXION_CAMERA_FRONT_INFO := 32
 
 # Processor
 AXION_PROCESSOR := Snapdragon_8_Elite
+
+# Enable blur
+TARGET_ENABLE_BLUR := true
+
+# Enable AxionFX
+TARGET_INCLUDE_AXFX := true
