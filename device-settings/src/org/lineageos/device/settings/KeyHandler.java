@@ -16,20 +16,12 @@
 
 package org.lineageos.device.settings;
 
-import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.input.InputManager;
-import android.os.FileObserver;
-import android.os.RemoteException;
-import android.os.UserHandle;
-import android.os.Vibrator;
-import android.provider.Settings;
 import android.util.Log;
-import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
 import androidx.annotation.Keep;
@@ -40,12 +32,15 @@ import java.util.Arrays;
 
 import org.lineageos.device.settings.Constants;
 import org.lineageos.device.settings.SliderControllerBase;
+import org.lineageos.device.settings.slider.AppLaunchController;
 import org.lineageos.device.settings.slider.NotificationController;
 import org.lineageos.device.settings.slider.FlashlightController;
 import org.lineageos.device.settings.slider.BrightnessController;
-import org.lineageos.device.settings.slider.RotationController;
-import org.lineageos.device.settings.slider.RingerController;
+import org.lineageos.device.settings.slider.FlashlightController;
+import org.lineageos.device.settings.slider.NotificationController;
 import org.lineageos.device.settings.slider.NotificationRingerController;
+import org.lineageos.device.settings.slider.RingerController;
+import org.lineageos.device.settings.slider.RotationController;
 
 @Keep
 public class KeyHandler implements DeviceKeyHandler {
@@ -58,6 +53,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private final RotationController mRotationController;
     private final RingerController mRingerController;
     private final NotificationRingerController mNotificationRingerController;
+    private final AppLaunchController mAppLaunchController;
 
     private SliderControllerBase mSliderController;
 
@@ -101,9 +97,20 @@ public class KeyHandler implements DeviceKeyHandler {
                     mSliderController = mNotificationRingerController;
                     mSliderController.update(actions);
                     break;
+                case AppLaunchController.ID:
+                    mAppLaunchController.updatePackages(
+                            intent.getStringArrayExtra(Constants.EXTRA_SLIDER_APPS));
+                    mSliderController = mAppLaunchController;
+                    mSliderController.update(actions);
+                    break;
             }
 
-            mSliderController.restoreState(context, false);
+            // Don't "restore" the app-launch usage: that would open an app
+            // on every settings change and on boot instead of only on a
+            // real slider move.
+            if (!(mSliderController instanceof AppLaunchController)) {
+                mSliderController.restoreState(context, false);
+            }
         }
     };
 
@@ -116,11 +123,22 @@ public class KeyHandler implements DeviceKeyHandler {
         mRotationController = new RotationController(mContext);
         mRingerController = new RingerController(mContext);
         mNotificationRingerController = new NotificationRingerController(mContext);
+        mAppLaunchController = new AppLaunchController(mContext);
 
         mContext.registerReceiver(mSliderUpdateReceiver,
-                new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS));
+                new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS),
+                Context.RECEIVER_EXPORTED);
 
         mInputManager = mContext.getSystemService(InputManager.class);
+
+        // Prefs live in the DeviceSettings package, not system_server's context.
+        try {
+            Context packageContext = mContext.createPackageContext(
+                    Constants.class.getPackage().getName(), 0);
+            DeviceSettings.restoreSliderStates(packageContext);
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to restore slider states", e);
+        }
     }
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
@@ -130,6 +148,11 @@ public class KeyHandler implements DeviceKeyHandler {
 
         if (!mInputManager.getInputDevice(event.getDeviceId()).getName().equals("oplus,hall_tri_state_key")) {
             return event;
+        }
+
+        if (mSliderController == null) {
+            Log.w(TAG, "Slider controller not initialized yet");
+            return null;
         }
 
         mSliderController.processEvent(mContext);

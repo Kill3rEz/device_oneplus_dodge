@@ -14,24 +14,25 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Device config
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_DISABLE_EPPE := true
+BYPASS_CHARGE_SUPPORTED := true
+EVO_BUILD_TYPE := Official
+
+# Feed props ON. Keep persist.alpha.fusion_light seeded 0 — enable with
+# setprop after boot (never seed 1 until cold-boot proven).
+TARGET_FUSIONLIGHT_ENABLE := true
+
+
 PRODUCT_NAME := lineage_dodge
 PRODUCT_DEVICE := dodge
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2653
 
-#Lunaris Stuff
-LUNARIS_BUILD_TYPE := OFFICIAL
-TARGET_HAS_UDFPS := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_DISABLE_EPPE := true
-WITH_GMS := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-TARGET_CUSTOM_UDFPS := true
-SURFACE_FLINGER_BOOST := true
 
-TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
-BYPASS_CHARGE_SUPPORTED := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
@@ -42,19 +43,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2653 \
     SystemDevice=OP5D55L1 \
     SystemName=CPH2653
-
-# AxionAOSP Flags
-AXION_MAINTAINER := Kill3rEz
-
-# Cameras
-AXION_CAMERA_REAR_INFO := 50,50,50
-AXION_CAMERA_FRONT_INFO := 32
-
-# Processor
-AXION_PROCESSOR := Snapdragon_8_Elite
-
-# Enable blur
-TARGET_ENABLE_BLUR := true
-
-# Enable AxionFX
-TARGET_INCLUDE_AXFX := true

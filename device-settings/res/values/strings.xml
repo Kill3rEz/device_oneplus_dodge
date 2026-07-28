@@ -36,6 +36,11 @@
     <string name="notification_slider_for_rotation">Rotation</string>
     <string name="notification_slider_for_ringer">Ringer</string>
     <string name="notification_slider_for_notification_ringer">Notification and ringer</string>
+    <string name="notification_slider_for_applaunch">Launch app</string>
+    <string name="notification_slider_applaunch_launch">Launch app</string>
+    <string name="notification_slider_app_none">No app selected</string>
+    <string name="notification_slider_app_dialog_title">Select app</string>
+    <string name="notification_slider_app_clear">Clear</string>
     <string name="notification_slider_flashlight_off">Off</string>
     <string name="notification_slider_flashlight_on">On</string>
     <string name="notification_slider_flashlight_blink">Blink</string>
@@ -234,6 +239,8 @@
     <string name="hbm_category_title" translatable="false">@string/hbm_title</string>
     <string name="hbm_title">HBM</string>
     <string name="hbm_summary">High Brightness Mode</string>
+    <string name="sunlight_boost_title">Auto sunlight boost</string>
+    <string name="sunlight_boost_summary">Boost to peak panel brightness in direct sunlight (above 40,000 lux), like stock. Releases below 20,000 lux</string>
     <string name="hbm_unavailable">High Brightness Mode is not supported on this device</string>
     <string name="hbm_warning_title">Warning</string>
     <string name="hbm_warning_summary">HBM accelerates cumulative panel degradation. So use it only when necessary and for short periods of time.\n</string>

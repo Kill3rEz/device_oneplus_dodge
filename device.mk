@@ -9,8 +9,10 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Alert slider
+# DeviceSettings owns the tri-state KeyHandler (custom usages incl. flashlight
+# blink). Do not also package hardware/oplus KeyHandler — PhoneWindowManager
+# would load it from lineage-sdk and overwrite DeviceSettings slider actions.
 PRODUCT_PACKAGES += \
-    KeyHandler \
     DeviceSettings \
     tri-state-key-calibrate
 
@@ -33,7 +35,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Fingerprint
 TARGET_HAS_UDFPS := true
 
-# LiveDisplay
+# LiveDisplay (PA crash fixed in frameworks/base 7d536ea / local 2892b8bd658f)
 $(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_AF,true)
 
 
@@ -43,7 +45,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     FrameworksResTargetEuicc \
-    KeyHandlerResTarget \
     OPlusFrameworksResTarget \
     OPlusSettingsProviderResTarget \
     OPlusSettingsResTarget \
@@ -90,15 +91,17 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set_bool,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_GM,true)
 $(call soong_config_set_bool,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_HTPR,false)
 
-# Vibrator
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vibrator/def/effect_0.bin:$(TARGET_COPY_OUT_ODM)/etc/vibrator/9999/def/effect_0.bin\
-    $(LOCAL_PATH)/configs/vibrator/def/effect_1.bin:$(TARGET_COPY_OUT_ODM)/etc/vibrator/9999/def/effect_1.bin\
-    $(LOCAL_PATH)/configs/vibrator/def/effect_2.bin:$(TARGET_COPY_OUT_ODM)/etc/vibrator/9999/def/effect_2.bin\
-    $(LOCAL_PATH)/configs/vibrator/def/effect_21.bin:$(TARGET_COPY_OUT_ODM)/etc/vibrator/9999/def/effect_21.bin
+# Vibrator (YAAP sm8650-common style profiles)
+# sm8750-common QTI HAL + dodge effect lib. Profiles via persist.sys.haptic_profile:
+#   richtap | crisp | gentle | op13crisp | op13gentle (default)
+# op13crisp/op13gentle = dodge stock def/soft effect_0..5 (AOSP IDs 0-5).
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.oplus.dodge)
 
-$(call soong_config_set_bool,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
-$(call soong_config_set,OPLUS_LINEAGE_VIBRATOR_HAL,INCLUDE_DIR,$(LOCAL_PATH)/vibrator/include)
+PRODUCT_PACKAGES += \
+    libqtivibratoreffect.oplus.dodge
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.haptic_profile=op13gentle
 
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8750-common/common.mk)
@@ -106,5 +109,20 @@ $(call inherit-product, device/oneplus/sm8750-common/common.mk)
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/dodge/dodge-vendor.mk)
 
+# Real-time 1080p120: override stock odm camera feature/config blobs.
+# filter-out must match the full PRODUCT_COPY_FILES entry (src:dest); matching
+# only %/odm/... fails because entries are src:$(TARGET_COPY_OUT_ODM)/etc/...
+PRODUCT_COPY_FILES := $(filter-out \
+    %:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \
+    %:$(TARGET_COPY_OUT_ODM)/etc/camera/config/camera_unit_feature_config.protobuf \
+    ,$(PRODUCT_COPY_FILES))
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \
+    $(LOCAL_PATH)/camera/camera_unit_feature_config.protobuf:$(TARGET_COPY_OUT_ODM)/etc/camera/config/camera_unit_feature_config.protobuf
+
+
 # Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
+
+# Fusion light sensor (content-immune ALS) — added by apply-fusion-port.sh
+$(call inherit-product-if-exists, vendor/oplus/fusionlight/fusionlight.mk)
