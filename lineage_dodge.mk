@@ -42,3 +42,24 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2653 \
     SystemDevice=OP5D55L1 \
     SystemName=CPH2653
+
+# AxionAOSP Flags
+AXION_MAINTAINER := Kill3rEz
+
+# Cameras
+AXION_CAMERA_REAR_INFO := 50,50,50
+AXION_CAMERA_FRONT_INFO := 32
+
+# Processor
+AXION_PROCESSOR := Snapdragon_8_Elite
+
+# Enable blur.
+# NOTE: TARGET_ENABLE_BLUR is not consumed anywhere in this tree, so it is inert
+# on its own. SurfaceFlinger gates blur solely on this sysprop (defaults to 0),
+# so the prop is what actually turns background blur on.
+TARGET_ENABLE_BLUR := true
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1
+
+# Enable AxionFX
+TARGET_INCLUDE_AXFX := true
