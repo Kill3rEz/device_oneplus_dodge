@@ -43,3 +43,19 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2653 \
     SystemDevice=OP5D55L1 \
     SystemName=CPH2653
+
+# AxionAOSP Flags
+AXION_MAINTAINER := Kill3rEz
+
+# Cameras
+AXION_CAMERA_REAR_INFO := 50,50,50
+AXION_CAMERA_FRONT_INFO := 32
+
+# Processor
+AXION_PROCESSOR := Snapdragon_8_Elite
+
+# Enable blur
+TARGET_ENABLE_BLUR := true
+
+# Enable AxionFX
+TARGET_INCLUDE_AXFX := true

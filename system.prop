@@ -1,1 +1,4 @@
 ro.lunaris.maintainer=OscarM1019
+
+# Enable blur
+ro.surface_flinger.supports_background_blur=1
