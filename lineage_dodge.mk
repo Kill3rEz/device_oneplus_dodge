@@ -63,3 +63,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Enable AxionFX
 TARGET_INCLUDE_AXFX := true
+
+# Keep the display stack on Scudo (dual_allocator flag defaults ON in bionic).
+# The Oplus gralloc/composer blobs bootloop under jemalloc, so opt this device
+# out of DISPLAY_STACK_USE_JEMALLOC.
+$(call soong_config_set,BIONIC,use_jemalloc_for_display_stack,false)
