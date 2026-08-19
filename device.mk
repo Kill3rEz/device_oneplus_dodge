@@ -166,6 +166,11 @@ $(call inherit-product, vendor/oneplus/dodge/dodge-vendor.mk)
 # Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
+# libcsextimpl.so NEEDs libcameraservice.so, which cameraserver only links
+# statically, so nothing else installs a shared copy.
+PRODUCT_PACKAGES += \
+    libcameraservice
+
 # Fusion light sensor (content-immune ALS). Dormant until
 # persist.alpha.fusion_light=1 is set on device — see the repo README.
 $(call inherit-product-if-exists, vendor/oplus/fusionlight/fusionlight.mk)
