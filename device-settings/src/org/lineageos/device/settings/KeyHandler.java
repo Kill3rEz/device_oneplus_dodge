@@ -132,7 +132,8 @@ public class KeyHandler implements DeviceKeyHandler {
         mAppLaunchController = new AppLaunchController(mContext);
 
         mContext.registerReceiver(mSliderUpdateReceiver,
-                new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS));
+                new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS),
+                Context.RECEIVER_EXPORTED);
 
         mInputManager = mContext.getSystemService(InputManager.class);
     }
@@ -144,6 +145,11 @@ public class KeyHandler implements DeviceKeyHandler {
 
         if (!mInputManager.getInputDevice(event.getDeviceId()).getName().equals("oplus,hall_tri_state_key")) {
             return event;
+        }
+
+        if (mSliderController == null) {
+            Log.w(TAG, "Slider controller not initialized yet");
+            return null;
         }
 
         mSliderController.processEvent(mContext);
