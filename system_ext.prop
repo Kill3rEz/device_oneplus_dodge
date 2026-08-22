@@ -1,6 +1,11 @@
 # IFAA
 sys.oplus.ifaa.model=ONEPLUS-R23821
 
+# Dev options "Show refresh rate": panel TE node. Also in vendor.prop; duplicated
+# here so SurfaceFlinger sees it without a vendor image rebuild. SF also falls
+# back to this path if the property is missing.
+ro.surface_flinger.panel_refresh_rate_node=/sys/kernel/oplus_display/test_te
+
 # The AIUnit region default is deliberately NOT here. This file is installed on
 # every unit regardless of where it was sold, so pinning a region here forced US
 # onto Indian and European devices too. It lives in

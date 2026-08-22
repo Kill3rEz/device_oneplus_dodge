@@ -17,6 +17,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -160,6 +162,19 @@ public class DeviceSettingsService extends Service {
     private void initializeRefreshRate() {
         if (Constants.DEBUG) Log.i(TAG, "Initializing RefreshRate");
         try {
+            // Old default was min=60 with a higher peak ("60 ~ 120 Hz"). That
+            // pins SurfaceFlinger at 60Hz so the dev-options overlay never
+            // shows LTPO drops. Lift the stored floor to 1 Hz once.
+            float min = Settings.System.getFloatForUser(getContentResolver(),
+                    Settings.System.MIN_REFRESH_RATE, 60f, UserHandle.USER_CURRENT);
+            float peak = Settings.System.getFloatForUser(getContentResolver(),
+                    Settings.System.PEAK_REFRESH_RATE, 120f, UserHandle.USER_CURRENT);
+            if (min >= 59f && min <= 61f && peak > 61f) {
+                Settings.System.putFloatForUser(getContentResolver(),
+                        Settings.System.MIN_REFRESH_RATE, 1f, UserHandle.USER_CURRENT);
+                if (Constants.DEBUG) Log.i(TAG, "Migrated min refresh rate 60 -> 1 Hz");
+            }
+
             RefreshRateController.getInstance(this);
             RefreshRateMonitorService.notifyStateChanged(this);
             if (Constants.DEBUG) Log.i(TAG, "RefreshRate initialized");
