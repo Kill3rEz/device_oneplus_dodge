@@ -68,3 +68,8 @@ TARGET_INCLUDE_AXFX := true
 # The Oplus gralloc/composer blobs bootloop under jemalloc, so opt this device
 # out of DISPLAY_STACK_USE_JEMALLOC.
 $(call soong_config_set,BIONIC,use_jemalloc_for_display_stack,false)
+
+# LTPO: let SurfaceFlinger's scheduler pick render rates down to 1 Hz.
+# RefreshRateSelector.h defaults kMinSupportedFrameRate to 20; the
+# frameworks/native override reads this flag to lower the floor to 1 Hz.
+$(call soong_config_set,surfaceflinger,frame_rate_category_min,1)
