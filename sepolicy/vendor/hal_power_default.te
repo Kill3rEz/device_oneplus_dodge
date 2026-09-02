@@ -11,3 +11,15 @@ allow hal_power_default appdomain:process { getsched setsched };
 allow hal_power_default surfaceflinger:process setsched;
 allow hal_power_default hal_graphics_composer_default:process setsched;
 allow hal_power_default system_server:process setsched;
+
+# To do powerhint on nodes defined in powerhint.json (libperfmgr)
+allow hal_power_default cgroup:dir search;
+allow hal_power_default cgroup:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+
+# To get/set powerhal state property
+set_prop(hal_power_default, vendor_power_prop)
+
+# To grant access to IStats service for metrics
+allow hal_power_default fwk_stats_service:service_manager find;
+binder_call(hal_power_default, stats_service_server);
