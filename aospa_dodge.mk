@@ -7,6 +7,11 @@
 
 ifeq (aospa_dodge,$(TARGET_PRODUCT))
 
+# QCOM SoC platform. Needed in the PRODUCT phase because aospa-target.mk
+# inherits device/qcom/common/common.mk, which requires TARGET_BOARD_PLATFORM
+# to be defined already (the Lineage tree only sets it in BoardConfig).
+TARGET_BOARD_PLATFORM := sun
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
