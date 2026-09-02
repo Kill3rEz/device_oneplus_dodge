@@ -5,4 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_dodge.mk
+    $(LOCAL_DIR)/aospa_dodge.mk
+
+COMMON_LUNCH_CHOICES := \
+    aospa_dodge-user \
+    aospa_dodge-userdebug \
+    aospa_dodge-eng
