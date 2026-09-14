@@ -167,7 +167,8 @@ $(call inherit-product, vendor/oneplus/dodge/dodge-vendor.mk)
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
 # libcsextimpl.so NEEDs libcameraservice.so, which cameraserver only links
-# statically, so nothing else installs a shared copy.
+# statically, so nothing else installs a shared copy. Must be PRODUCT_PACKAGES
+# only — Soong rejects shared_libs/required on libcsextimpl (AIDL V3 vs V4).
 PRODUCT_PACKAGES += \
     libcameraservice
 
