@@ -142,8 +142,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8750-common/common.mk)
 
-# Dalvik: 16GB. Must follow the common inherit; ?= props are last-wins.
-$(call inherit-product, frameworks/native/build/phone-xhdpi-16384-dalvik-heap.mk)
 
 # Real-time 1080p120: override the stock odm camera feature blob.
 # This has to be declared *before* inheriting dodge-vendor.mk. inherit-product
@@ -166,6 +164,10 @@ $(call inherit-product, vendor/oneplus/dodge/dodge-vendor.mk)
 # Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
+# OplusCamera is system_ext + non-coredomain (vendor HAL/DSP/prop access).
+PRODUCT_SELINUX_TREBLE_LABELING_TRACKING_LIST_FILE := \
+    device/oneplus/dodge/sepolicy/tracking_list.yaml
+
 # libcsextimpl.so NEEDs libcameraservice.so, which cameraserver only links
 # statically, so nothing else installs a shared copy. Must be PRODUCT_PACKAGES
 # only — Soong rejects shared_libs/required on libcsextimpl (AIDL V3 vs V4).
@@ -175,3 +177,8 @@ PRODUCT_PACKAGES += \
 # Fusion light sensor (content-immune ALS). Dormant until
 # persist.alpha.fusion_light=1 is set on device — see the repo README.
 $(call inherit-product-if-exists, vendor/oplus/fusionlight/fusionlight.mk)
+
+# OPLUS Face Unlock (UFF AIDL IFace). Do not combine with Paranoid Sense —
+# FaceService treats ro.face.sense_service as exclusive. See
+# vendor/oplus/opfaceunlock/README.md.
+$(call inherit-product-if-exists, vendor/oplus/opfaceunlock/opfaceunlock.mk)

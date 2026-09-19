@@ -1,0 +1,11 @@
+# OplusCamera is a system_ext priv-app, so Treble labeling treats it as a
+# platform APK. Its domain cannot be coredomain: vendor sepolicy grants
+# vendor_camera_prop, DSP devices, and vendor_data_file, which AOSP
+# neverallows for coredomain (see system/sepolicy/private/property.te).
+coredomain_in_vendor: []
+platform_file_in_vendor_file_contexts: []
+platform_apps_in_vendor_seapp_contexts: []
+non_coredomain_for_platform_apps:
+  - apk: OplusCamera.apk
+    bug: 0
+coredomain_for_vendor_apps: []
