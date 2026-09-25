@@ -1,0 +1,60 @@
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Subject: [PATCH] camera: Build the Oplus camera blobs on A17
+
+Applied by apply-dodge-ports-evo.sh to vendor/oplus/camera/camera after it is
+(re)cloned: bump the camera provider/device AIDL NDK libs V3->V4, disable
+check_elf_files for the prebuilts and fix camera-vendor.mk packages.
+---
+diff --git a/Android.bp b/Android.bp
+index edf70be..cf471d9 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -1258,10 +1258,10 @@ cc_prebuilt_library_shared {
+                 "android.frameworks.cameraservice.service@2.2",
+                 "android.frameworks.cameraservice.device@2.0",
+                 "android.hardware.camera.common@1.0",
+-                "android.hardware.camera.provider-V3-ndk",
++                "android.hardware.camera.provider-V4-ndk",
+                 "android.hardware.camera.provider@2.7",
+                 "android.hardware.camera.device@3.6",
+-                "android.hardware.camera.device-V3-ndk",
++                "android.hardware.camera.device-V4-ndk",
+                 "android.frameworks.sensorservice@1.0",
+                 "android.hardware.sensors@1.0",
+                 "vendor.oplus.hardware.cameraMDM@1.0",
+@@ -1282,6 +1282,14 @@ cc_prebuilt_library_shared {
+         },
+     },
+     compile_multilib: "64",
++    // libcsextimpl was built against camera provider/device AIDL V3; its DT_NEEDED
++    // references android.hardware.camera.{provider,device}-V3-ndk.so. A17 uses V4,
++    // and soong forbids depending on two versions of one aidl_interface in the same
++    // graph (libcameraservice already pulls V4), so the V3 libs cannot be added to
++    // shared_libs. Its symbols still resolve against V4; only the soname reference
++    // differs. Bypass the ELF check here and install the V3 NDK libs via
++    // PRODUCT_PACKAGES so the DT_NEEDED is satisfied at runtime.
++    check_elf_files: false,
+     prefer: true,
+     system_ext_specific: true,
+ }
+@@ -2165,7 +2173,6 @@ android_app_import {
+         enabled: false,
+     },
+     privileged: true,
+-    skip_preprocessed_apk_checks: true,
+     system_ext_specific: true,
+ }
+ 
+diff --git a/camera-vendor.mk b/camera-vendor.mk
+index 11dce95..4ad00ea 100644
+--- a/camera-vendor.mk
++++ b/camera-vendor.mk
+@@ -268,6 +268,8 @@ PRODUCT_PACKAGES += \
+     libc++_shared_aiunit \
+     libcore_tokenizers_aiunit \
+     libcsextimpl \
++    android.hardware.camera.provider-V3-ndk \
++    android.hardware.camera.device-V3-ndk \
+     libdatastore_shared_counter_aiunit \
+     libextendfile_system_ext \
+     libfde_aon \
