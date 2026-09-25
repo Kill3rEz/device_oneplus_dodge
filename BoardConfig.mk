@@ -12,7 +12,13 @@ include device/oneplus/sm8750-common/BoardConfigCommon.mk
 DEVICE_PATH := device/oneplus/dodge
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := OP5D0DL1,OP5D55L1
+# Both OnePlus 13 "dodge" SKUs (OP5D0DL1 = CN, OP5D55L1 = global) must be accepted.
+# TARGET_OTA_ASSERT_DEVICE is passed through raw into the OTA metadata's `pre-device`,
+# and the recovery splits that value on '|' (FINGERPRING_SEPARATOR in
+# bootable/recovery install.cpp), NOT on comma. A comma list stays a single token and
+# never matches ("Package is for product OP5D0DL1,OP5D55L1 but expected OP5D55L1"), so
+# use '|' as the separator to keep BOTH SKUs flashable.
+TARGET_OTA_ASSERT_DEVICE := OP5D0DL1|OP5D55L1
 
 # Display
 TARGET_SCREEN_DENSITY := 640
@@ -47,4 +53,9 @@ TARGET_FUSIONLIGHT_ENABLE := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/fusionlight/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/opfaceunlock/sepolicy/vendor
+# PenguinOS: use SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS (the var soong_config.mk:242 exports to
+# soong's SystemExtPrivateSepolicyDirs), NOT BOARD_SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS, which is
+# not consumed anywhere — so this device's sepolicy/private (refresh_rate_ext service_contexts +
+# the system_server/app .te) was never compiled, and refresh_rate_ext fell back to
+# default_android_service -> system_server addService denied -> FATAL -> bootloop.
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
