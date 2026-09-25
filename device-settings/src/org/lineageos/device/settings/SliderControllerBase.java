@@ -108,9 +108,15 @@ public abstract class SliderControllerBase {
         if (mVibrator == null) {
             return;
         }
-        boolean enabled = LineageSettings.System.getIntForUser(mContext.getContentResolver(),
-                LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1,
-                UserHandle.USER_CURRENT) != 0;
+        boolean enabled = true;
+        try {
+            enabled = LineageSettings.System.getIntForUser(mContext.getContentResolver(),
+                    LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1,
+                    UserHandle.USER_CURRENT) != 0;
+        } catch (Exception e) {
+            // PenguinOS: no lineage-sdk LineageSettingsProvider on AOSPA; keep haptics enabled.
+            Log.w(TAG, "LineageSettings unavailable, defaulting haptic feedback on", e);
+        }
         if (enabled) {
             mVibrator.vibrate(50);
         }
