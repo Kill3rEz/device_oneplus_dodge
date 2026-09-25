@@ -1,2 +1,7 @@
-# Allow PermissionController to find QSPM HAL service
-allow permissioncontroller_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+# PenguinOS: the rule below referenced the VENDOR type vendor_hal_qspmhal_hwservice, which is
+# not visible in system_ext policy scope (Treble) -> "unknown type" sepolicy compile error once
+# this dir was actually wired in (SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS). It only silenced a
+# non-fatal "find" denial (PermissionController -> QSPM HAL), so it's dropped. If needed, re-add
+# it in a VENDOR sepolicy dir (device/oneplus/dodge/sepolicy/vendor) where the vendor type is
+# in scope, not here.
+# allow permissioncontroller_app vendor_hal_qspmhal_hwservice:hwservice_manager find;

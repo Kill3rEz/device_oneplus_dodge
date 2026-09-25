@@ -26,3 +26,12 @@
 # app read and execute across all of /vendor.
 /(vendor|odm)/lib(64)?/libaiboost\.so    u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libaiboost_llm\.so    u:object_r:same_process_hal_file:s0
+
+# PenguinOS: label the LineageOS libperfmgr power HAL binary as hal_power_default_exec so init
+# can domain-transition and start it (else it ships as u:object_r:vendor_file, init can't exec
+# it, android.hardware.power.IPower/default never registers, PowerManagerService.nativeInit
+# blocks -> watchdog kills system_server -> bootloop). Upstream Lineage sets this in
+# device/lineage/sepolicy/common/vendor/file_contexts which AOSPA doesn't wire in. Must live in
+# a BOARD_VENDOR_SEPOLICY_DIRS dir (this one) — the sm8750-common/sepolicy/vendor dir is only in
+# BOARD_SEPOLICY_DIRS and does NOT feed vendor_file_contexts.
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.lineage-libperfmgr    u:object_r:hal_power_default_exec:s0
