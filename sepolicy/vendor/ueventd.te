@@ -1,0 +1,7 @@
+# PenguinOS: the OPLUS qcacld driver requests firmware "wlan/WCNSS_qcom_cfg.ini", which
+# ueventd serves from /mnt/vendor/persist/ (odm ueventd.rc firmware_directories, kernel
+# force_sysfs_fallback). AOSPA's device/qcom/common file_contexts labels
+# /mnt/vendor/persist/wlan as vendor_persist_wcnss_service_file (Axion keeps mnt_vendor_file)
+# and only grants ueventd dir search on it, so the read is denied, cfg_parse fails, the wlan
+# probe aborts and wlan0 never appears (WifiHAL "Timed out wating on Driver ready").
+r_dir_file(ueventd, vendor_persist_wcnss_service_file)
