@@ -184,7 +184,19 @@ public class DeviceSettings extends SettingsBasePreferenceFragment
 
         ListPreference usagePref = (ListPreference) findPreference(
                 Constants.KEY_NOTIF_SLIDER_USAGE);
-        handleSliderUsageChange(usagePref.getValue());
+        String usage = usagePref.getValue();
+        if (usage == null) {
+            // PenguinOS: prefs never seeded (fresh install / cleared data / boot seeding not run
+            // yet). Fall back to the default usage and its default actions, like a user change,
+            // so the switch below and the later Integer.parseInt(getValue()) calls never see null.
+            usage = getString(R.string.config_defaultNotificationSliderUsage);
+            usagePref.setValue(usage);
+            handleSliderUsageChange(usage);
+            handleSliderUsageDefaultsChange(usage);
+            notifySliderUsageChange(usage);
+        } else {
+            handleSliderUsageChange(usage);
+        }
     }
 
     private void registerPreferenceListener(String key) {
