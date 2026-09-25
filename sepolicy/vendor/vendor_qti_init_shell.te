@@ -1,0 +1,6 @@
+# PenguinOS: /odm/bin/init.oplus.wifi.sh (service wifiserver, vendor_qti_init_shell) creates and
+# refreshes WCNSS_qcom_cfg.ini and the cnss_diag confs in /mnt/vendor/persist/wlan. AOSPA relabels
+# that dir vendor_persist_wcnss_service_file (see ueventd.te), so grant the same dir/file access
+# Axion gets on mnt_vendor_file; otherwise a wiped persist never gets the ini recreated.
+allow vendor_qti_init_shell vendor_persist_wcnss_service_file:dir rw_dir_perms;
+allow vendor_qti_init_shell vendor_persist_wcnss_service_file:file create_file_perms;
