@@ -37,14 +37,6 @@ index edf70be..cf471d9 100644
      prefer: true,
      system_ext_specific: true,
  }
-@@ -2165,7 +2173,6 @@ android_app_import {
-         enabled: false,
-     },
-     privileged: true,
--    skip_preprocessed_apk_checks: true,
-     system_ext_specific: true,
- }
- 
 diff --git a/camera-vendor.mk b/camera-vendor.mk
 index 11dce95..4ad00ea 100644
 --- a/camera-vendor.mk
