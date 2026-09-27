@@ -1,0 +1,20 @@
+// fmt 11.0.2 (src/format.cc + headers, MIT, see LICENSE) built as a shared lib.
+//
+// The OxygenOS camera service extension /system_ext/lib64/libcsextimpl.so was
+// linked on Android 16, where libbase exported fmt::v11. Android 17 libbase
+// ships fmt 12 (fmt::v12), so cameraserver's dlopen of libcsextimpl fails on
+// 9 fmt::v11 symbols and the OnePlus camera cannot configure its streams.
+// patches/vendor_oplus_camera_camera/0002-libcsextimpl-fmt11-shim.sh adds this
+// library to libcsextimpl's DT_NEEDED. fmt::v11 and fmt::v12 live in different
+// inline namespaces, so both can be loaded in the same process.
+cc_library_shared {
+    name: "libfmt11_shim",
+    system_ext_specific: true,
+    srcs: ["src/format.cc"],
+    local_include_dirs: ["include"],
+    // Same flags as external/fmtlib on Android 16 (fmtlib-non-test-defaults).
+    cflags: [
+        "-fno-exceptions",
+        "-UNDEBUG",
+    ],
+}
