@@ -136,6 +136,10 @@ $(call inherit-product, vendor/oneplus/dodge/dodge-vendor.mk)
 # Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
+# fmt 11 for the OxygenOS libcsextimpl.so on Android 17 (see libshims/fmt11)
+PRODUCT_PACKAGES += \
+    libfmt11_shim
+
 # Fusion light sensor (content-immune ALS). Dormant until
 # persist.alpha.fusion_light=1 is set on device — see the repo README.
 $(call inherit-product-if-exists, vendor/oplus/fusionlight/fusionlight.mk)
