@@ -27,6 +27,12 @@ TARGET_SCREEN_DENSITY := 640
 # Kernel
 TARGET_KERNEL_ADDITIONAL_FLAGS += CONFIG_DODGE_DTB=y
 
+# Power
+# AOSPA off-screen gestures: vendor.aospa.power-service handles double tap through the
+# hardware/oplus extension (IOplusTouch gesture bitmask). This has to be a board variable:
+# vendor/aospa BoardConfigSoong.mk resets aospaGestureVars and fills it from these.
+TARGET_POWER_FEATURE_EXT_LIB := //hardware/oplus:power-feature-ext-oplus
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
