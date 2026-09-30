@@ -77,13 +77,13 @@
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data
                 android:name="com.android.settings.group_key"
-                android:value="top_level_account_category" />
+                android:value="top_level_system_info_category" />
             <meta-data
                 android:name="com.android.settings.keyhint"
                 android:value="top_level_device_settings" />
             <meta-data
                 android:name="com.android.settings.order"
-                android:resource="@integer/device_settings_top_level_order" />
+                android:value="@integer/device_settings_top_level_order" />
             <meta-data
                 android:name="com.android.settings.icon"
                 android:resource="@drawable/ic_settings_device" />
@@ -139,6 +139,14 @@
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.battery" />
+            <!-- First battery card, between Battery usage (order -2, set by
+                 patches/packages_apps_Settings) and Battery saver (implicit order 0) -->
+            <meta-data
+                android:name="com.android.settings.group_key"
+                android:value="power_usage_summary_category" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-1" />
             <meta-data
                 android:name="com.android.settings.icon"
                 android:resource="@drawable/ic_charging_control" />

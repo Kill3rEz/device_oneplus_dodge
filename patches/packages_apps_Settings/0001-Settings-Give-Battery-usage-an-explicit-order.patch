@@ -1,0 +1,28 @@
+From ae997a22377fb5ce5fc4b2cddd5e9577e8fae09f Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 16:58:44 +0200
+Subject: [PATCH] Settings: Give Battery usage an explicit order
+
+Lets a device settings tile be injected into the first Battery card
+between Battery usage and Battery saver at a fixed, language
+independent position (injected tiles with the same order are sorted
+by title). The implicit order of every other preference is unchanged.
+---
+ res/xml/power_usage_summary.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/res/xml/power_usage_summary.xml b/res/xml/power_usage_summary.xml
+index fff753533a9..45dd364adf1 100644
+--- a/res/xml/power_usage_summary.xml
++++ b/res/xml/power_usage_summary.xml
+@@ -49,6 +49,7 @@
+         <Preference
+             android:fragment="com.android.settings.fuelgauge.batteryusage.PowerUsageAdvanced"
+             android:key="battery_usage_summary"
++            android:order="-2"
+             android:title="@string/advanced_battery_preference_title"
+             android:summary="@string/advanced_battery_preference_summary"
+             settings:keywords="@string/keywords_battery_usage" />
+-- 
+2.53.0
+
