@@ -40,13 +40,14 @@ import java.util.Arrays;
 
 import org.lineageos.device.settings.Constants;
 import org.lineageos.device.settings.SliderControllerBase;
+import org.lineageos.device.settings.chargingcontrol.ChargingControlController;
 import org.lineageos.device.settings.slider.AppLaunchController;
-import org.lineageos.device.settings.slider.NotificationController;
-import org.lineageos.device.settings.slider.FlashlightController;
 import org.lineageos.device.settings.slider.BrightnessController;
-import org.lineageos.device.settings.slider.RotationController;
-import org.lineageos.device.settings.slider.RingerController;
+import org.lineageos.device.settings.slider.FlashlightController;
+import org.lineageos.device.settings.slider.NotificationController;
 import org.lineageos.device.settings.slider.NotificationRingerController;
+import org.lineageos.device.settings.slider.RingerController;
+import org.lineageos.device.settings.slider.RotationController;
 
 @Keep
 public class KeyHandler implements DeviceKeyHandler {
@@ -136,6 +137,14 @@ public class KeyHandler implements DeviceKeyHandler {
                 Context.RECEIVER_EXPORTED);
 
         mInputManager = mContext.getSystemService(InputManager.class);
+
+        // KeyHandler lives in system_server: host the charging control controller here, like
+        // LineageOS does from its platform services. It never throws into system_server.
+        try {
+            ChargingControlController.start(mContext);
+        } catch (Throwable t) {
+            Log.e(TAG, "Failed to start charging control", t);
+        }
     }
 
     public KeyEvent handleKeyEvent(KeyEvent event) {

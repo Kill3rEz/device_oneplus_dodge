@@ -242,4 +242,15 @@
         <item>crisp</item>
         <item>richtap</item>
     </string-array>
+
+    <string-array name="charging_control_mode_entries" translatable="false">
+        <item>@string/charging_control_mode_auto</item>
+        <item>@string/charging_control_mode_custom</item>
+        <item>@string/charging_control_mode_limit</item>
+    </string-array>
+    <string-array name="charging_control_mode_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

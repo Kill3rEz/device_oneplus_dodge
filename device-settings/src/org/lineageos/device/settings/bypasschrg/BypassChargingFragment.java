@@ -78,6 +78,8 @@ public class BypassChargingFragment extends PreferenceFragmentCompat {
             targetPreference.setValue(mBypassController.getBypassChargingTarget());
             targetPreference.setMin(Constants.BYPASS_TARGET_MIN);
             targetPreference.setMax(Constants.BYPASS_TARGET_MAX);
+            // The charge limit lives in Settings > Battery > Charging control now.
+            targetPreference.setVisible(false);
             targetPreference.setDefaultValue(Constants.BYPASS_TARGET_DEFAULT, true);
             targetPreference.setOnPreferenceChangeListener((pref, newValue) -> {
                 int target = (int) newValue;

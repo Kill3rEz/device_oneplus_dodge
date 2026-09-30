@@ -82,6 +82,7 @@ public class DeviceSettings extends SettingsBasePreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.main);
+        findPreference("refresh_rate").setVisible(false);
 
         mHbmController = HbmController.getInstance(getContext());
         mPwmController = PwmController.getInstance(getContext());
