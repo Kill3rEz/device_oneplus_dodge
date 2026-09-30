@@ -20,4 +20,11 @@
     <!-- SoftwareMusicHal + QuickLook session. Default is false in frameworks;
          overlay true after the device is validated for background recognition. -->
     <bool name="config_supportsBackgroundMusicRecognition">true</bool>
+
+    <!-- AOSPA off-screen gestures (Settings > Gestures). The OPlus touch driver reports a
+         double tap as KEY_WAKEUP (scan code 143); the AOSPA KeyHandler matches scan codes. -->
+    <bool name="config_enableKeyHandler">true</bool>
+    <integer name="config_doubleTapKeyCode">143</integer>
+    <!-- Default action for double tap: wake up (AOSPA KeyHandler WAKE_UP). -->
+    <integer name="config_doubleTapDefault">1</integer>
 </resources>
