@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:key="charging_control_enabled"
+        android:icon="@drawable/ic_charging_control"
+        android:title="@string/charging_control_enable_title"
+        android:summary="@string/charging_control_enable_summary"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="charging_control_mode"
+        android:title="@string/charging_control_mode_title"
+        android:dialogTitle="@string/charging_control_mode_title"
+        android:entries="@array/charging_control_mode_entries"
+        android:entryValues="@array/charging_control_mode_values"
+        android:summary="%s"
+        android:persistent="false" />
+
+    <Preference
+        android:key="charging_control_start_time"
+        android:title="@string/charging_control_start_time_title"
+        android:persistent="false" />
+
+    <Preference
+        android:key="charging_control_target_time"
+        android:title="@string/charging_control_target_time_title"
+        android:persistent="false" />
+
+    <org.lineageos.device.settings.preferences.CustomSeekBarPreference
+        android:key="charging_control_limit"
+        android:title="@string/charging_control_limit_title"
+        android:max="100"
+        settings:min="70"
+        settings:interval="1"
+        settings:units="%"
+        android:defaultValue="80"
+        android:persistent="false" />
+
+    <Preference
+        android:key="charging_control_footer"
+        android:icon="@drawable/ic_info_outline"
+        android:selectable="false"
+        android:persistent="false" />
+
+</PreferenceScreen>

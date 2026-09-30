@@ -301,4 +301,25 @@
     <string name="on">On</string>
     <string name="off">Off</string>
 
+
+    <!-- Charging control (ported from LineageOS) -->
+    <string name="charging_control_title">Charging control</string>
+    <string name="charging_control_summary">Extend battery lifespan by limiting or scheduling charging</string>
+    <string name="charging_control_enable_title">Enable charging control</string>
+    <string name="charging_control_enable_summary">Charge up to a set level, or finish charging right when you need it</string>
+    <string name="charging_control_mode_title">Charging mode</string>
+    <string name="charging_control_mode_auto">Automatic schedule</string>
+    <string name="charging_control_mode_custom">Custom schedule</string>
+    <string name="charging_control_mode_limit">Limit charging</string>
+    <string name="charging_control_mode_auto_summary">Charging pauses at 80% and finishes right before your next alarm</string>
+    <string name="charging_control_mode_custom_summary">Charging pauses at 80% and finishes by the target time. Nothing happens outside the start and target times</string>
+    <string name="charging_control_mode_limit_summary">Charging stops at the set limit and resumes when the battery drops below it</string>
+    <string name="charging_control_start_time_title">Start time</string>
+    <string name="charging_control_target_time_title">Target time to full charge</string>
+    <string name="charging_control_limit_title">Charging limit</string>
+    <string name="charging_control_notification_limit">Charging to %1$d%%</string>
+    <string name="charging_control_notification_limit_done">Battery is charged to %1$d%%</string>
+    <string name="charging_control_notification_time">Battery will be fully charged by %1$s</string>
+    <string name="charging_control_notification_full">Battery is fully charged</string>
+    <string name="charging_control_notification_charge_full">Charge to full</string>
 </resources>
