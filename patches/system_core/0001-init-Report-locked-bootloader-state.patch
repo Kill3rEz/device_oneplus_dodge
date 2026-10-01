@@ -1,0 +1,53 @@
+From 2f0138580316f65b5649d6eb19b4f3e2ebe189bc Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Thu, 1 Oct 2026 16:18:22 +0200
+Subject: [PATCH] init: Report locked bootloader state
+
+Set the verified boot properties before the bootloader values get
+imported. Recovery keeps the real ones.
+---
+ init/property_service.cpp | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/init/property_service.cpp b/init/property_service.cpp
+index 49ffb56ab..c8a7da964 100644
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -1510,6 +1510,23 @@ static void ProcessBootconfig() {
+     });
+ }
+ 
++static void SetLockedBootProps() {
++    static constexpr std::pair<const char*, const char*> kProps[] = {
++            {"ro.boot.flash.locked", "1"},
++            {"ro.boot.vbmeta.device_state", "locked"},
++            {"ro.boot.verifiedbootstate", "green"},
++            {"ro.boot.veritymode", "enforcing"},
++            {"ro.boot.warranty_bit", "0"},
++    };
++
++    for (const auto& [name, value] : kProps) {
++        std::string error;
++        if (PropertySetNoSocket(name, value, &error) != PROP_SUCCESS) {
++            LOG(ERROR) << "Could not set '" << name << "' to '" << value << "': " << error;
++        }
++    }
++}
++
+ void PropertyInit() {
+     selinux_callback cb;
+     cb.func_audit = PropertyAuditCallback;
+@@ -1524,6 +1541,10 @@ void PropertyInit() {
+         LOG(FATAL) << "Failed to load serialized property info file";
+     }
+ 
++    if (!IsRecoveryMode()) {
++        SetLockedBootProps();
++    }
++
+     // If arguments are passed both on the command line and in DT,
+     // properties set in DT always have priority over the command-line ones.
+     ProcessKernelDt();
+-- 
+2.53.0
+
