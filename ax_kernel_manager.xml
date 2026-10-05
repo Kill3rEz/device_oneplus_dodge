@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Axion Kernel Manager config - OnePlus 13 (dodge), SM8750 / sun.
+
+    Moved from device/axion/common/prebuilts/ax_kernel_manager_sun.xml, which
+    upstream deleted. Installed by device.mk as /system_ext/etc/ax_kernel_manager.xml.
+
+    CPU: CPU0-5 share SCMI perf domain 0 and CPU6-7 share domain 1
+    (kernel/oneplus/sm8750-devicetrees qcom/sun.dtsi), so the kernel exposes
+    exactly two cpufreq policies: policy0 (cpu 0-5) and policy6 (cpu 6-7).
+    Frequencies are read at runtime from scaling_available_frequencies.
+
+    GPU: kgsl-3d0 devfreq. There is deliberately no static "values" list: the
+    Adreno OPP table depends on the speed bin (qcom/graphics/gpu/
+    sun-v2-gpu-pwrlevels.dtsi), so the loader reads devfreq/available_frequencies.
+-->
+<kernel-manager>
+    <cpu
+        id="little"
+        group="cpu 0-5"
+        cpuIds="0-5"
+        minId="axion_min_freq"
+        maxId="axion_max_freq"
+        governorId="little_cpu_governor"
+        minNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq"
+        maxNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq"
+        curFreqPath="/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq"
+        availablePath="/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies"
+        governorNode="/sys/devices/system/cpu/cpufreq/policy0/scaling_governor"
+        governorAvailablePath="/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors" />
+
+    <cpu
+        id="big"
+        group="cpu 6-7"
+        cpuIds="6-7"
+        minId="axion_min_freq_big"
+        maxId="axion_max_freq_big"
+        governorId="big_cpu_governor"
+        minNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq"
+        maxNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq"
+        curFreqPath="/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq"
+        availablePath="/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies"
+        governorNode="/sys/devices/system/cpu/cpufreq/policy6/scaling_governor"
+        governorAvailablePath="/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors" />
+
+    <gpu
+        node="/sys/class/kgsl/kgsl-3d0/devfreq"
+        currentNode="/sys/class/kgsl/kgsl-3d0/gpuclk"
+        usageNode="/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage"
+        availablePath="/sys/class/kgsl/kgsl-3d0/devfreq/available_frequencies"
+        frequencyMultiplier="1" />
+</kernel-manager>
