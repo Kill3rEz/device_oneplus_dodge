@@ -18,6 +18,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
+# Axion kernel manager
+# device/axion/common no longer ships sun files. Its config/board/common.mk
+# looks them up via $(DEVICE_PATH), $(COMMON_PATH) and the device name, but it
+# runs in the product phase, where DEVICE_PATH/COMMON_PATH (BoardConfig*.mk)
+# and TARGET_DEVICE are still empty, so nothing is found for this tree. Install
+# the OP13 files explicitly, at the destinations common.mk would use.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ax_kernel_manager.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/ax_kernel_manager.xml \
+    $(LOCAL_PATH)/ax_init_dodge.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ax_init_sun.rc
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3168
 TARGET_SCREEN_WIDTH := 1440
