@@ -153,6 +153,11 @@ public class Constants {
             "/sys/kernel/oplus_display/aod_light_mode_set";
     public static final String KEY_AOD_HIGH_BRIGHTNESS = "aod_high_brightness";
 
+    /** Haptic profile, read live by the dodge vibrator effect lib on every effect.
+     *  The default must match the effect lib and device.mk. */
+    public static final String PROP_HAPTIC_PROFILE = "persist.sys.haptic_profile";
+    public static final String HAPTIC_PROFILE_DEFAULT = "op13crisp";
+
     /** Panel test-TE counter: real DDIC self-refresh rate (LTPO). Write "1" to
      *  enable the irq (done at boot by DeviceSettingsService); reads return the
      *  measured rate, or 0 until two TE pulses have been observed. Consumed by the
