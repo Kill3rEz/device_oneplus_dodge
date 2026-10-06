@@ -16,6 +16,7 @@
  */
 package org.lineageos.device.settings.ui.screens
 
+import android.os.SystemProperties
 import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
@@ -116,6 +117,11 @@ fun MainScreen(
     var aodHigh by remember { mutableStateOf(aodController.isHighBrightnessEnabled) }
     var fastOn by remember { mutableStateOf(fastCharge.isFastChargingEnabled) }
     var nightOn by remember { mutableStateOf(fastCharge.isNightModeEnabled) }
+    var hapticProfile by remember {
+        mutableStateOf(
+            SystemProperties.get(Constants.PROP_HAPTIC_PROFILE, Constants.HAPTIC_PROFILE_DEFAULT)
+        )
+    }
     var showHbmWarning by remember { mutableStateOf(false) }
     var pickingSliderApp by remember { mutableStateOf<String?>(null) }
 
@@ -349,6 +355,26 @@ fun MainScreen(
                         },
                     )
                 }
+            }
+        }
+
+        PreferenceGroup(title = stringResource(R.string.vibration_category_title)) {
+            item {
+                IconListPreference(
+                    title = stringResource(R.string.haptic_profile_title),
+                    options = arrayOptions(
+                        context,
+                        R.array.haptic_profile_entries,
+                        R.array.haptic_profile_values,
+                    ),
+                    value = hapticProfile,
+                    onValueChange = { profile ->
+                        SystemProperties.set(Constants.PROP_HAPTIC_PROFILE, profile)
+                        hapticProfile = profile
+                        Log.i(TAG, "Haptic profile set to $profile")
+                    },
+                    icon = R.drawable.ic_vibration,
+                )
             }
         }
 
