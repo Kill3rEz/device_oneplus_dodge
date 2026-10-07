@@ -242,4 +242,17 @@
         <item>crisp</item>
         <item>richtap</item>
     </string-array>
+
+    <!-- AOD Brightness -->
+    <string-array name="aod_brightness_entries">
+        <item>@string/aod_brightness_auto</item>
+        <item>@string/aod_brightness_high</item>
+        <item>@string/aod_brightness_low</item>
+    </string-array>
+
+    <string-array name="aod_brightness_values" translatable="false">
+        <item>auto</item>
+        <item>high</item>
+        <item>low</item>
+    </string-array>
 </resources>
