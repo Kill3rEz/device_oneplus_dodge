@@ -17,6 +17,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -33,12 +35,12 @@ import org.lineageos.device.settings.display.SunlightBoostController;
 import org.lineageos.device.settings.fastcharge.FastChargeController;
 import org.lineageos.device.settings.gamebar.GameBar;
 import org.lineageos.device.settings.gamebar.GameBarMonitorService;
-import org.lineageos.device.settings.refreshrate.RefreshRateController;
-import org.lineageos.device.settings.refreshrate.RefreshRateMonitorService;
 import org.lineageos.device.settings.utils.FileUtils;
 
 public class DeviceSettingsService extends Service {
     private static final String TAG = "DeviceSettingsService";
+    private static final String KEY_LEGACY_MIN_REFRESH_RATE_CLEARED =
+            "legacy_min_refresh_rate_cleared";
 
     private BroadcastReceiver mReceiver;
 
@@ -84,7 +86,7 @@ public class DeviceSettingsService extends Service {
         initializeSunlightBoost();
         initializeAodBrightness();
         initializeGameBar();
-        initializeRefreshRate();
+        clearLegacyRefreshRate();
     }
 
     private void initializeAodBrightness() {
@@ -196,14 +198,28 @@ public class DeviceSettingsService extends Service {
         }
     }
 
-    private void initializeRefreshRate() {
-        if (Constants.DEBUG) Log.i(TAG, "Initializing RefreshRate");
+    private void clearLegacyRefreshRate() {
+        // The refresh rate is owned by the system display settings now. MIN may
+        // have been written by the old refresh rate service (1 for auto, its fixed
+        // rate, or an HBM pin it never got to restore), and a leftover value would
+        // floor every peak rate picked in the display settings. Unset it once so
+        // the minimum starts from the system default; the display settings list
+        // sets it from then on.
         try {
-            RefreshRateController.getInstance(this);
-            RefreshRateMonitorService.notifyStateChanged(this);
-            if (Constants.DEBUG) Log.i(TAG, "RefreshRate initialized");
+            var prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            if (prefs.getBoolean(KEY_LEGACY_MIN_REFRESH_RATE_CLEARED, false)) {
+                return;
+            }
+            if (HbmController.getInstance(this).isHbmEnabled()) {
+                // MIN is pinned (and backed up) by HBM; try again on the next start
+                return;
+            }
+            Settings.System.putStringForUser(getContentResolver(),
+                    Settings.System.MIN_REFRESH_RATE, null, UserHandle.USER_CURRENT);
+            prefs.edit().putBoolean(KEY_LEGACY_MIN_REFRESH_RATE_CLEARED, true).commit();
+            Log.i(TAG, "Cleared the legacy minimum refresh rate");
         } catch (Exception e) {
-            Log.e(TAG, "Failed to initialize RefreshRate", e);
+            Log.e(TAG, "Failed to clear the legacy minimum refresh rate", e);
         }
     }
 
@@ -299,16 +315,6 @@ public class DeviceSettingsService extends Service {
             DisplayModeController.getInstance(this).broadcastStateChange();
         } catch (Exception e) {
             Log.e(TAG, "Failed to sync HBM state on screen on", e);
-        }
-
-        // The kernel ADFR status_reset() re-arms sa_min_fps=1 on every panel
-        // enable/timing switch, which would silently re-enable LTPO after a
-        // screen-off/on. Re-apply the persisted refresh-rate state (including
-        // the LTPO master switch) so the user's choice survives.
-        try {
-            RefreshRateMonitorService.notifyStateChanged(this);
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to re-apply refresh rate on screen on", e);
         }
 
         // Restart GameBar if needed

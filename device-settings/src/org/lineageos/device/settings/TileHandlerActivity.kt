@@ -29,9 +29,6 @@ import org.lineageos.device.settings.display.HbmTile
 import org.lineageos.device.settings.display.PwmTile
 import org.lineageos.device.settings.gamebar.GameBarSettingsActivity
 import org.lineageos.device.settings.gamebar.GameBarTileService
-import org.lineageos.device.settings.refreshrate.LtpoTile
-import org.lineageos.device.settings.refreshrate.RefreshRateActivity
-import org.lineageos.device.settings.refreshrate.RefreshRateTile
 
 class TileHandlerActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,8 +83,6 @@ class TileHandlerActivity : Activity() {
             BypassChargingTile::class.java.name to BypassChargingActivity::class.java,
             HbmTile::class.java.name to DeviceSettingsActivity::class.java,
             PwmTile::class.java.name to DeviceSettingsActivity::class.java,
-            RefreshRateTile::class.java.name to RefreshRateActivity::class.java,
-            LtpoTile::class.java.name to RefreshRateActivity::class.java,
         )
     }
 }
