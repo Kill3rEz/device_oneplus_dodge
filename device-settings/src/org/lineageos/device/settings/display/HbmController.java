@@ -141,6 +141,11 @@ public class HbmController {
 
         // 3. Write HBM sysfs node; only persist pref when the node matches
         if (!writeHbmNode(true)) {
+            // The kernel refused (e.g. panel not fully on): undo steps 1 and 2 so
+            // a failed enable does not leave auto-brightness off and RR pinned.
+            restoreAutoBrightness();
+            RefreshRateMonitorService.notifyStateChanged(mContext);
+            Log.i(TAG, "HBM enable failed; refresh rate handed back to monitor");
             return false;
         }
         mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, true).commit();
