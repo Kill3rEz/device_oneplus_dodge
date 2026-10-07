@@ -70,9 +70,12 @@ public class HbmController {
             mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, nodeState).commit();
             Log.i(TAG, "HBM state synced to node: " + nodeState);
             if (prefState && !nodeState) {
-                // HBM was released by the kernel (sleep safeguard) while our RR was
-                // pinned to 120Hz. Hand the refresh rate back to the monitor so the
-                // user's baseline is restored instead of staying welded at 120.
+                // HBM was released underneath us (e.g. a reboot) while auto-brightness
+                // was parked and our RR was pinned to 120Hz. Undo both as
+                // disableHbmInternal() would: restore auto-brightness from the backup,
+                // then hand the refresh rate back to the monitor so the user's
+                // baseline is restored instead of staying welded at 120.
+                restoreAutoBrightness();
                 RefreshRateMonitorService.notifyStateChanged(mContext);
             }
         }
@@ -152,16 +155,9 @@ public class HbmController {
         }
 
         // 2. Restore auto-brightness if it was enabled before
-        boolean wasAutoBrightnessEnabled = mSharedPrefs.getBoolean(KEY_BACKUP_AUTO_BRIGHTNESS, false);
-        if (wasAutoBrightnessEnabled) {
-            setAutoBrightness(true);
-            Log.i(TAG, "Auto-brightness restored");
-        }
+        restoreAutoBrightness();
 
-        mSharedPrefs.edit()
-                .putBoolean(Constants.KEY_HBM, false)
-                .remove(KEY_BACKUP_AUTO_BRIGHTNESS)
-                .commit();
+        mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, false).commit();
 
         // 3. Hand the refresh rate back to RefreshRateMonitorService: it re-applies
         // the user's baseline (tile / per-app / auto / LTPO).
@@ -182,6 +178,15 @@ public class HbmController {
             return false;
         }
         return true;
+    }
+
+    /** Re-enable auto-brightness if HBM parked it, then drop the backup. */
+    private void restoreAutoBrightness() {
+        if (mSharedPrefs.getBoolean(KEY_BACKUP_AUTO_BRIGHTNESS, false)) {
+            setAutoBrightness(true);
+            Log.i(TAG, "Auto-brightness restored");
+        }
+        mSharedPrefs.edit().remove(KEY_BACKUP_AUTO_BRIGHTNESS).commit();
     }
 
     private void setRefreshRate(float min, float peak) {
