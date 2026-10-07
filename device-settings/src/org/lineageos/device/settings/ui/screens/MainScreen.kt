@@ -56,7 +56,6 @@ private const val KEY_SHOW_HBM_WARNING = "hbm_warning"
 fun MainScreen(
     contentPadding: PaddingValues,
     onOpenBypass: () -> Unit,
-    onOpenRefresh: () -> Unit,
     onOpenGameBar: () -> Unit,
 ) {
     val context = LocalContext.current
@@ -428,14 +427,6 @@ fun MainScreen(
         }
 
         PreferenceGroup(title = stringResource(R.string.gaming_category_title)) {
-            item {
-                ClickablePreference(
-                    title = stringResource(R.string.refresh_rate_app_title),
-                    summary = stringResource(R.string.refresh_rate_app_summary),
-                    customIcon = { PrefIcon(R.drawable.ic_refresh_rate) },
-                    onClick = onOpenRefresh,
-                )
-            }
             item {
                 ClickablePreference(
                     title = stringResource(R.string.game_bar_title),
