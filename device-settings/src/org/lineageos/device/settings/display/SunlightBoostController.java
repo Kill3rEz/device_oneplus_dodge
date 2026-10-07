@@ -152,8 +152,8 @@ public class SunlightBoostController {
         boolean featureEnabled = mPrefs.getBoolean(Constants.KEY_SUNLIGHT_BOOST, true);
 
         if (!featureEnabled || !isDisplayOn()) {
-            // The panel resets on power cycle, so a latched boost must not
-            // leave stale settings backups behind
+            // Try not to leave a latched boost behind; if the panel already
+            // refuses the release, disengage() keeps it for the display-on path
             if (mAutoEngaged) {
                 disengage(featureEnabled ? "display off" : "feature disabled");
             }
@@ -255,9 +255,17 @@ public class SunlightBoostController {
     }
 
     private void disengage(String reason) {
-        DisplayModeController.getInstance(mContext).disableHbm();
-        mAutoEngaged = false;
         mExitSince = 0;
+        if (!DisplayModeController.getInstance(mContext).disableHbm()) {
+            // The kernel rejects hbm_max writes unless the panel is fully on, and
+            // the display-off path in updateState() runs with the panel already
+            // off or dozing. Keep owning the boost so evaluate() retries the
+            // release once the panel is back on, instead of leaving HBM latched
+            // with nobody to undo it.
+            Log.w(TAG, "Sunlight boost release failed (" + reason + "), keeping it engaged");
+            return;
+        }
+        mAutoEngaged = false;
         mPrefs.edit().putBoolean(KEY_AUTO_ENGAGED, false).apply();
         Log.i(TAG, "Sunlight boost disengaged: " + reason);
     }
