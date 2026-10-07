@@ -114,7 +114,7 @@ fun MainScreen(
     var sunlight by remember {
         mutableStateOf(prefs.getBoolean(Constants.KEY_SUNLIGHT_BOOST, true))
     }
-    var aodHigh by remember { mutableStateOf(aodController.isHighBrightnessEnabled) }
+    var aodMode by remember { mutableStateOf(aodController.mode) }
     var fastOn by remember { mutableStateOf(fastCharge.isFastChargingEnabled) }
     var nightOn by remember { mutableStateOf(fastCharge.isNightModeEnabled) }
     var hapticProfile by remember {
@@ -193,7 +193,7 @@ fun MainScreen(
             fastOn = fastCharge.isFastChargingEnabled
             nightOn = fastCharge.isNightModeEnabled
         }
-        aodHigh = aodController.isHighBrightnessEnabled
+        aodMode = aodController.mode
     }
 
     val appMode = usage == Constants.NOTIF_SLIDER_FOR_APPLAUNCH
@@ -342,17 +342,21 @@ fun MainScreen(
             }
             if (aodPresent) {
                 item {
-                    SwitchPreference(
-                        title = stringResource(R.string.aod_high_brightness_title),
-                        summary = stringResource(R.string.aod_high_brightness_summary),
-                        checked = aodHigh,
-                        customIcon = { PrefIcon(R.drawable.ic_aod_brightness) },
-                        onCheckedChange = { high ->
-                            if (!aodController.setHighBrightness(high)) {
-                                Log.w(TAG, "Failed to set AOD high brightness=$high")
+                    IconListPreference(
+                        title = stringResource(R.string.aod_brightness_title),
+                        options = arrayOptions(
+                            context,
+                            R.array.aod_brightness_entries,
+                            R.array.aod_brightness_values,
+                        ),
+                        value = aodMode,
+                        onValueChange = { mode ->
+                            if (!aodController.setMode(mode)) {
+                                Log.w(TAG, "Failed to set AOD brightness mode=$mode")
                             }
-                            aodHigh = high
+                            aodMode = aodController.mode
                         },
+                        icon = R.drawable.ic_aod_brightness,
                     )
                 }
             }

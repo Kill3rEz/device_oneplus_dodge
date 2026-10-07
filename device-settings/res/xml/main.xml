@@ -97,12 +97,15 @@
             android:title="@string/sunlight_boost_title"
             android:summary="@string/sunlight_boost_summary" />
 
-        <SwitchPreferenceCompat
-            android:key="aod_high_brightness"
+        <ListPreference
+            android:key="aod_brightness_mode"
             android:icon="@drawable/ic_aod_brightness"
-            android:title="@string/aod_high_brightness_title"
-            android:summary="@string/aod_high_brightness_summary"
-            android:defaultValue="false" />
+            android:dialogTitle="@string/aod_brightness_title"
+            android:title="@string/aod_brightness_title"
+            android:entries="@array/aod_brightness_entries"
+            android:entryValues="@array/aod_brightness_values"
+            android:defaultValue="auto"
+            android:summary="%s" />
 
     </PreferenceCategory>
 
