@@ -57,11 +57,10 @@ public class HbmController {
     }
 
     /**
-     * Reconcile our persisted state with the actual node. The kernel forces
-     * hbm_max off whenever the panel sleeps (safeguard against a frozen UI), so
-     * after any screen-off the node is authoritative and our preference/tile may
-     * be a stale ON. Call on screen-on: if the node disagrees with the stored
-     * preference, adopt the node value. Returns the live state.
+     * Reconcile our persisted state with the actual node, which is
+     * authoritative: hbm_max boots off, so after a reboot our preference/tile
+     * may be a stale ON. Call at boot and on screen-on: if the node disagrees
+     * with the stored preference, adopt the node value. Returns the live state.
      */
     public boolean syncState() {
         boolean nodeState = isHbmEnabled();
