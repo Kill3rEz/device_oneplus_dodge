@@ -89,6 +89,7 @@ public class DeviceSettingsService extends Service {
     private void initializeAodBrightness() {
         if (Constants.DEBUG) Log.i(TAG, "Initializing AOD brightness");
         try {
+            // Pins a forced mode; auto leaves the boot level to the sensors HAL.
             AodBrightnessController.getInstance(this).restoreAodBrightness();
             if (Constants.DEBUG) Log.i(TAG, "AOD brightness initialized");
         } catch (Exception e) {
@@ -253,7 +254,8 @@ public class DeviceSettingsService extends Service {
     private void handleScreenOff() {
         if (Constants.DEBUG) Log.i(TAG, "Screen OFF");
 
-        // Re-assert before LP1 so lux_aod cannot win the race.
+        // Re-assert a forced AOD level before LP1 so lux_aod cannot win the
+        // race. Auto mode writes nothing and leaves the level to lux_aod.
         try {
             AodBrightnessController.getInstance(this).restoreAodBrightness();
         } catch (Exception e) {

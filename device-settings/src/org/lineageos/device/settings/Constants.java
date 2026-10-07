@@ -148,10 +148,17 @@ public class Constants {
     public static final String KEY_SUNLIGHT_BOOST = "sunlight_boost";
 
     /** AOD brightness, stock binary levels via OFP: write 0 = high (~50 nits),
-     *  1 = low (~10 nits). Default is low, matching ColorOS. */
+     *  1 = low (~10 nits). The sensors HAL writes bare levels from lux_aod
+     *  (stock ColorOS adaptive AOD). A "force" tag pins the level and makes the
+     *  kernel ignore bare writes until reboot; an "auto" tag releases that pin.
+     *  Default is auto, matching ColorOS. */
     public static final String NODE_AOD_LIGHT_MODE =
             "/sys/kernel/oplus_display/aod_light_mode_set";
-    public static final String KEY_AOD_HIGH_BRIGHTNESS = "aod_high_brightness";
+    public static final String KEY_AOD_BRIGHTNESS_MODE = "aod_brightness_mode";
+    public static final String AOD_BRIGHTNESS_AUTO = "auto";
+    public static final String AOD_BRIGHTNESS_HIGH = "high";
+    public static final String AOD_BRIGHTNESS_LOW = "low";
+    public static final String AOD_BRIGHTNESS_DEFAULT = AOD_BRIGHTNESS_AUTO;
 
     /** Haptic profile, read live by the dodge vibrator effect lib on every effect.
      *  The default must match the effect lib and device.mk. */
