@@ -17,13 +17,10 @@
 package org.lineageos.device.settings;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 
 import org.lineageos.device.settings.fastcharge.FastChargeController;
-import org.lineageos.internal.util.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
