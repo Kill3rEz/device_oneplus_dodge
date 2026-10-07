@@ -13,7 +13,6 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.device.settings.Constants;
-import org.lineageos.device.settings.refreshrate.RefreshRateMonitorService;
 import org.lineageos.device.settings.utils.FileUtils;
 
 public class HbmController {
@@ -27,12 +26,17 @@ public class HbmController {
     // RR lets SF timing-switch 60<->120, and each switch reprograms the panel drive
     // registers + re-latches, dropping it out of HBM (visible flash); auto would also
     // let the DDIC self-refresh down-clock beneath the mode. So pin BOTH halves - SF
-    // MIN=PEAK=120 (no switches) and adfr_min_fps=120 (no down-clock). On disable,
-    // hand the refresh rate back to RefreshRateMonitorService (the single owner of
-    // the user's baseline); no local backup/restore, which is what used to weld
-    // auto->120 when pins overlapped.
+    // MIN=PEAK=120 (no switches) and adfr_min_fps=120 (no down-clock). The system
+    // settings own MIN/PEAK, so back them up once per pin (a second backup would
+    // save the pinned 120, which is what used to weld auto->120 when pins
+    // overlapped) and put them back on release exactly as they were, unset
+    // included; adfr_min_fps goes back to 0 (LTPO).
     private static final float HBM_FRAMERATE = MAX;
     private static final String KEY_BACKUP_AUTO_BRIGHTNESS = "hbm_backup_auto_brightness";
+    // Marker plus raw MIN/PEAK strings; a missing string means the setting was unset
+    private static final String KEY_BACKUP_REFRESH_RATE = "hbm_backup_refresh_rate";
+    private static final String KEY_BACKUP_MIN_REFRESH_RATE = "hbm_backup_min_rate";
+    private static final String KEY_BACKUP_PEAK_REFRESH_RATE = "hbm_backup_peak_rate";
 
     private HbmController(Context context) {
         mContext = context.getApplicationContext();
@@ -60,7 +64,9 @@ public class HbmController {
      * Reconcile our persisted state with the actual node, which is
      * authoritative: hbm_max boots off, so after a reboot our preference/tile
      * may be a stale ON. Call at boot and on screen-on: if the node disagrees
-     * with the stored preference, adopt the node value. Returns the live state.
+     * with the stored preference, adopt the node value. Whenever the node reads
+     * off, a pin still held (e.g. the process died between taking it and the
+     * release) is released too. Returns the live state.
      */
     public boolean syncState() {
         boolean nodeState = isHbmEnabled();
@@ -68,15 +74,15 @@ public class HbmController {
         if (prefState != nodeState) {
             mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, nodeState).commit();
             Log.i(TAG, "HBM state synced to node: " + nodeState);
-            if (prefState && !nodeState) {
-                // HBM was released underneath us (e.g. a reboot) while auto-brightness
-                // was parked and our RR was pinned to 120Hz. Undo both as
-                // disableHbmInternal() would: restore auto-brightness from the backup,
-                // then hand the refresh rate back to the monitor so the user's
-                // baseline is restored instead of staying welded at 120.
-                restoreAutoBrightness();
-                RefreshRateMonitorService.notifyStateChanged(mContext);
-            }
+        }
+        if (!nodeState && (mSharedPrefs.getBoolean(KEY_BACKUP_REFRESH_RATE, false)
+                || mSharedPrefs.contains(KEY_BACKUP_AUTO_BRIGHTNESS))) {
+            // HBM was released underneath us (e.g. a reboot) while auto-brightness
+            // was parked and our RR was pinned to 120Hz. Undo both as
+            // disableHbmInternal() would, so the user's refresh rate is restored
+            // instead of staying welded at 120.
+            restoreAutoBrightness();
+            releaseRefreshRate();
         }
         return nodeState;
     }
@@ -85,6 +91,13 @@ public class HbmController {
         if (!FileUtils.isFileWritable(Constants.NODE_HBM)) {
             Log.w(TAG, "HBM node is not writable");
             return false;
+        }
+
+        // Already on (e.g. the switch on top of a live sunlight boost): taking the
+        // pin again would back up the parked auto-brightness as "off"
+        if ("1".equals(FileUtils.readLineTrimmed(Constants.NODE_HBM))) {
+            mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, true).commit();
+            return true;
         }
 
         // Check if PWM is enabled (PWM has priority)
@@ -129,22 +142,16 @@ public class HbmController {
             Log.i(TAG, "Auto-brightness disabled for HBM");
         }
 
-        // 2. Pin the refresh rate: adfr_min_fps first (kernel self-refresh floor),
-        // then SF MIN=PEAK so SF stops timing-switching. No backup here -
-        // RefreshRateMonitorService owns the user's baseline and restores it
-        // when the pin is released.
-        FileUtils.writeLine(Constants.NODE_ADFR_MIN_FPS,
-                String.valueOf((int) HBM_FRAMERATE));
-        setRefreshRate(HBM_FRAMERATE, HBM_FRAMERATE);
-        Log.i(TAG, "HBM: pinned refresh rate to " + HBM_FRAMERATE);
+        // 2. Back up and pin the refresh rate
+        pinRefreshRate();
 
         // 3. Write HBM sysfs node; only persist pref when the node matches
         if (!writeHbmNode(true)) {
             // The kernel refused (e.g. panel not fully on): undo steps 1 and 2 so
             // a failed enable does not leave auto-brightness off and RR pinned.
             restoreAutoBrightness();
-            RefreshRateMonitorService.notifyStateChanged(mContext);
-            Log.i(TAG, "HBM enable failed; refresh rate handed back to monitor");
+            releaseRefreshRate();
+            Log.i(TAG, "HBM enable failed; refresh rate restored");
             return false;
         }
         mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, true).commit();
@@ -153,7 +160,8 @@ public class HbmController {
     }
 
     private boolean disableHbmInternal() {
-        // 1. Disable HBM sysfs node first, so the monitor below sees HBM off.
+        // 1. Disable HBM sysfs node first, so the panel leaves HBM before the
+        // refresh rate is allowed to switch again.
         if (!writeHbmNode(false)) {
             return false;
         }
@@ -163,10 +171,9 @@ public class HbmController {
 
         mSharedPrefs.edit().putBoolean(Constants.KEY_HBM, false).commit();
 
-        // 3. Hand the refresh rate back to RefreshRateMonitorService: it re-applies
-        // the user's baseline (tile / per-app / auto / LTPO).
-        RefreshRateMonitorService.notifyStateChanged(mContext);
-        Log.i(TAG, "HBM sysfs node disabled; refresh rate handed to monitor");
+        // 3. Restore the refresh rate pinned by enableHbmInternal()
+        releaseRefreshRate();
+        Log.i(TAG, "HBM sysfs node disabled; refresh rate restored");
         return true;
     }
 
@@ -193,11 +200,75 @@ public class HbmController {
         mSharedPrefs.edit().remove(KEY_BACKUP_AUTO_BRIGHTNESS).commit();
     }
 
-    private void setRefreshRate(float min, float peak) {
-        Settings.System.putFloatForUser(mContext.getContentResolver(),
-                Settings.System.MIN_REFRESH_RATE, min, UserHandle.USER_CURRENT);
-        Settings.System.putFloatForUser(mContext.getContentResolver(),
-                Settings.System.PEAK_REFRESH_RATE, peak, UserHandle.USER_CURRENT);
+    /**
+     * Pin the refresh rate for HBM: adfr_min_fps first (kernel self-refresh floor),
+     * then SF MIN=PEAK so SF stops timing-switching. The user's MIN/PEAK are backed
+     * up only if no backup is held yet: while one is held the settings already
+     * read the pinned 120, and saving them again would make it stick.
+     */
+    private synchronized void pinRefreshRate() {
+        if (!mSharedPrefs.getBoolean(KEY_BACKUP_REFRESH_RATE, false)) {
+            String min = getRefreshRateSetting(Settings.System.MIN_REFRESH_RATE);
+            String peak = getRefreshRateSetting(Settings.System.PEAK_REFRESH_RATE);
+            // putString(key, null) removes the key, which records an unset setting
+            mSharedPrefs.edit()
+                    .putBoolean(KEY_BACKUP_REFRESH_RATE, true)
+                    .putString(KEY_BACKUP_MIN_REFRESH_RATE, min)
+                    .putString(KEY_BACKUP_PEAK_REFRESH_RATE, peak)
+                    .commit();
+            Log.i(TAG, "Refresh rate backed up (MIN: " + min + ", PEAK: " + peak + ")");
+        }
+
+        FileUtils.writeLine(Constants.NODE_ADFR_MIN_FPS,
+                String.valueOf((int) HBM_FRAMERATE));
+        String pinned = Float.toString(HBM_FRAMERATE);
+        setRefreshRateSetting(Settings.System.MIN_REFRESH_RATE, pinned);
+        setRefreshRateSetting(Settings.System.PEAK_REFRESH_RATE, pinned);
+        Log.i(TAG, "HBM: pinned refresh rate to " + HBM_FRAMERATE);
+    }
+
+    /**
+     * Undo pinRefreshRate(): adfr_min_fps back to 0 (LTPO) and MIN/PEAK back to
+     * the backup, then drop it. A setting changed while pinned (e.g. from the
+     * display settings) is the user's newer choice and is left alone.
+     */
+    private synchronized void releaseRefreshRate() {
+        FileUtils.writeLine(Constants.NODE_ADFR_MIN_FPS, "0");
+
+        if (!mSharedPrefs.getBoolean(KEY_BACKUP_REFRESH_RATE, false)) {
+            return;
+        }
+        restoreRefreshRateSetting(Settings.System.MIN_REFRESH_RATE,
+                mSharedPrefs.getString(KEY_BACKUP_MIN_REFRESH_RATE, null));
+        restoreRefreshRateSetting(Settings.System.PEAK_REFRESH_RATE,
+                mSharedPrefs.getString(KEY_BACKUP_PEAK_REFRESH_RATE, null));
+        mSharedPrefs.edit()
+                .remove(KEY_BACKUP_REFRESH_RATE)
+                .remove(KEY_BACKUP_MIN_REFRESH_RATE)
+                .remove(KEY_BACKUP_PEAK_REFRESH_RATE)
+                .commit();
+    }
+
+    private void restoreRefreshRateSetting(String name, String backup) {
+        float current = Settings.System.getFloatForUser(mContext.getContentResolver(),
+                name, -1f, UserHandle.USER_CURRENT);
+        if (current != HBM_FRAMERATE) {
+            Log.i(TAG, name + " changed while pinned, keeping it");
+            return;
+        }
+        // A null backup writes a null value, which reads back as unset (default)
+        setRefreshRateSetting(name, backup);
+        Log.i(TAG, name + " restored to " + backup);
+    }
+
+    private String getRefreshRateSetting(String name) {
+        return Settings.System.getStringForUser(mContext.getContentResolver(),
+                name, UserHandle.USER_CURRENT);
+    }
+
+    private void setRefreshRateSetting(String name, String value) {
+        Settings.System.putStringForUser(mContext.getContentResolver(),
+                name, value, UserHandle.USER_CURRENT);
     }
 
     private boolean isAutoBrightnessEnabled() {

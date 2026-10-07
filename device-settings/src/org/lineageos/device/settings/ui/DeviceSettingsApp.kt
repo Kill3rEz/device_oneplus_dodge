@@ -18,7 +18,6 @@ import androidx.navigation.compose.rememberNavController
 import org.lineageos.device.settings.ui.screens.BypassChargingScreen
 import org.lineageos.device.settings.ui.screens.GameBarSettingsScreen
 import org.lineageos.device.settings.ui.screens.MainScreen
-import org.lineageos.device.settings.ui.screens.RefreshRateScreen
 
 private val PageIn = fadeIn(tween(200))
 private val PageOut = fadeOut(tween(160))
@@ -26,7 +25,6 @@ private val PageOut = fadeOut(tween(160))
 enum class DeviceSettingsDest(val route: String) {
     Main("main"),
     Bypass("bypass"),
-    Refresh("refresh"),
     GameBar("gamebar"),
 }
 
@@ -61,15 +59,11 @@ fun DeviceSettingsApp(
                 MainScreen(
                     contentPadding = padding,
                     onOpenBypass = { navController.navigate(DeviceSettingsDest.Bypass.route) },
-                    onOpenRefresh = { navController.navigate(DeviceSettingsDest.Refresh.route) },
                     onOpenGameBar = { navController.navigate(DeviceSettingsDest.GameBar.route) },
                 )
             }
             composable(DeviceSettingsDest.Bypass.route) {
                 BypassChargingScreen(contentPadding = padding)
-            }
-            composable(DeviceSettingsDest.Refresh.route) {
-                RefreshRateScreen(contentPadding = padding)
             }
             composable(DeviceSettingsDest.GameBar.route) {
                 GameBarSettingsScreen(contentPadding = padding)
