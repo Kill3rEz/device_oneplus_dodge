@@ -80,6 +80,7 @@ public class DeviceSettingsService extends Service {
         initializeFastCharging();
         initializePwm();
         initializeTestTe();
+        initializeHbm();
         initializeSunlightBoost();
         initializeAodBrightness();
         initializeGameBar();
@@ -94,6 +95,17 @@ public class DeviceSettingsService extends Service {
             if (Constants.DEBUG) Log.i(TAG, "AOD brightness initialized");
         } catch (Exception e) {
             Log.e(TAG, "Failed to initialize AOD brightness", e);
+        }
+    }
+
+    private void initializeHbm() {
+        // A reboot with HBM on leaves the preference and the auto-brightness
+        // backup behind while the panel comes up with hbm_max off. No screen-on
+        // broadcast is sent at boot, so reconcile here as well.
+        try {
+            HbmController.getInstance(this).syncState();
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to sync HBM state at boot", e);
         }
     }
 
@@ -262,9 +274,9 @@ public class DeviceSettingsService extends Service {
             Log.e(TAG, "Failed to restore AOD brightness on screen off", e);
         }
 
-        // HBM (hbm_max) off on sleep is enforced by the kernel now
-        // (oplus_display_set_power resets hbm_max on DPMS OFF/LP so the UI can't
-        // freeze with HBM latched). We only sync our displayed state on screen-on.
+        // HBM cannot be released here: the kernel rejects hbm_max writes once the
+        // panel has left DPMS_ON. Sunlight boost keeps ownership and releases it
+        // after the next screen-on; the displayed state is synced on screen-on.
 
         // Stop GameBar
         try {
@@ -280,9 +292,8 @@ public class DeviceSettingsService extends Service {
     private void handleScreenOn() {
         if (Constants.DEBUG) Log.i(TAG, "Screen ON");
 
-        // Sync HBM state: the kernel forced hbm_max off while the panel slept, so
-        // reconcile our preference to the node and refresh the tile/switch, which
-        // would otherwise show a stale ON.
+        // Sync HBM state: reconcile our preference with the node and refresh the
+        // tile/switch, which could otherwise show a stale state.
         try {
             HbmController.getInstance(this).syncState();
             DisplayModeController.getInstance(this).broadcastStateChange();
