@@ -21,6 +21,7 @@ android_app {
     static_libs: [
         "ax_compose",
         "SettingsLib",
+        "org.lineageos.platform.internal",
         "androidx.activity_activity-compose",
         "androidx.core_core-ktx",
         "androidx.appcompat_appcompat",
