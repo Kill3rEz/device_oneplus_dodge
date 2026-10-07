@@ -83,22 +83,6 @@ fun BypassChargingScreen(contentPadding: PaddingValues) {
                     },
                 )
             }
-            item {
-                CustomSeekBar(
-                    title = stringResource(R.string.bypass_charging_target_title),
-                    value = target,
-                    onValueChange = { value ->
-                        if (value in Constants.BYPASS_TARGET_MIN..Constants.BYPASS_TARGET_MAX) {
-                            controller.bypassChargingTarget = value
-                            target = value
-                        }
-                    },
-                    min = Constants.BYPASS_TARGET_MIN,
-                    max = Constants.BYPASS_TARGET_MAX,
-                    defaultValue = Constants.BYPASS_TARGET_DEFAULT,
-                    formatValue = { "$it%" },
-                )
-            }
         }
 
         PreferenceGroup(title = stringResource(R.string.bypass_charging_app_picker_title)) {
