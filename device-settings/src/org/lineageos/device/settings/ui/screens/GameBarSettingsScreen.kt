@@ -32,7 +32,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.android.axion.compose.preferences.ClickablePreference
-import com.android.axion.compose.preferences.CustomSeekBar
 import com.android.axion.compose.preferences.ListPreference
 import com.android.axion.compose.preferences.PreferenceGroup
 import com.android.axion.compose.preferences.SwitchPreference
@@ -42,6 +41,7 @@ import org.lineageos.device.settings.gamebar.GameBar
 import org.lineageos.device.settings.gamebar.GameBarMonitorService
 import org.lineageos.device.settings.gamebar.GameDataExport
 import org.lineageos.device.settings.ui.AppIcon
+import org.lineageos.device.settings.ui.CustomSeekBar
 import org.lineageos.device.settings.ui.OnResume
 import org.lineageos.device.settings.ui.PrefIcon
 import org.lineageos.device.settings.ui.SettingsScroll
