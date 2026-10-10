@@ -13,23 +13,13 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 # Read by vendor/rr before the inherit below.
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_EXCLUDES_AUDIOFX := true
+WITH_GMS := true
 
 # envsetup accepts rr_* . Set the codename here as well so the version
 # string is dodge even if lunch was not used.
 LINEAGE_BUILD := dodge
 
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
-
-# Resurrected Remix fonts, Remixer, OmniStyle, and OmniJaws.
-$(call inherit-product, packages/overlays/Resurrection/fonts/fonts.mk)
-
-PRODUCT_PACKAGES += \
-    OmniStyle \
-    OmniJaws \
-
-TARGET_HAS_UDFPS := true
-TARGET_ENABLE_BLUR := true
-WITH_GMS := true
 
 PRODUCT_NAME := rr_dodge
 PRODUCT_DEVICE := dodge
