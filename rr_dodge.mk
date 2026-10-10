@@ -11,7 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/dodge/device.mk)
 
 # Read by vendor/rr before the inherit below.
-TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_EXCLUDES_AUDIOFX := true
 WITH_GMS := true
 
