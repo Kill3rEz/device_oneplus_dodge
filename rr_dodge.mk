@@ -14,6 +14,7 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_HAS_UDFPS := true
 WITH_GMS := true
+RR_MAINTAINER := OscarM1019
 
 # envsetup accepts rr_* . Set the codename here as well so the version
 # string is dodge even if lunch was not used.
