@@ -26,10 +26,10 @@ $(call inherit-product, packages/overlays/Resurrection/fonts/fonts.mk)
 PRODUCT_PACKAGES += \
     OmniStyle \
     OmniJaws \
-    CustomDoze
 
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
+WITH_GMS := true
 
 PRODUCT_NAME := rr_dodge
 PRODUCT_DEVICE := dodge
