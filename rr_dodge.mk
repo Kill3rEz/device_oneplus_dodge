@@ -12,6 +12,7 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 
 # Read by vendor/rr before the inherit below.
 TARGET_EXCLUDES_AUDIOFX := true
+TARGET_HAS_UDFPS := true
 WITH_GMS := true
 
 # envsetup accepts rr_* . Set the codename here as well so the version
