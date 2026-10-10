@@ -17,4 +17,14 @@
     <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
          relies on this value will not be sized correctly. -->
     <item name="pixel_pitch" format="float" type="dimen">49.49</item>
+
+    <!-- Alert slider dialog, from stock (SystemUIResOverlay.23893, sw411dp): one spot for all
+         three positions, 160.975dp from the top in portrait. SystemUI adds the 45.67dp status
+         bar to the portrait values. -->
+    <dimen name="tri_state_up_dialog_position">115.3dp</dimen>
+    <dimen name="tri_state_middle_dialog_position">115.3dp</dimen>
+    <dimen name="tri_state_down_dialog_position">115.3dp</dimen>
+    <dimen name="tri_state_up_dialog_position_l">135.86dp</dimen>
+    <dimen name="tri_state_middle_dialog_position_l">135.86dp</dimen>
+    <dimen name="tri_state_down_dialog_position_l">135.86dp</dimen>
 </resources>
