@@ -20,7 +20,7 @@ LINEAGE_BUILD := dodge
 
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
-# Resurrection Remix fonts, Remixer, OmniStyle, and OmniJaws.
+# Resurrected Remix fonts, Remixer, OmniStyle, and OmniJaws.
 $(call inherit-product, packages/overlays/Resurrection/fonts/fonts.mk)
 
 PRODUCT_PACKAGES += \

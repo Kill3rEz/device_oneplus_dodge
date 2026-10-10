@@ -49,5 +49,5 @@ BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/fusionlight/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/opfaceunlock/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
-# Official Resurrection Remix boot animation. Lineage copies this zip as-is.
+# Official Resurrected Remix boot animation. Lineage copies this zip as-is.
 TARGET_BOOTANIMATION := vendor/rr/prebuilt/common/bootanimation/bootanimation.zip
