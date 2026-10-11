@@ -67,7 +67,6 @@ internal fun CustomSeekBar(
         valueRange = min.toFloat()..upper.toFloat(),
         displayValue = formatValue?.invoke(current) ?: current.toString(),
         modifier = modifier,
-        customIcon = customIcon,
         enabled = enabled,
         onReset = defaultValue?.let { resetValue ->
             {
