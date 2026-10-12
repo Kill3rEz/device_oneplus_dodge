@@ -1,0 +1,31 @@
+From a72e4847590d4b677eb3ad89de70439220033ae2 Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Mon, 12 Oct 2026 09:21:08 +0200
+Subject: [PATCH] libgui: Only extend the slot count when the consumer allows
+ it
+
+Surface asked for extendSlotCount whenever minUndequeued + maxDequeued
+went over the slot count, even when the consumer did not allow unlimited
+slots, so the call failed. Camera 60 fps recording into a
+GraphicBufferSource asks for 80 buffers and used to be clamped to the
+slot count by BufferQueueProducer; keep that for such consumers.
+---
+ libs/gui/Surface.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libs/gui/Surface.cpp b/libs/gui/Surface.cpp
+index c1f62b7455..a3955f47e3 100644
+--- a/libs/gui/Surface.cpp
++++ b/libs/gui/Surface.cpp
+@@ -2785,7 +2785,7 @@ int Surface::setMaxDequeuedBufferCount(int maxDequeuedBuffers) {
+     }
+ 
+     int newSlotCount = minUndequeuedBuffers + maxDequeuedBuffers;
+-    if (newSlotCount > (int)mSlots.size()) {
++    if (mIsSlotExpansionAllowed && newSlotCount > (int)mSlots.size()) {
+         err = mGraphicBufferProducer->extendSlotCount(newSlotCount);
+         if (err != OK) {
+             SURF_LOGE("IGraphicBufferProducer::extendSlotCount(%d) returned %s", newSlotCount,
+-- 
+2.53.0
+
