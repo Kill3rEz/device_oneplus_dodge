@@ -42,12 +42,9 @@ TARGET_USES_OPLUS_FACEUNLOCK := true
 # setprop after boot (never seed 1 until cold-boot proven).
 TARGET_FUSIONLIGHT_ENABLE := true
 
-
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/fusionlight/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/opfaceunlock/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
-# Official Resurrected Remix boot animation. Lineage copies this zip as-is.
-TARGET_BOOTANIMATION := vendor/rr/prebuilt/common/bootanimation/bootanimation.zip
