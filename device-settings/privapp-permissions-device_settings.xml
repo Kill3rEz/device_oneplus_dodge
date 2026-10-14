@@ -17,6 +17,5 @@
 <permissions>
     <privapp-permissions package="org.lineageos.device.settings">
         <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 </permissions>

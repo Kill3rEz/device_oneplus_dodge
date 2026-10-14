@@ -1,11 +1,3 @@
 -keep class org.lineageos.device.settings.** {
   *;
 }
-
--keep class org.lineageos.device.settings.chargingcontrol.** {
-  *;
-}
-
--keep class vendor.lineage.health.** {
-  *;
-}
