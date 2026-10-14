@@ -1,0 +1,162 @@
+From e47d0606cf192f9eef6b93063c1f05031d1a97bd Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Wed, 14 Oct 2026 23:34:22 +0200
+Subject: [PATCH] Revert "Fix Use-After-Free in NXP NFC HAL timer teardown"
+
+It can leave the HAL stuck, spamming the log and draining the battery.
+
+This reverts commit e245c4b.
+---
+ pn8x/halimpl/hal/phNxpNciHal.cc     | 14 ++------------
+ snxxx/halimpl/hal/phNxpNciHal.cc    | 11 ++---------
+ snxxx/halimpl_v2/hal/phNxpNciHal.cc |  3 ---
+ 3 files changed, 4 insertions(+), 24 deletions(-)
+
+diff --git a/pn8x/halimpl/hal/phNxpNciHal.cc b/pn8x/halimpl/hal/phNxpNciHal.cc
+index e3c39d9..a246e52 100644
+--- a/pn8x/halimpl/hal/phNxpNciHal.cc
++++ b/pn8x/halimpl/hal/phNxpNciHal.cc
+@@ -385,11 +385,8 @@ static NFCSTATUS phNxpNciHal_fw_download(void) {
+   if (status != NFCSTATUS_SUCCESS) {
+     if (NFCSTATUS_SUCCESS != phNxpNciHal_fw_mw_ver_check()) {
+       NXPLOG_NCIHAL_D("Chip Version Middleware Version mismatch!!!!");
+-      intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-      nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+       phOsalNfc_Timer_Cleanup();
+       phTmlNfc_Shutdown_CleanUp();
+-      phDal4Nfc_msgrelease(client_id);
+       status = NFCSTATUS_FAILED;
+     } else {
+       NXPLOG_NCIHAL_E("FW download failed, Continue NFCC init");
+@@ -2069,11 +2066,8 @@ NFCSTATUS phNxpNciHalRFConfigCmdRecSequence() {
+           (pphTmlNfc_TransactCompletionCb_t)&phNxpNciHal_read_complete, NULL);
+       if (status != NFCSTATUS_PENDING) {
+         NXPLOG_NCIHAL_E("TML Read status error status = %x", status);
+-        intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-        nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+         phOsalNfc_Timer_Cleanup();
+         phTmlNfc_Shutdown();
+-        phDal4Nfc_msgrelease(client_id);
+         status = NFCSTATUS_FAILED;
+       }
+       break;
+@@ -2191,8 +2185,6 @@ int phNxpNciHal_close(bool bShutdown) {
+     status = phTmlNfc_ReadAbort();
+     status = phTmlNfc_WriteAbort();
+ 
+-    intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     status = phTmlNfc_Shutdown();
+@@ -2203,7 +2195,7 @@ int phNxpNciHal_close(bool bShutdown) {
+ 
+     phTmlNfc_CleanUp();
+ 
+-    phDal4Nfc_msgrelease(client_id);
++    phDal4Nfc_msgrelease(nxpncihal_ctrl.gDrvCfg.nClientId);
+ 
+     memset(&nxpncihal_ctrl, 0x00, sizeof(nxpncihal_ctrl));
+ 
+@@ -2243,8 +2235,6 @@ int phNxpNciHal_Minclose(void) {
+     status = phTmlNfc_ReadAbort();
+     status = phTmlNfc_WriteAbort();
+ 
+-    intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     status = phTmlNfc_Shutdown();
+@@ -2255,7 +2245,7 @@ int phNxpNciHal_Minclose(void) {
+ 
+     phTmlNfc_CleanUp();
+ 
+-    phDal4Nfc_msgrelease(client_id);
++    phDal4Nfc_msgrelease(nxpncihal_ctrl.gDrvCfg.nClientId);
+ 
+     memset(&nxpncihal_ctrl, 0x00, sizeof(nxpncihal_ctrl));
+ 
+diff --git a/snxxx/halimpl/hal/phNxpNciHal.cc b/snxxx/halimpl/hal/phNxpNciHal.cc
+index 6e816cf..2e0edd8 100644
+--- a/snxxx/halimpl/hal/phNxpNciHal.cc
++++ b/snxxx/halimpl/hal/phNxpNciHal.cc
+@@ -490,12 +490,9 @@ static NFCSTATUS phNxpNciHal_force_fw_download(uint8_t seq_handler_offset,
+       fw_download_success = TRUE;
+     } else if (status == NFCSTATUS_FW_CHECK_INTEGRITY_FAILED ||
+                (phNxpNciHal_fw_mw_ver_check() != NFCSTATUS_SUCCESS)) {
+-      intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-      nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+       phOsalNfc_Timer_Cleanup();
+       phNxpTempMgr::GetInstance().Reset();
+       phTmlNfc_Shutdown_CleanUp();
+-      phDal4Nfc_msgrelease(client_id);
+       return NFCSTATUS_CMD_ABORTED;
+     }
+ 
+@@ -2570,8 +2567,6 @@ close_and_return:
+     status = phTmlNfc_ReadAbort();
+     status = phTmlNfc_WriteAbort();
+ 
+-    intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     status = phTmlNfc_Shutdown();
+@@ -2583,7 +2578,7 @@ close_and_return:
+     phNxpTempMgr::GetInstance().Reset();
+     phTmlNfc_CleanUp();
+ 
+-    phDal4Nfc_msgrelease(client_id);
++    phDal4Nfc_msgrelease(nxpncihal_ctrl.gDrvCfg.nClientId);
+ 
+     memset(&nxpncihal_ctrl, 0x00, sizeof(nxpncihal_ctrl));
+ 
+@@ -2653,8 +2648,6 @@ void phNxpNciHal_clean_resources() {
+     if (status != NFCSTATUS_SUCCESS) {
+       NXPLOG_TML_E("phTmlNfc_ReadAbort Failed");
+     }
+-    intptr_t client_id = nxpncihal_ctrl.gDrvCfg.nClientId;
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     status = phTmlNfc_Shutdown();
+@@ -2670,7 +2663,7 @@ void phNxpNciHal_clean_resources() {
+     phNxpTempMgr::GetInstance().Reset();
+     phTmlNfc_CleanUp();
+ 
+-    phDal4Nfc_msgrelease(client_id);
++    phDal4Nfc_msgrelease(nxpncihal_ctrl.gDrvCfg.nClientId);
+ 
+     memset(&nxpncihal_ctrl, 0x00, sizeof(nxpncihal_ctrl));
+   }
+diff --git a/snxxx/halimpl_v2/hal/phNxpNciHal.cc b/snxxx/halimpl_v2/hal/phNxpNciHal.cc
+index afe6e88..dd965b7 100644
+--- a/snxxx/halimpl_v2/hal/phNxpNciHal.cc
++++ b/snxxx/halimpl_v2/hal/phNxpNciHal.cc
+@@ -321,7 +321,6 @@ static NFCSTATUS phNxpNciHal_force_fw_download(uint8_t seq_handler_offset,
+       fw_download_success = true;
+     } else if (status == NFCSTATUS_FW_CHECK_INTEGRITY_FAILED ||
+                (phNxpNciHal_fw_mw_ver_check() != NFCSTATUS_SUCCESS)) {
+-      nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+       phOsalNfc_Timer_Cleanup();
+       phNxpTempMgr::GetInstance().Reset();
+       phTmlNfc_Shutdown_CleanUp();
+@@ -2305,7 +2304,6 @@ close_and_return:
+     phNxpNciHal_complete(NFCSTATUS_SUCCESS, PHNXP_NCIHAL_OP_CLOSE);
+     /* Abort any pending read and write */
+     (void)phTmlNfc_ReadAbort();
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     (void)phTmlNfc_Shutdown();
+@@ -2367,7 +2365,6 @@ void phNxpNciHal_clean_resources() {
+     if (status != NFCSTATUS_SUCCESS) {
+       NXPLOG_TML_E("phTmlNfc_ReadAbort Failed");
+     }
+-    nxpncihal_ctrl.gDrvCfg.nClientId = 0;
+     phOsalNfc_Timer_Cleanup();
+ 
+     status = phTmlNfc_Shutdown();
+-- 
+2.53.0
+
