@@ -91,6 +91,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# SuperVOOC charging ring
+PRODUCT_PACKAGES += \
+    libnativeChargingRing
+
 # Telephony
 PRODUCT_PACKAGES += \
     OplusEsimSwitcher \

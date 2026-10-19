@@ -1,0 +1,16 @@
+// Stock SystemUI's GLES SuperVOOC ring (CPH2649 SystemUI.apk lib/arm64-v8a).
+// SystemUI loads it from /system_ext/lib64.
+cc_prebuilt_library_shared {
+    name: "libnativeChargingRing",
+    arch: {
+        arm64: {
+            srcs: ["lib64/libnativeChargingRing.so"],
+        },
+    },
+    compile_multilib: "64",
+    system_ext_specific: true,
+    strip: {
+        none: true,
+    },
+    check_elf_files: false,
+}
