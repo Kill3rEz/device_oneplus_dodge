@@ -6,6 +6,9 @@
 package org.lineageos.device.settings.ui
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,6 +19,9 @@ import org.lineageos.device.settings.ui.screens.BypassChargingScreen
 import org.lineageos.device.settings.ui.screens.GameBarSettingsScreen
 import org.lineageos.device.settings.ui.screens.MainScreen
 import org.lineageos.device.settings.ui.screens.RefreshRateScreen
+
+private val PageIn = fadeIn(tween(200))
+private val PageOut = fadeOut(tween(160))
 
 enum class DeviceSettingsDest(val route: String) {
     Main("main"),
@@ -42,6 +48,14 @@ fun DeviceSettingsApp(
             navController = navController,
             startDestination = start.route,
             modifier = Modifier.fillMaxSize(),
+            // The banner stays put. A 700ms crossfade, or predictive back scaling
+            // the list to 70% under that banner, reads as the page falling apart.
+            enterTransition = { PageIn },
+            exitTransition = { PageOut },
+            popEnterTransition = { PageIn },
+            popExitTransition = { PageOut },
+            predictivePopEnterTransition = { _ -> PageIn },
+            predictivePopExitTransition = { _ -> PageOut },
         ) {
             composable(DeviceSettingsDest.Main.route) {
                 MainScreen(

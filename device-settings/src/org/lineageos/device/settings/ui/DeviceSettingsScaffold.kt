@@ -7,6 +7,7 @@
 
 package org.lineageos.device.settings.ui
 
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -35,6 +36,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -79,7 +81,11 @@ fun DeviceSettingsScaffold(
     modifier: Modifier = Modifier,
     content: @Composable (PaddingValues) -> Unit,
 ) {
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    // The default snap is a spring and it overshoots the expanded and collapsed heights.
+    val snapSpec = remember { tween<Float>(durationMillis = 220) }
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(
+        snapAnimationSpec = snapSpec,
+    )
     val density = LocalDensity.current
 
     BoxWithConstraints(modifier = modifier.fillMaxSize()) {
@@ -93,8 +99,9 @@ fun DeviceSettingsScaffold(
         val collapsedPx = statusPx + stripHeightPx
         val statusDp = with(density) { statusPx.toDp() }
         val pageColor = MaterialTheme.colorScheme.surfaceContainer
+        val limit = collapsedPx - expandedPx
         SideEffect {
-            scrollBehavior.state.heightOffsetLimit = collapsedPx - expandedPx
+            scrollBehavior.state.heightOffsetLimit = limit
         }
         val barHeight = with(density) {
             (expandedPx + scrollBehavior.state.heightOffset).toDp()
