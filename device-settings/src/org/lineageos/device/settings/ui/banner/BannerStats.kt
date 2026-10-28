@@ -39,6 +39,7 @@ object BannerFacts {
     /** SKU from product props, uppercased. Dodge is OnePlus 13. */
     fun productSku(): String {
         val keys = arrayOf(
+            "ro.product.model",
             "ro.product.odm.device",
             "ro.product.system.device",
             "ro.product.vendor.device",
