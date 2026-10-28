@@ -18,15 +18,6 @@ TARGET_BOARD_PLATFORM := sun
 # Pairs with TARGET_KERNEL_LINEAGE_ONLY in device/oneplus/sm8750-common/BoardConfigCommon.mk.
 TARGET_USES_KERNEL_PLATFORM := false
 
-# The device ships the lineage-libperfmgr android.hardware.power HAL (see
-# device/oneplus/sm8750-common/common.mk). Declare that we provide our own power
-# HAL so device/qcom/common/common.mk skips inheriting
-# vendor/qcom/opensource/power/power-vendor-product.mk, which would otherwise also
-# add the QCOM android.hardware.power-service (+ power-v6.xml) and make VINTF fail
-# with two providers of android.hardware.power IPower/default. Must be set here in
-# the product phase, before aospa-target.mk -> device/qcom/common/common.mk.
-TARGET_PROVIDES_POWERHAL := true
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
