@@ -1,0 +1,23 @@
+--- a/Android.bp
++++ b/Android.bp
+@@ -39,7 +39,8 @@
+ }
+ 
+ cc_prebuilt_library_shared {
+-    name: "libpenguin",
++    name: "libpenguin_vendor",
++    stem: "libpenguin",
+     owner: "oplus/camera",
+     strip: {
+         none: true,
+--- a/camera-vendor.mk
++++ b/camera-vendor.mk
+@@ -222,7 +222,7 @@
+ 
+ PRODUCT_PACKAGES += \
+     vendor.oplus.hardware.cameraextension@1.0 \
+-    libpenguin \
++    libpenguin_vendor \
+     vendor.oplus.hardware.cammidasservice@1.0 \
+     libAPSClient-alog-jni \
+     libAPSClient-cmd-jni-extension.oplus \
