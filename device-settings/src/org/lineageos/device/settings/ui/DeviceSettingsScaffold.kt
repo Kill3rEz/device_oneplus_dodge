@@ -8,8 +8,9 @@
 package org.lineageos.device.settings.ui
 
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.PaddingValues
@@ -40,33 +41,25 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import org.lineageos.device.settings.R
+import org.lineageos.device.settings.ui.banner.CollapsedBanner
 import org.lineageos.device.settings.ui.banner.LiveBanner
-import org.lineageos.device.settings.ui.banner.ZONE_BLUR
-import org.lineageos.device.settings.ui.banner.ZONE_SCRIM
 
-/** Must match oplus_banner.png / oplus_mask.png pixel size. */
-private const val ART_W = 1080f
-private const val ART_H = 662f
-private const val MASK_W = 1080f
-private const val MASK_H = 182f
+/** Expanded and collapsed banner heights per unit of width. */
+private const val BANNER_ASPECT = 662f / 1080f
+private const val STRIP_ASPECT = 182f / 1080f
 
-/** Baked round on the 1080-wide PNGs is ~20px. */
-private const val CORNER = 20f / 1080f
+/** 22 units on a 358-wide banner. */
+private const val CORNER = 22f / 358f
+
+private val CARD_EDGE = Color.White.copy(alpha = 0.06f)
+private val BACK_SCRIM = Color.Black.copy(alpha = 0.3f)
+private val BACK_EDGE = Color.White.copy(alpha = 0.1f)
 
 /** Original small icon button. 22.dp screen start = 16.dp art gutter + 6.dp extra. */
 private val BACK_SIZE = 40.dp
@@ -74,7 +67,7 @@ private val BACK_ICON = 24.dp
 private val BACK_START = 6.dp
 private val BACK_TOP = 10.dp
 
-/** Shared collapsing header: expanded LiveBanner, collapsed oplus_mask stamp. */
+/** Shared collapsing header: expanded LiveBanner, collapsed CollapsedBanner strip. */
 @Composable
 fun DeviceSettingsScaffold(
     onBack: () -> Unit,
@@ -90,8 +83,9 @@ fun DeviceSettingsScaffold(
 
     BoxWithConstraints(modifier = modifier.fillMaxSize()) {
         val artWidth = (maxWidth - 32.dp).coerceAtLeast(1.dp)
-        val artHeight = artWidth * (ART_H / ART_W)
-        val stripHeight = artWidth * (MASK_H / MASK_W)
+        val artHeight = artWidth * BANNER_ASPECT
+        val stripHeight = artWidth * STRIP_ASPECT
+        val shape = RoundedCornerShape(artWidth * CORNER)
         val statusPx = WindowInsets.statusBars.getTop(density).toFloat()
         val artHeightPx = with(density) { artHeight.toPx() }
         val stripHeightPx = with(density) { stripHeight.toPx() }
@@ -131,51 +125,25 @@ fun DeviceSettingsScaffold(
                             .padding(horizontal = 16.dp)
                             .align(Alignment.TopCenter)
                             .offset(y = statusDp)
-                            .clip(RoundedCornerShape(artWidth * CORNER)),
+                            .clip(shape),
                     ) {
                         LiveBanner(
                             active = expandedAlpha > 0.01f,
                             modifier = Modifier
                                 .fillMaxSize()
                                 .align(Alignment.TopCenter)
-                                .alpha(expandedAlpha),
+                                .alpha(expandedAlpha)
+                                .border(1.dp, CARD_EDGE, shape),
                         )
-                        Box(
+                        CollapsedBanner(
+                            active = collapsedAlpha > 0.01f,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(stripHeight)
-                                .align(Alignment.TopCenter),
-                        ) {
-                            Image(
-                                painter = painterResource(R.drawable.oplus_mask),
-                                contentDescription = null,
-                                contentScale = ContentScale.FillWidth,
-                                alignment = Alignment.TopCenter,
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .alpha(collapsedAlpha),
-                            )
-                            Image(
-                                painter = painterResource(R.drawable.oplus_mask),
-                                contentDescription = null,
-                                contentScale = ContentScale.FillWidth,
-                                alignment = Alignment.TopCenter,
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .alpha(collapsedAlpha)
-                                    .clipToCircle(BACK_START, BACK_TOP, BACK_SIZE)
-                                    .blur(ZONE_BLUR),
-                            )
-                        }
-                        Image(
-                            painter = painterResource(R.drawable.oplus_banner),
-                            contentDescription = null,
-                            contentScale = ContentScale.FillBounds,
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .alpha(expandedAlpha)
-                                .clipToCircle(BACK_START, BACK_TOP, BACK_SIZE)
-                                .blur(ZONE_BLUR),
+                                .align(Alignment.TopCenter)
+                                .alpha(collapsedAlpha)
+                                .clip(shape)
+                                .border(1.dp, CARD_EDGE, shape),
                         )
                         Surface(
                             onClick = onBack,
@@ -184,8 +152,9 @@ fun DeviceSettingsScaffold(
                                 .padding(start = BACK_START, top = BACK_TOP)
                                 .size(BACK_SIZE),
                             shape = CircleShape,
-                            color = ZONE_SCRIM,
+                            color = BACK_SCRIM,
                             contentColor = Color.White,
+                            border = BorderStroke(1.dp, BACK_EDGE),
                         ) {
                             Box(
                                 modifier = Modifier.fillMaxSize(),
@@ -210,15 +179,5 @@ fun DeviceSettingsScaffold(
             },
             content = content,
         )
-    }
-}
-
-/** Clip after a full-size blur so the circle samples the art 1:1. */
-private fun Modifier.clipToCircle(x: Dp, y: Dp, d: Dp): Modifier = drawWithCache {
-    val path = Path().apply {
-        addOval(Rect(x.toPx(), y.toPx(), (x + d).toPx(), (y + d).toPx()))
-    }
-    onDrawWithContent {
-        clipPath(path) { this@onDrawWithContent.drawContent() }
     }
 }
