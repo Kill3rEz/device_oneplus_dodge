@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Maintainer -->
+    <string name="penguin_maintainer" translatable="false">Kill3rEz</string>
+    <string name="maintainer_unofficial"><xliff:g id="maintainer">%1$s</xliff:g></string>
+
+    <!-- Hardware info -->
+    <string name="penguin_soc_model" translatable="false">Snapdragon® 8 Elite</string>
+</resources>
