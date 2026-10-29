@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Maintainer -->
+    <string name="penguin_maintainer" translatable="false">Kill3rEz</string>
+    <string name="maintainer_unofficial"><xliff:g id="maintainer">%1$s</xliff:g></string>
+
+    <!-- Hardware info -->
+    <string name="config_device_soc_name" translatable="false">Snapdragon® 8 Elite</string>
+    <string name="config_device_display_size" translatable="false">6.82″</string>
+    <string name="config_device_camera_spec" translatable="false">50 MP + 50 MP + 50 MP, 32 MP front</string>
+</resources>
