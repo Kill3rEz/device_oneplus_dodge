@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# The off-screen gestures (scan codes 246 + gesture id) are matched by scan code in the
+# framework KeyHandler. Keep them unmapped here, otherwise they fall back to Generic.kl
+# (248 MUTE toggles the microphone, 256-264 BUTTON_1-9).
+
+key 142   SLEEP
+key 143   WAKEUP
