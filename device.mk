@@ -143,6 +143,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.feature.uhdr.support=true \
     persist.sys.feature.support.edrlistener=true
 
+# Stock 11.F.94 perfd. Before sm8750-common so its perfconfigstore, which
+# leaves sun scroll and launch hints off, does not replace the stock one.
+$(call inherit-product, vendor/oneplus/dodge/qti-perfd/qti-perfd.mk)
+
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8750-common/common.mk)
 
