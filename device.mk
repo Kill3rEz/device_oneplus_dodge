@@ -146,6 +146,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8750-common/common.mk)
 
+# 16 GB Dalvik heap. common.mk installs the 6 GB profile as vendor props.
+# Product build.prop is loaded after vendor and replaces those values.
+$(call inherit-product, frameworks/native/build/phone-xhdpi-16384-dalvik-heap.mk)
+
 
 # Real-time 1080p120: override the stock odm camera feature blob.
 # This has to be declared *before* inheriting dodge-vendor.mk. inherit-product
