@@ -22,6 +22,8 @@ LINEAGE_BUILD := dodge
 
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
+WITH_DUCK_RKP := true
+
 PRODUCT_NAME := rr_dodge
 PRODUCT_DEVICE := dodge
 PRODUCT_MANUFACTURER := OnePlus
