@@ -14,6 +14,7 @@ $(call inherit-product, device/oneplus/dodge/device.mk)
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_HAS_UDFPS := true
 WITH_GMS := true
+WITH_DUCK_RKP := true
 RR_MAINTAINER := OscarM1019
 
 # envsetup accepts rr_* . Set the codename here as well so the version
@@ -21,8 +22,6 @@ RR_MAINTAINER := OscarM1019
 LINEAGE_BUILD := dodge
 
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
-
-WITH_DUCK_RKP := true
 
 PRODUCT_NAME := rr_dodge
 PRODUCT_DEVICE := dodge
