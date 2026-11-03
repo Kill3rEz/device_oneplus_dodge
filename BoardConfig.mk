@@ -42,6 +42,9 @@ TARGET_USES_OPLUS_FACEUNLOCK := true
 # setprop after boot (never seed 1 until cold-boot proven).
 TARGET_FUSIONLIGHT_ENABLE := true
 
+# Clear Voice
+TARGET_USES_OPLUS_CLEARVOICE := true
+
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/oplus/fusionlight/sepolicy/vendor
