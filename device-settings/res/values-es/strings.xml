@@ -55,4 +55,8 @@ Mantén presionado para establecer</string>
     <string name="delete_message">¿Eliminar el elemento seleccionado?</string>
     <string name="on">"Activado"</string>
     <string name="off">"Desactivado"</string>
+    <string name="notification_slider_app_clear">Borrar</string>
+    <string name="notification_slider_rotation_portrait">Vertical</string>
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="display_category_title">Display</string>
 </resources>
