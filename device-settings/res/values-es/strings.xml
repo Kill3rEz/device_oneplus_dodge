@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Control deslizante de alertas</string>
+    <string name="notification_slider_selection_dialog_title">"Acción"</string>
+    <string name="notification_slider_top_position">Posición superior</string>
+    <string name="notification_slider_middle_position">Posición central</string>
+    <string name="notification_slider_bottom_position">Posición inferior</string>
+    <string name="notification_slider_mode_total_silence">"Silencio total"</string>
+    <string name="notification_slider_mode_alarms_only">"Solo alarmas"</string>
+    <string name="notification_slider_mode_priority_only">"Solo interrupciones prioritarias"</string>
+    <string name="notification_slider_mode_none">"Todo"</string>
+    <string name="notification_slider_for_notification">"Notificación"</string>
+    <string name="notification_slider_for_flashlight">Linterna</string>
+    <string name="notification_slider_for_brightness">"Brillo"</string>
+    <string name="notification_slider_for_rotation">"Rotación"</string>
+    <string name="notification_slider_for_ringer">Timbre</string>
+    <string name="notification_slider_app_none">Ninguna aplicación seleccionada</string>
+    <string name="notification_slider_app_dialog_title">"Seleccionar aplicación"</string>
+    <string name="notification_slider_flashlight_off">"Desactivado"</string>
+    <string name="notification_slider_flashlight_on">"Activado"</string>
+    <string name="notification_slider_flashlight_blink">Parpadeo</string>
+    <string name="notification_slider_brightness_auto">"Automático"</string>
+    <string name="notification_slider_rotation_auto">"Automático"</string>
+    <string name="notification_slider_rotation_landscape_90">Horizontal (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Horizontal (270°)</string>
+    <string name="notification_slider_ringer_vibrate">"Vibrar"</string>
+    <string name="notification_slider_ringer_silent">Silencio</string>
+    <string name="gaming_category_title">"Juegos"</string>
+    <string name="battery_category_title">"Batería"</string>
+    <string name="fast_charging_title">"Carga rápida"</string>
+    <string name="night_charging_title">Modo nocturno</string>
+    <string name="bypass_charging_title">Bypass de carga</string>
+    <string name="bypass_charging_enabled">"Habilitado"</string>
+    <string name="bypass_charging_disabled">"Inhabilitado"</string>
+    <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">predeterminado</string>
+    <string name="custom_seekbar_default_value_to_set">Valor predeterminado: <xliff:g id="v">%s</xliff:g>\n
+Mantén presionado para establecer</string>
+    <string name="custom_seekbar_default_value_is_set">Valor predeterminado establecido</string>
+    <string name="game_bar_applications">"Aplicaciones"</string>
+    <string name="game_bar_color_white">"Blanco"</string>
+    <string name="game_bar_color_black">"Negro"</string>
+    <string name="game_bar_color_red">"Rojo"</string>
+    <string name="game_bar_color_green">"Verde"</string>
+    <string name="game_bar_color_blue">"Azul"</string>
+    <string name="game_bar_color_yellow">"Amarillo"</string>
+    <string name="game_bar_color_cyan">"Cian"</string>
+    <string name="hbm_warning_title">Advertencia</string>
+    <string name="hbm_btn_enable">"Habilitar"</string>
+    <string name="refresh_rate_title">"Frecuencia de actualización"</string>
+    <string name="ltpo_adaptive">"Adaptativos"</string>
+    <string name="ltpo_fixed">"Fijo"</string>
+    <string name="refresh_rate_auto">"Automático"</string>
+    <string name="delete">"Eliminar"</string>
+    <string name="delete_message">¿Eliminar el elemento seleccionado?</string>
+    <string name="on">"Activado"</string>
+    <string name="off">"Desactivado"</string>
+</resources>

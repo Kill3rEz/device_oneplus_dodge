@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"الإجراء"</string>
+    <string name="notification_slider_mode_total_silence">"كتم الصوت تمامًا"</string>
+    <string name="notification_slider_mode_alarms_only">"التنبيهات فقط"</string>
+    <string name="notification_slider_mode_priority_only">"الأولوية فقط"</string>
+    <string name="notification_slider_mode_none">"الكل"</string>
+    <string name="notification_slider_for_notification">"الإشعار"</string>
+    <string name="notification_slider_for_flashlight">"ضوء الفلاش"</string>
+    <string name="notification_slider_for_brightness">"السطوع"</string>
+    <string name="notification_slider_for_rotation">"الدوران"</string>
+    <string name="notification_slider_for_ringer">الرنين</string>
+    <string name="notification_slider_app_none">لم يتم تحديد أي تطبيق</string>
+    <string name="notification_slider_app_dialog_title">"اختيار تطبيق"</string>
+    <string name="notification_slider_flashlight_off">"الميزة غير مفعّلة"</string>
+    <string name="notification_slider_flashlight_on">"الميزة مفعّلة"</string>
+    <string name="notification_slider_brightness_auto">"تلقائي"</string>
+    <string name="notification_slider_rotation_auto">"تلقائي"</string>
+    <string name="notification_slider_ringer_vibrate">"اهتزاز"</string>
+    <string name="notification_slider_ringer_silent">صامت</string>
+    <string name="gaming_category_title">"ألعاب"</string>
+    <string name="battery_category_title">"البطارية"</string>
+    <string name="fast_charging_title">"جارٍ الشحن السريع"</string>
+    <string name="night_charging_title">الوضع الليلي</string>
+    <string name="bypass_charging_title">تجاوز الشحن</string>
+    <string name="bypass_charging_enabled">"مفعّل"</string>
+    <string name="bypass_charging_disabled">"غير مفعّل"</string>
+    <string name="custom_seekbar_value">القيمة: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">بشكل افتراضي</string>
+    <string name="custom_seekbar_default_value_to_set">القيمة الافتراضية: <xliff:g id="v">%s</xliff:g>\n أنقر مطولاً للتعيين</string>
+    <string name="game_bar_applications">"التطبيقات"</string>
+    <string name="game_bar_color_white">"أبيض"</string>
+    <string name="game_bar_color_black">"أسود"</string>
+    <string name="game_bar_color_red">"أحمر"</string>
+    <string name="game_bar_color_green">"أخضر"</string>
+    <string name="game_bar_color_blue">"أزرق"</string>
+    <string name="game_bar_color_yellow">"أصفر"</string>
+    <string name="game_bar_color_cyan">"سماوي"</string>
+    <string name="game_bar_color_magenta">"أرجواني"</string>
+    <string name="hbm_warning_title">تحذير</string>
+    <string name="hbm_btn_enable">"تفعيل"</string>
+    <string name="refresh_rate_title">"معدّل التحديث"</string>
+    <string name="ltpo_adaptive">"تكيّفية"</string>
+    <string name="ltpo_fixed">"التفعيل بدون تتبّع"</string>
+    <string name="refresh_rate_auto">"تلقائي"</string>
+    <string name="delete">"حذف"</string>
+    <string name="delete_message">حذف العنصر المحدد؟</string>
+    <string name="on">"الميزة مفعّلة"</string>
+    <string name="off">"الميزة غير مفعّلة"</string>
+</resources>

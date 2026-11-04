@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Handeling"</string>
+    <string name="notification_slider_mode_total_silence">"Volkome stilte"</string>
+    <string name="notification_slider_mode_alarms_only">"Net wekkers"</string>
+    <string name="notification_slider_mode_priority_only">"Net prioriteit"</string>
+    <string name="notification_slider_mode_none">"Alles"</string>
+    <string name="notification_slider_for_notification">"Kennisgewing"</string>
+    <string name="notification_slider_for_flashlight">"Flitslig"</string>
+    <string name="notification_slider_for_brightness">"Helderheid"</string>
+    <string name="notification_slider_for_rotation">"Rotasie"</string>
+    <string name="notification_slider_app_dialog_title">"Kies app"</string>
+    <string name="notification_slider_flashlight_off">"Af"</string>
+    <string name="notification_slider_flashlight_on">"Aan"</string>
+    <string name="notification_slider_brightness_auto">"Outo"</string>
+    <string name="notification_slider_rotation_auto">"Outo"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibreer"</string>
+    <string name="notification_slider_ringer_silent">"Stil"</string>
+    <string name="gaming_category_title">"Speletjies"</string>
+    <string name="fast_charging_title">"Laai vinnig"</string>
+    <string name="night_charging_title">Nag-modus</string>
+    <string name="bypass_charging_enabled">"Geaktiveer"</string>
+    <string name="bypass_charging_disabled">"Gedeaktiveer"</string>
+    <string name="custom_seekbar_value">Waarde <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by verstek</string>
+    <string name="custom_seekbar_default_value_to_set">Standaard waarde: <xliff:g id="v">%s</xliff:g>\nLang tik om te stel</string>
+    <string name="game_bar_applications">"Programme"</string>
+    <string name="game_bar_color_white">"Wit"</string>
+    <string name="game_bar_color_black">"Swart"</string>
+    <string name="game_bar_color_red">"Rooi"</string>
+    <string name="game_bar_color_green">"Groen"</string>
+    <string name="game_bar_color_blue">"Blou"</string>
+    <string name="game_bar_color_yellow">"Geel"</string>
+    <string name="game_bar_color_cyan">"Siaan"</string>
+    <string name="hbm_warning_title">"Waarskuwing"</string>
+    <string name="hbm_btn_enable">"Aktiveer"</string>
+    <string name="refresh_rate_title">"Herlaaitempo"</string>
+    <string name="ltpo_adaptive">"Aanpasbaar"</string>
+    <string name="ltpo_fixed">"Vasgestel"</string>
+    <string name="refresh_rate_auto">"Outo"</string>
+    <string name="delete">"Vee uit"</string>
+    <string name="delete_message">Verwyder geselekteerde item?</string>
+    <string name="on">"Aan"</string>
+    <string name="off">"Af"</string>
+</resources>

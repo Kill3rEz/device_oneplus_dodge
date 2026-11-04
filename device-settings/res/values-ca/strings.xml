@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Control lliscant d\'alerta</string>
+    <string name="notification_slider_selection_dialog_title">"Acció"</string>
+    <string name="notification_slider_top_position">Posició superior</string>
+    <string name="notification_slider_middle_position">Posició central</string>
+    <string name="notification_slider_bottom_position">Posició inferior</string>
+    <string name="notification_slider_mode_total_silence">"Silenci total"</string>
+    <string name="notification_slider_mode_alarms_only">"Només alarmes"</string>
+    <string name="notification_slider_mode_priority_only">"Només amb prioritat"</string>
+    <string name="notification_slider_mode_none">"Tot"</string>
+    <string name="notification_slider_for_notification">"Notificació"</string>
+    <string name="notification_slider_for_flashlight">Llanterna</string>
+    <string name="notification_slider_for_brightness">"Brillantor"</string>
+    <string name="notification_slider_for_rotation">"Rotació"</string>
+    <string name="notification_slider_app_none">No s\'ha seleccionat cap aplicació</string>
+    <string name="notification_slider_app_dialog_title">"Selecciona una aplicació"</string>
+    <string name="notification_slider_flashlight_off">"Desactivat"</string>
+    <string name="notification_slider_flashlight_on">"Activat"</string>
+    <string name="notification_slider_flashlight_blink">Parpelleja</string>
+    <string name="notification_slider_brightness_auto">"Automàtic"</string>
+    <string name="notification_slider_rotation_auto">"Automàtic"</string>
+    <string name="notification_slider_ringer_vibrate">Vibra</string>
+    <string name="notification_slider_ringer_silent">Silenci</string>
+    <string name="gaming_category_title">"Jocs"</string>
+    <string name="battery_category_title">"Bateria"</string>
+    <string name="fast_charging_title">"Càrrega ràpida"</string>
+    <string name="night_charging_title">Mode nocturn</string>
+    <string name="bypass_charging_enabled">"Activat"</string>
+    <string name="bypass_charging_disabled">"Desactivat"</string>
+    <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">per defecte</string>
+    <string name="custom_seekbar_default_value_to_set">Valor per defecte: <xliff:g id="v">%s</xliff:g>\nPremeu prolongadament per a establir-lo</string>
+    <string name="game_bar_applications">"Aplicacions"</string>
+    <string name="game_bar_color_white">"Blanc"</string>
+    <string name="game_bar_color_black">"Negre"</string>
+    <string name="game_bar_color_red">"Vermell"</string>
+    <string name="game_bar_color_green">"Verd"</string>
+    <string name="game_bar_color_blue">"Blau"</string>
+    <string name="game_bar_color_yellow">"Groc"</string>
+    <string name="game_bar_color_cyan">"Cian"</string>
+    <string name="hbm_warning_title">Advertència</string>
+    <string name="hbm_btn_enable">"Activa"</string>
+    <string name="refresh_rate_title">"Freqüència d\'actualització"</string>
+    <string name="ltpo_adaptive">"Adaptatius"</string>
+    <string name="ltpo_fixed">"Fix"</string>
+    <string name="refresh_rate_auto">"Automàtic"</string>
+    <string name="delete">"Suprimeix"</string>
+    <string name="delete_message">Vols treure l\'element seleccionat?</string>
+    <string name="on">"Activat"</string>
+    <string name="off">"Desactivat"</string>
+</resources>

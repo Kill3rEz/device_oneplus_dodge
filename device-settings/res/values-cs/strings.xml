@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Posuvník oznámení</string>
+    <string name="notification_slider_selection_dialog_title">"Akce"</string>
+    <string name="notification_slider_top_position">Pozice nahoře</string>
+    <string name="notification_slider_middle_position">Pozice uprostřed</string>
+    <string name="notification_slider_bottom_position">Pozice dole</string>
+    <string name="notification_slider_mode_total_silence">"Úplné ticho"</string>
+    <string name="notification_slider_mode_alarms_only">"Pouze budíky"</string>
+    <string name="notification_slider_mode_priority_only">"Pouze prioritní"</string>
+    <string name="notification_slider_mode_none">"Vše"</string>
+    <string name="notification_slider_for_notification">"Oznámení"</string>
+    <string name="notification_slider_for_flashlight">Svítilna</string>
+    <string name="notification_slider_for_brightness">"Jas"</string>
+    <string name="notification_slider_for_rotation">"Otočení"</string>
+    <string name="notification_slider_app_none">Není vybrána žádná aplikace</string>
+    <string name="notification_slider_app_dialog_title">"Vyberte aplikaci"</string>
+    <string name="notification_slider_flashlight_off">"Vypnuto"</string>
+    <string name="notification_slider_flashlight_on">"Zapnuto"</string>
+    <string name="notification_slider_flashlight_blink">Blikat</string>
+    <string name="notification_slider_brightness_auto">"Automaticky"</string>
+    <string name="notification_slider_rotation_auto">"Automaticky"</string>
+    <string name="notification_slider_rotation_landscape_90">Na šířku (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Na šířku (270°)</string>
+    <string name="notification_slider_ringer_vibrate">"Vibrace"</string>
+    <string name="notification_slider_ringer_silent">"Tichý režim"</string>
+    <string name="gaming_category_title">"Hraní her"</string>
+    <string name="battery_category_title">"Baterie"</string>
+    <string name="fast_charging_title">"Rychlé nabíjení"</string>
+    <string name="night_charging_title">Noční režim</string>
+    <string name="bypass_charging_enabled">"Zapnuto"</string>
+    <string name="bypass_charging_disabled">"Vypnuto"</string>
+    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">výchozí hodnota</string>
+    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte pro její nastavení</string>
+    <string name="game_bar_text_size">Velikost textu</string>
+    <string name="game_bar_applications">"Aplikace"</string>
+    <string name="game_bar_color_white">"Bílá"</string>
+    <string name="game_bar_color_black">"Černá"</string>
+    <string name="game_bar_color_red">"Červená"</string>
+    <string name="game_bar_color_green">"Zelená"</string>
+    <string name="game_bar_color_blue">"Modrá"</string>
+    <string name="game_bar_color_yellow">"Žlutá"</string>
+    <string name="game_bar_color_cyan">"Azurová"</string>
+    <string name="game_bar_color_magenta">"Purpurová"</string>
+    <string name="hbm_warning_title">Varování</string>
+    <string name="hbm_btn_enable">"Povolit"</string>
+    <string name="refresh_rate_title">"Obnovovací frekvence"</string>
+    <string name="ltpo_adaptive">"Adaptivní"</string>
+    <string name="ltpo_fixed">"Pevné"</string>
+    <string name="refresh_rate_auto">"Automaticky"</string>
+    <string name="delete">"Smazat"</string>
+    <string name="delete_message">Odstranit vybranou položku?</string>
+    <string name="on">"Zapnuto"</string>
+    <string name="off">"Vypnuto"</string>
+</resources>

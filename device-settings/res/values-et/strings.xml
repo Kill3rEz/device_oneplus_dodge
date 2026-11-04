@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Toiming"</string>
+    <string name="notification_slider_mode_total_silence">"Täielik vaikus"</string>
+    <string name="notification_slider_mode_alarms_only">"Ainult äratused"</string>
+    <string name="notification_slider_mode_priority_only">"Ainult prioriteetsed"</string>
+    <string name="notification_slider_mode_none">"Kõik"</string>
+    <string name="notification_slider_for_notification">"Märguanne"</string>
+    <string name="notification_slider_for_flashlight">Taskulamp</string>
+    <string name="notification_slider_for_brightness">"Heledus"</string>
+    <string name="notification_slider_for_rotation">"Pööramine"</string>
+    <string name="notification_slider_app_none">Rakendus on valimata</string>
+    <string name="notification_slider_app_dialog_title">"Valige rakendus"</string>
+    <string name="notification_slider_flashlight_off">"Väljas"</string>
+    <string name="notification_slider_flashlight_on">"Sees"</string>
+    <string name="notification_slider_brightness_auto">"Automaatne"</string>
+    <string name="notification_slider_rotation_auto">"Automaatne"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibreerimine"</string>
+    <string name="notification_slider_ringer_silent">"Hääletu"</string>
+    <string name="gaming_category_title">"Mängud"</string>
+    <string name="battery_category_title">"Aku"</string>
+    <string name="fast_charging_title">"Kiirlaadimine"</string>
+    <string name="night_charging_title">Öörežiim</string>
+    <string name="bypass_charging_enabled">"Lubatud"</string>
+    <string name="bypass_charging_disabled">"Keelatud"</string>
+    <string name="custom_seekbar_value">Väärtus: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">vaikimisi</string>
+    <string name="custom_seekbar_default_value_to_set">Vaikeväärtus: <xliff:g id="v">%s</xliff:g>\nMääramiseks vajuta pikalt</string>
+    <string name="custom_seekbar_default_value_is_set">Vaikeväärtus on määratud</string>
+    <string name="game_bar_applications">"Rakendused"</string>
+    <string name="game_bar_color_white">"Valge"</string>
+    <string name="game_bar_color_black">"Must"</string>
+    <string name="game_bar_color_red">"Punane"</string>
+    <string name="game_bar_color_green">"Roheline"</string>
+    <string name="game_bar_color_blue">"Sinine"</string>
+    <string name="game_bar_color_yellow">"Kollane"</string>
+    <string name="game_bar_color_cyan">"Tsüaan"</string>
+    <string name="game_bar_color_magenta">"Fuksia"</string>
+    <string name="hbm_warning_title">Hoiatus</string>
+    <string name="hbm_btn_enable">"Luba"</string>
+    <string name="refresh_rate_title">"Värskendussagedus"</string>
+    <string name="ltpo_adaptive">"Kohanduvad"</string>
+    <string name="ltpo_fixed">"Fikseeritud"</string>
+    <string name="refresh_rate_auto">"Automaatne"</string>
+    <string name="delete">"Kustuta"</string>
+    <string name="delete_message">Eemaldada valitud üksus?</string>
+    <string name="on">"Sees"</string>
+    <string name="off">"Väljas"</string>
+</resources>

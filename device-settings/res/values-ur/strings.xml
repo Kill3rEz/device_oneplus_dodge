@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"ایکشن"</string>
+    <string name="notification_slider_mode_total_silence">"مکمل خاموشی"</string>
+    <string name="notification_slider_mode_alarms_only">"صرف الارمز"</string>
+    <string name="notification_slider_mode_priority_only">"صرف ترجیحی"</string>
+    <string name="notification_slider_mode_none">"تمام"</string>
+    <string name="notification_slider_for_notification">"اطلاع"</string>
+    <string name="notification_slider_for_flashlight">"فلیش لائٹ"</string>
+    <string name="notification_slider_for_brightness">"چمکیلا پن"</string>
+    <string name="notification_slider_for_rotation">"گھمانا"</string>
+    <string name="notification_slider_app_none">کوئی ایپ منتخب نہیں ہے</string>
+    <string name="notification_slider_app_dialog_title">"ایپ منتخب کریں"</string>
+    <string name="notification_slider_flashlight_off">"آف"</string>
+    <string name="notification_slider_flashlight_on">"آن ہے"</string>
+    <string name="notification_slider_brightness_auto">"خودکار"</string>
+    <string name="notification_slider_rotation_auto">"خودکار"</string>
+    <string name="notification_slider_ringer_vibrate">"وائبریٹ"</string>
+    <string name="notification_slider_ringer_silent">"خاموش"</string>
+    <string name="gaming_category_title">"گیم سازی"</string>
+    <string name="battery_category_title">"بیٹری"</string>
+    <string name="fast_charging_title">"فاسٹ چارجنگ"</string>
+    <string name="night_charging_title">رات وضع</string>
+    <string name="bypass_charging_enabled">"فعال"</string>
+    <string name="bypass_charging_disabled">"غیر فعال"</string>
+    <string name="custom_seekbar_value">مقدار: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">معین شدہ</string>
+    <string name="custom_seekbar_default_value_to_set">معین شدہ مقدار: <xliff:g id="v">%s</xliff:g>\nسیٹ کرنے کے لیے دیر تک تھپتھپائیں</string>
+    <string name="custom_seekbar_default_value_is_set">پہلے سے طے شدہ وزن مقرر کیا گیا ہے</string>
+    <string name="game_bar_applications">"ایپلیکیشنز"</string>
+    <string name="game_bar_color_white">"سفید"</string>
+    <string name="game_bar_color_black">"سیاہ"</string>
+    <string name="game_bar_color_red">"سرخ"</string>
+    <string name="game_bar_color_green">"سبز"</string>
+    <string name="game_bar_color_blue">"نیلا"</string>
+    <string name="game_bar_color_yellow">"پیلا"</string>
+    <string name="game_bar_color_cyan">"سیان"</string>
+    <string name="game_bar_color_magenta">"قرمزی"</string>
+    <string name="hbm_warning_title">"وارننگ"</string>
+    <string name="hbm_btn_enable">"فعال کریں"</string>
+    <string name="refresh_rate_title">"ریفریش ریٹ"</string>
+    <string name="ltpo_adaptive">"تغیر پذیر"</string>
+    <string name="ltpo_fixed">"مقرر"</string>
+    <string name="refresh_rate_auto">"خودکار"</string>
+    <string name="delete">"حذف کریں"</string>
+    <string name="delete_message">منتخب کردہ کو حزف کریں؟</string>
+    <string name="on">"آن ہے"</string>
+    <string name="off">"آف"</string>
+</resources>

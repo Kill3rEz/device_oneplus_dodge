@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Riasztási csúszka</string>
+    <string name="notification_slider_selection_dialog_title">"Művelet"</string>
+    <string name="notification_slider_top_position">Felül</string>
+    <string name="notification_slider_middle_position">Középen</string>
+    <string name="notification_slider_bottom_position">Alul</string>
+    <string name="notification_slider_mode_total_silence">"Teljes némítás"</string>
+    <string name="notification_slider_mode_alarms_only">"Csak ébresztések"</string>
+    <string name="notification_slider_mode_priority_only">"Csak prioritásos"</string>
+    <string name="notification_slider_mode_none">"Összes"</string>
+    <string name="notification_slider_for_notification">"Értesítés"</string>
+    <string name="notification_slider_for_flashlight">Zseblámpa</string>
+    <string name="notification_slider_for_brightness">"Fényerő"</string>
+    <string name="notification_slider_for_rotation">"Elforgatás"</string>
+    <string name="notification_slider_for_ringer">Csengés</string>
+    <string name="notification_slider_app_none">Nincs alkalmazás kiválasztva</string>
+    <string name="notification_slider_app_dialog_title">"Alkalmazás kiválasztása"</string>
+    <string name="notification_slider_flashlight_off">"Ki"</string>
+    <string name="notification_slider_flashlight_on">"Be"</string>
+    <string name="notification_slider_flashlight_blink">Villogás</string>
+    <string name="notification_slider_brightness_auto">"Automatikus"</string>
+    <string name="notification_slider_rotation_auto">"Automatikus"</string>
+    <string name="notification_slider_ringer_vibrate">"Rezgés"</string>
+    <string name="notification_slider_ringer_silent">"Néma"</string>
+    <string name="gaming_category_title">"Játék"</string>
+    <string name="battery_category_title">"Akkumulátor"</string>
+    <string name="fast_charging_title">"Gyors töltés…"</string>
+    <string name="night_charging_title">Éjszakai üzemmód</string>
+    <string name="bypass_charging_enabled">"Engedélyezve"</string>
+    <string name="bypass_charging_disabled">"Letiltva"</string>
+    <string name="custom_seekbar_value"><xliff:g id="v">%s</xliff:g> értékű</string>
+    <string name="custom_seekbar_default_value">alapértelmezés szerint</string>
+    <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték: <xliff:g id="v">%s</xliff:g>\nHosszú koppintás a beállításhoz</string>
+    <string name="game_bar_applications">"Alkalmazások"</string>
+    <string name="game_bar_color_white">"Fehér"</string>
+    <string name="game_bar_color_black">"Fekete"</string>
+    <string name="game_bar_color_red">"Piros"</string>
+    <string name="game_bar_color_green">"Zöld"</string>
+    <string name="game_bar_color_blue">"Kék"</string>
+    <string name="game_bar_color_yellow">"Sárga"</string>
+    <string name="game_bar_color_cyan">"Zöldeskék"</string>
+    <string name="hbm_warning_title">Figyelmeztetés</string>
+    <string name="hbm_btn_enable">"Engedélyezés"</string>
+    <string name="refresh_rate_title">"Frissítési gyakoriság"</string>
+    <string name="ltpo_adaptive">"Adaptív"</string>
+    <string name="ltpo_fixed">"Rögzített"</string>
+    <string name="refresh_rate_auto">"Automatikus"</string>
+    <string name="delete">"Törlés"</string>
+    <string name="delete_message">Biztosan törli a kiválasztott elemet?</string>
+    <string name="on">"Be"</string>
+    <string name="off">"Ki"</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Toiminto"</string>
+    <string name="notification_slider_mode_total_silence">"Täydellinen hiljaisuus"</string>
+    <string name="notification_slider_mode_alarms_only">"Vain herätykset"</string>
+    <string name="notification_slider_mode_priority_only">"Vain tärkeät"</string>
+    <string name="notification_slider_mode_none">"Kaikki"</string>
+    <string name="notification_slider_for_notification">"Ilmoitus"</string>
+    <string name="notification_slider_for_flashlight">Taskulamppu</string>
+    <string name="notification_slider_for_brightness">"Kirkkaus"</string>
+    <string name="notification_slider_for_rotation">"Kierto"</string>
+    <string name="notification_slider_app_none">Ei valittuja sovelluksia</string>
+    <string name="notification_slider_app_dialog_title">"Valitse sovellus"</string>
+    <string name="notification_slider_flashlight_off">"Pois päältä"</string>
+    <string name="notification_slider_flashlight_on">"Päällä"</string>
+    <string name="notification_slider_ringer_vibrate">"Värinä"</string>
+    <string name="notification_slider_ringer_silent">"Äänetön"</string>
+    <string name="gaming_category_title">"Pelit"</string>
+    <string name="battery_category_title">"Akku"</string>
+    <string name="fast_charging_title">"Nopea lataus"</string>
+    <string name="night_charging_title">Yötila</string>
+    <string name="bypass_charging_enabled">"Käytössä"</string>
+    <string name="bypass_charging_disabled">"Ei käytössä"</string>
+    <string name="custom_seekbar_value">Arvo: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">oletuksena</string>
+    <string name="custom_seekbar_default_value_to_set">Oletusarvo: <xliff:g id="v">%s</xliff:g>\nAseta napauttamalla pitkään</string>
+    <string name="game_bar_applications">"Sovellukset"</string>
+    <string name="game_bar_color_white">"Valkoinen"</string>
+    <string name="game_bar_color_black">"Musta"</string>
+    <string name="game_bar_color_red">"Punainen"</string>
+    <string name="game_bar_color_green">"Vihreä"</string>
+    <string name="game_bar_color_blue">"Sininen"</string>
+    <string name="game_bar_color_yellow">"Keltainen"</string>
+    <string name="game_bar_color_cyan">"Syaani"</string>
+    <string name="hbm_warning_title">Varoitus</string>
+    <string name="hbm_btn_enable">"Ota käyttöön"</string>
+    <string name="refresh_rate_title">"Päivitysväli"</string>
+    <string name="ltpo_adaptive">"Mukautuva"</string>
+    <string name="ltpo_fixed">"Kiinteä"</string>
+    <string name="delete">"Poista"</string>
+    <string name="delete_message">Poista valittu kohde?</string>
+    <string name="on">"Päällä"</string>
+    <string name="off">"Pois päältä"</string>
+</resources>

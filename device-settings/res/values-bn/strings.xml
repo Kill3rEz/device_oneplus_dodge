@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"অ্যাকশন"</string>
+    <string name="notification_slider_mode_total_silence">"একদম নিরব"</string>
+    <string name="notification_slider_mode_alarms_only">"শুধুমাত্র অ্যালার্মগুলি"</string>
+    <string name="notification_slider_mode_priority_only">"শুধুমাত্র অগ্রাধিকার"</string>
+    <string name="notification_slider_mode_none">"সমস্ত"</string>
+    <string name="notification_slider_for_notification">"বিজ্ঞপ্তি"</string>
+    <string name="notification_slider_for_flashlight">"ফ্ল্যাশলাইট"</string>
+    <string name="notification_slider_for_brightness">"উজ্জ্বলতা"</string>
+    <string name="notification_slider_for_rotation">"রোটেশন"</string>
+    <string name="notification_slider_app_dialog_title">"অ্যাপ বেছে নিন"</string>
+    <string name="notification_slider_flashlight_off">"বন্ধ আছে"</string>
+    <string name="notification_slider_flashlight_on">"চালু আছে"</string>
+    <string name="notification_slider_brightness_auto">"স্বতঃ"</string>
+    <string name="notification_slider_rotation_auto">"স্বতঃ"</string>
+    <string name="notification_slider_ringer_vibrate">"ভাইব্রেট"</string>
+    <string name="notification_slider_ringer_silent">"সাইলেন্ট"</string>
+    <string name="gaming_category_title">"গেমিং"</string>
+    <string name="battery_category_title">"ব্যাটারি"</string>
+    <string name="fast_charging_title">"ফাস্ট চার্জিং"</string>
+    <string name="night_charging_title">রাতের মোড</string>
+    <string name="bypass_charging_enabled">"চালু করা আছে"</string>
+    <string name="bypass_charging_disabled">"বন্ধ করা আছে"</string>
+    <string name="custom_seekbar_value">ভ্যালু: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">বাই ডিফল্ট</string>
+    <string name="custom_seekbar_default_value_to_set">ডিফল্ট ভ্যালু:<xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="game_bar_applications">"অ্যাপ্লিকেশন"</string>
+    <string name="game_bar_color_white">"সাদা"</string>
+    <string name="game_bar_color_black">"কালো"</string>
+    <string name="game_bar_color_red">"লাল"</string>
+    <string name="game_bar_color_green">"সবুজ"</string>
+    <string name="game_bar_color_blue">"নীল"</string>
+    <string name="game_bar_color_yellow">"হলুদ"</string>
+    <string name="game_bar_color_cyan">"নীলাভ সবুজ"</string>
+    <string name="game_bar_color_magenta">"ম্যাজেন্টা"</string>
+    <string name="hbm_warning_title">"সতর্কতা"</string>
+    <string name="hbm_btn_enable">"চালু করুন"</string>
+    <string name="refresh_rate_title">"রিফ্রেশ রেট"</string>
+    <string name="ltpo_adaptive">"অ্যাডাপ্টিভ"</string>
+    <string name="ltpo_fixed">"চালু আছে"</string>
+    <string name="refresh_rate_auto">"স্বতঃ"</string>
+    <string name="delete">"মুছুন"</string>
+    <string name="delete_message">নির্বাচন করাগুলি ডিলিট করতে চান?</string>
+    <string name="on">"চালু আছে"</string>
+    <string name="off">"বন্ধ আছে"</string>
+</resources>

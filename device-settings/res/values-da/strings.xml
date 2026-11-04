@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Handling"</string>
+    <string name="notification_slider_mode_total_silence">"Total stilhed"</string>
+    <string name="notification_slider_mode_alarms_only">"Kun alarmer"</string>
+    <string name="notification_slider_mode_priority_only">"Kun prioritet"</string>
+    <string name="notification_slider_mode_none">"Alle"</string>
+    <string name="notification_slider_for_notification">"Notifikation"</string>
+    <string name="notification_slider_for_flashlight">Lommelygte</string>
+    <string name="notification_slider_for_brightness">"Lysstyrke"</string>
+    <string name="notification_slider_app_dialog_title">"Vælg app"</string>
+    <string name="notification_slider_flashlight_off">"Fra"</string>
+    <string name="notification_slider_flashlight_on">"Til"</string>
+    <string name="notification_slider_brightness_auto">"Automatisk"</string>
+    <string name="notification_slider_rotation_auto">"Automatisk"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibration"</string>
+    <string name="notification_slider_ringer_silent">"Lydløs"</string>
+    <string name="gaming_category_title">"Spil"</string>
+    <string name="battery_category_title">"Batteri"</string>
+    <string name="fast_charging_title">"Lynopladning"</string>
+    <string name="night_charging_title">Nattilstand</string>
+    <string name="bypass_charging_enabled">"Aktiveret"</string>
+    <string name="bypass_charging_disabled">"Deaktiveret"</string>
+    <string name="custom_seekbar_value">Værdi: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">som standard</string>
+    <string name="custom_seekbar_default_value_to_set">Standardværdi: <xliff:g id="v">%s</xliff:g>\nLangt tryk for at indstille</string>
+    <string name="game_bar_applications">"Apps"</string>
+    <string name="game_bar_color_white">"Hvid"</string>
+    <string name="game_bar_color_black">"Sort"</string>
+    <string name="game_bar_color_red">"Rød"</string>
+    <string name="game_bar_color_green">"Grøn"</string>
+    <string name="game_bar_color_blue">"Blå"</string>
+    <string name="game_bar_color_yellow">"Gul"</string>
+    <string name="hbm_warning_title">Advarsel</string>
+    <string name="hbm_btn_enable">"Aktivér"</string>
+    <string name="refresh_rate_title">"Opdateringshastighed"</string>
+    <string name="ltpo_adaptive">"Adaptiv"</string>
+    <string name="ltpo_fixed">"Fast"</string>
+    <string name="refresh_rate_auto">"Automatisk"</string>
+    <string name="delete">"Slet"</string>
+    <string name="delete_message">Vil du slette det valgte element?</string>
+    <string name="on">"Til"</string>
+    <string name="off">"Fra"</string>
+</resources>

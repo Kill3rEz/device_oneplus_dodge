@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">نوار لغزنده هشدار</string>
+    <string name="notification_slider_selection_dialog_title">"عملکرد"</string>
+    <string name="notification_slider_top_position">موقعیت بالا</string>
+    <string name="notification_slider_middle_position">موقعیت وسط</string>
+    <string name="notification_slider_bottom_position">موقعیت پایین</string>
+    <string name="notification_slider_mode_total_silence">"سکوت کامل"</string>
+    <string name="notification_slider_mode_alarms_only">"فقط هشدارها"</string>
+    <string name="notification_slider_mode_priority_only">"فقط اولویت‌دار"</string>
+    <string name="notification_slider_mode_none">"همه"</string>
+    <string name="notification_slider_for_notification">"اعلان"</string>
+    <string name="notification_slider_for_flashlight">چراغ قوه</string>
+    <string name="notification_slider_for_brightness">"روشنایی"</string>
+    <string name="notification_slider_for_rotation">"چرخش"</string>
+    <string name="notification_slider_for_ringer">زنگ</string>
+    <string name="notification_slider_app_none">هیچ برنامه‌ ای انتخاب نشده</string>
+    <string name="notification_slider_app_dialog_title">"انتخاب برنامه"</string>
+    <string name="notification_slider_flashlight_off">"خاموش"</string>
+    <string name="notification_slider_flashlight_on">"روشن"</string>
+    <string name="notification_slider_flashlight_blink">چشمک زدن</string>
+    <string name="notification_slider_brightness_auto">"خودکار"</string>
+    <string name="notification_slider_rotation_auto">"خودکار"</string>
+    <string name="notification_slider_rotation_landscape_90">افقی (۹۰ درجه)</string>
+    <string name="notification_slider_rotation_landscape_270">افقی (۲۷۰ درجه)</string>
+    <string name="notification_slider_ringer_vibrate">"لرزش"</string>
+    <string name="notification_slider_ringer_silent">"بی‌صدا"</string>
+    <string name="gaming_category_title">"بازی"</string>
+    <string name="battery_category_title">"باتری"</string>
+    <string name="fast_charging_title">"درحال شارژ سریع"</string>
+    <string name="night_charging_title">حالت شب</string>
+    <string name="bypass_charging_enabled">"فعال"</string>
+    <string name="bypass_charging_disabled">غیرفعال</string>
+    <string name="custom_seekbar_value">ارزش: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">به طور پیش فرض</string>
+    <string name="custom_seekbar_default_value_to_set">ارزش پیش‌فرض: <xliff:g id="v">%s</xliff:g>\n برای تنظیم نگه دارید</string>
+    <string name="game_bar_applications">"برنامه‌ها"</string>
+    <string name="game_bar_color_white">"سفید"</string>
+    <string name="game_bar_color_black">"سياه"</string>
+    <string name="game_bar_color_red">"قرمز"</string>
+    <string name="game_bar_color_green">"سبز"</string>
+    <string name="game_bar_color_blue">"آبی"</string>
+    <string name="game_bar_color_yellow">"زرد"</string>
+    <string name="game_bar_color_cyan">"فیروزه‌ای"</string>
+    <string name="game_bar_color_magenta">"سرخابی"</string>
+    <string name="hbm_warning_title">هشدار</string>
+    <string name="hbm_btn_enable">"فعال کردن"</string>
+    <string name="refresh_rate_title">"نرخ بازآوری"</string>
+    <string name="ltpo_adaptive">"تطبیقی"</string>
+    <string name="ltpo_fixed">"ثابت"</string>
+    <string name="refresh_rate_auto">"خودکار"</string>
+    <string name="delete">"حذف"</string>
+    <string name="delete_message">موارد انتخاب شده حذف شوند؟</string>
+    <string name="on">"روشن"</string>
+    <string name="off">"خاموش"</string>
+</resources>

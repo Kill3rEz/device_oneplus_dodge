@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_mode_total_silence">"Ganap na katahimikan"</string>
+    <string name="notification_slider_mode_alarms_only">"Mga alarm lang"</string>
+    <string name="notification_slider_mode_priority_only">"Priyoridad lang"</string>
+    <string name="notification_slider_mode_none">"Lahat"</string>
+    <string name="notification_slider_for_rotation">"Pag-rotate"</string>
+    <string name="notification_slider_app_dialog_title">"Pumili ng app"</string>
+    <string name="notification_slider_flashlight_off">"Naka-off"</string>
+    <string name="notification_slider_flashlight_on">"Naka-on"</string>
+    <string name="notification_slider_ringer_vibrate">"I-vibrate"</string>
+    <string name="notification_slider_ringer_silent">"Naka-silent"</string>
+    <string name="gaming_category_title">"Paglalaro"</string>
+    <string name="battery_category_title">"Baterya"</string>
+    <string name="bypass_charging_enabled">"Naka-enable"</string>
+    <string name="bypass_charging_disabled">"Naka-disable"</string>
+    <string name="game_bar_applications">"Mga Application"</string>
+    <string name="game_bar_color_white">"Puti"</string>
+    <string name="game_bar_color_black">"Itim"</string>
+    <string name="game_bar_color_red">"Pula"</string>
+    <string name="game_bar_color_green">"Berde"</string>
+    <string name="game_bar_color_blue">"Asul"</string>
+    <string name="game_bar_color_yellow">"Dilaw"</string>
+    <string name="hbm_warning_title">"Babala"</string>
+    <string name="hbm_btn_enable">"I-enable"</string>
+    <string name="refresh_rate_title">"Rate ng pag-refresh"</string>
+    <string name="ltpo_fixed">"Nakapirmi"</string>
+    <string name="delete">"I-delete"</string>
+    <string name="on">"Naka-on"</string>
+    <string name="off">"Naka-off"</string>
+</resources>

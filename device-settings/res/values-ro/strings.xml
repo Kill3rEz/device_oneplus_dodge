@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Acțiune"</string>
+    <string name="notification_slider_top_position">Sus</string>
+    <string name="notification_slider_middle_position">Mijloc</string>
+    <string name="notification_slider_bottom_position">Jos</string>
+    <string name="notification_slider_mode_total_silence">"Niciun sunet"</string>
+    <string name="notification_slider_mode_alarms_only">"Numai alarme"</string>
+    <string name="notification_slider_mode_priority_only">"Numai cu prioritate"</string>
+    <string name="notification_slider_mode_none">"Toate"</string>
+    <string name="notification_slider_for_notification">"Notificare"</string>
+    <string name="notification_slider_for_flashlight">Lanternă</string>
+    <string name="notification_slider_for_brightness">"Luminozitate"</string>
+    <string name="notification_slider_for_rotation">"Rotire"</string>
+    <string name="notification_slider_app_none">Nicio aplicație selectată</string>
+    <string name="notification_slider_app_dialog_title">"Selectează aplicația"</string>
+    <string name="notification_slider_flashlight_off">"Dezactivat"</string>
+    <string name="notification_slider_flashlight_on">"Activat"</string>
+    <string name="notification_slider_flashlight_blink">Clipire</string>
+    <string name="notification_slider_brightness_auto">"Automat"</string>
+    <string name="notification_slider_rotation_auto">"Automat"</string>
+    <string name="notification_slider_ringer_vibrate">Vibrare</string>
+    <string name="notification_slider_ringer_silent">Silențios</string>
+    <string name="gaming_category_title">"Jocuri"</string>
+    <string name="battery_category_title">"Baterie"</string>
+    <string name="fast_charging_title">"Încărcare rapidă"</string>
+    <string name="night_charging_title">Modul Noapte</string>
+    <string name="bypass_charging_enabled">"Activat"</string>
+    <string name="bypass_charging_disabled">Dezactivat</string>
+    <string name="custom_seekbar_value">Valoare: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">implicit</string>
+    <string name="custom_seekbar_default_value_to_set">Valoare implicită: <xliff:g id="v">%s</xliff:g>\nAtingeți lung pentru a seta</string>
+    <string name="game_bar_applications">"Aplicații"</string>
+    <string name="game_bar_color_white">"Alb"</string>
+    <string name="game_bar_color_black">"Negru"</string>
+    <string name="game_bar_color_red">"Roșu"</string>
+    <string name="game_bar_color_green">"Verde"</string>
+    <string name="game_bar_color_blue">"Albastru"</string>
+    <string name="game_bar_color_yellow">"Galben"</string>
+    <string name="hbm_warning_title">Avertisment</string>
+    <string name="hbm_btn_enable">"Activează"</string>
+    <string name="refresh_rate_title">"Rata de actualizare"</string>
+    <string name="ltpo_fixed">"Fix"</string>
+    <string name="refresh_rate_auto">"Automat"</string>
+    <string name="delete">"Șterge"</string>
+    <string name="delete_message">Ștergeți elementul selectat?</string>
+    <string name="on">"Activat"</string>
+    <string name="off">"Dezactivat"</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Åtgärd"</string>
+    <string name="notification_slider_mode_total_silence">"Helt tyst"</string>
+    <string name="notification_slider_mode_alarms_only">"Endast alarm"</string>
+    <string name="notification_slider_mode_priority_only">"Endast prioriterade"</string>
+    <string name="notification_slider_mode_none">"Alla"</string>
+    <string name="notification_slider_for_notification">"Avisering"</string>
+    <string name="notification_slider_for_flashlight">Ficklampa</string>
+    <string name="notification_slider_for_brightness">"Ljusstyrka"</string>
+    <string name="notification_slider_for_ringer">Ringsignal</string>
+    <string name="notification_slider_app_none">Ingen app vald</string>
+    <string name="notification_slider_app_dialog_title">"Välj app"</string>
+    <string name="notification_slider_flashlight_off">"Av"</string>
+    <string name="notification_slider_flashlight_on">"På"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibration"</string>
+    <string name="notification_slider_ringer_silent">"Tyst"</string>
+    <string name="gaming_category_title">"Spel"</string>
+    <string name="battery_category_title">"Batteri"</string>
+    <string name="fast_charging_title">"Snabbladdning"</string>
+    <string name="night_charging_title">Nattläge</string>
+    <string name="bypass_charging_enabled">"Aktiverad"</string>
+    <string name="bypass_charging_disabled">"Inaktiverad"</string>
+    <string name="custom_seekbar_value">Värde: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value_to_set">Standardvärde: <xliff:g id="v">%s</xliff:g>\nLångtryck för att ställa in</string>
+    <string name="game_bar_applications">"Appar"</string>
+    <string name="game_bar_color_white">"Vit"</string>
+    <string name="game_bar_color_black">"Svart"</string>
+    <string name="game_bar_color_red">"Röd"</string>
+    <string name="game_bar_color_green">"Grön"</string>
+    <string name="game_bar_color_blue">"Blå"</string>
+    <string name="game_bar_color_yellow">"Gul"</string>
+    <string name="hbm_warning_title">Varning</string>
+    <string name="hbm_btn_enable">"Aktivera"</string>
+    <string name="refresh_rate_title">"Uppdateringsfrekvens"</string>
+    <string name="ltpo_adaptive">"Adaptiva"</string>
+    <string name="ltpo_fixed">"Fast"</string>
+    <string name="delete">"Radera"</string>
+    <string name="delete_message">Ta bort markerat objekt?</string>
+    <string name="on">"På"</string>
+    <string name="off">"Av"</string>
+</resources>

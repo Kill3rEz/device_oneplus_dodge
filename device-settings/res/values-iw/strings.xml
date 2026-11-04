@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">מתג התראות</string>
+    <string name="notification_slider_selection_dialog_title">"פעולה"</string>
+    <string name="notification_slider_top_position">ממוקם למעלה</string>
+    <string name="notification_slider_middle_position">ממוקם באמצע</string>
+    <string name="notification_slider_bottom_position">ממוקם למטה</string>
+    <string name="notification_slider_mode_total_silence">"שקט מוחלט"</string>
+    <string name="notification_slider_mode_alarms_only">"התראות בלבד"</string>
+    <string name="notification_slider_mode_priority_only">"עדיפות בלבד"</string>
+    <string name="notification_slider_mode_none">"הכול"</string>
+    <string name="notification_slider_for_notification">"התראה"</string>
+    <string name="notification_slider_for_flashlight">פנס</string>
+    <string name="notification_slider_for_brightness">"בהירות"</string>
+    <string name="notification_slider_for_rotation">"סיבוב"</string>
+    <string name="notification_slider_app_none">אף אפליקציה לא נבחרה</string>
+    <string name="notification_slider_app_dialog_title">"בחירת אפליקציה"</string>
+    <string name="notification_slider_flashlight_off">"כבוי"</string>
+    <string name="notification_slider_flashlight_on">"פועל"</string>
+    <string name="notification_slider_flashlight_blink">הבהוב</string>
+    <string name="notification_slider_brightness_auto">"אוטומטי"</string>
+    <string name="notification_slider_rotation_auto">"אוטומטי"</string>
+    <string name="notification_slider_ringer_vibrate">"רטט"</string>
+    <string name="notification_slider_ringer_silent">שקט</string>
+    <string name="gaming_category_title">"משחקים"</string>
+    <string name="battery_category_title">"סוללה"</string>
+    <string name="fast_charging_title">"טעינה מהירה"</string>
+    <string name="night_charging_title">מצב לילה</string>
+    <string name="bypass_charging_enabled">מופעל</string>
+    <string name="bypass_charging_disabled">"מושבת"</string>
+    <string name="custom_seekbar_value">ערך: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">כברירת מחדל</string>
+    <string name="custom_seekbar_default_value_to_set">ברירת מחדל <xliff:g id="v">%s</xliff:g>\n. לחיצה ממושכת להגדרה</string>
+    <string name="game_bar_applications">"אפליקציות"</string>
+    <string name="game_bar_color_white">"לבן"</string>
+    <string name="game_bar_color_black">"שחור"</string>
+    <string name="game_bar_color_red">"אדום"</string>
+    <string name="game_bar_color_green">"ירוק"</string>
+    <string name="game_bar_color_blue">"כחול"</string>
+    <string name="game_bar_color_yellow">"צהוב"</string>
+    <string name="game_bar_color_cyan">"ציאן"</string>
+    <string name="game_bar_color_magenta">"מגנטה"</string>
+    <string name="hbm_warning_title">אזהרה</string>
+    <string name="hbm_btn_enable">"הפעלה"</string>
+    <string name="refresh_rate_title">"קצב רענון"</string>
+    <string name="ltpo_adaptive">"גוון מותאם"</string>
+    <string name="ltpo_fixed">"מצב סטטי"</string>
+    <string name="refresh_rate_auto">"אוטומטי"</string>
+    <string name="delete">"מחיקה"</string>
+    <string name="delete_message">להסיר את הפריט הנבחר?</string>
+    <string name="on">"פועל"</string>
+    <string name="off">"כבוי"</string>
+</resources>

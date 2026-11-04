@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Дія"</string>
+    <string name="notification_slider_mode_total_silence">"Повна тиша"</string>
+    <string name="notification_slider_mode_alarms_only">"Лише будильник"</string>
+    <string name="notification_slider_mode_priority_only">"Лише пріоритетні"</string>
+    <string name="notification_slider_mode_none">"Усі"</string>
+    <string name="notification_slider_for_notification">"Сповіщення"</string>
+    <string name="notification_slider_for_flashlight">Ліхтарик</string>
+    <string name="notification_slider_for_brightness">"Яскравість"</string>
+    <string name="notification_slider_for_rotation">"Кут обертання"</string>
+    <string name="notification_slider_for_ringer">Дзвінок</string>
+    <string name="notification_slider_app_none">Не вибрано жодної програми</string>
+    <string name="notification_slider_app_dialog_title">"Вибрати додаток"</string>
+    <string name="notification_slider_flashlight_off">"Вимкнено"</string>
+    <string name="notification_slider_flashlight_on">"Увімкнено"</string>
+    <string name="notification_slider_brightness_auto">"Авто"</string>
+    <string name="notification_slider_rotation_auto">"Авто"</string>
+    <string name="notification_slider_ringer_vibrate">"Вібросигнал"</string>
+    <string name="notification_slider_ringer_silent">"Без звуку"</string>
+    <string name="gaming_category_title">"Ігри"</string>
+    <string name="battery_category_title">"Акумулятор"</string>
+    <string name="fast_charging_title">"Швидке заряджання"</string>
+    <string name="night_charging_title">Нічний режим</string>
+    <string name="bypass_charging_title">Пряме живлення телефону</string>
+    <string name="bypass_charging_enabled">"Увімкнено"</string>
+    <string name="bypass_charging_disabled">"Вимкнено"</string>
+    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">за замовчуванням</string>
+    <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nДовге натискання для встановлення</string>
+    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
+    <string name="game_bar_applications">"Додатки"</string>
+    <string name="game_bar_color_white">"Білий"</string>
+    <string name="game_bar_color_black">"Чорний"</string>
+    <string name="game_bar_color_red">"Червоний"</string>
+    <string name="game_bar_color_green">"Зелений"</string>
+    <string name="game_bar_color_blue">"Синій"</string>
+    <string name="game_bar_color_yellow">"Жовтий"</string>
+    <string name="game_bar_color_cyan">"Блакитний"</string>
+    <string name="game_bar_color_magenta">"Пурпуровий"</string>
+    <string name="hbm_warning_title">Попередження</string>
+    <string name="hbm_btn_enable">"Увімкнути"</string>
+    <string name="refresh_rate_title">"Частота оновлення"</string>
+    <string name="ltpo_adaptive">"Адаптивні"</string>
+    <string name="ltpo_fixed">"Завжди ввімкнено"</string>
+    <string name="refresh_rate_auto">"Авто"</string>
+    <string name="delete">"Видалити"</string>
+    <string name="delete_message">Видалити вибраний елемент?</string>
+    <string name="on">"Увімкнено"</string>
+    <string name="off">"Вимкнено"</string>
+</resources>

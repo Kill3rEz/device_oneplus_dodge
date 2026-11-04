@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_for_notification">Melding</string>
+    <string name="notification_slider_for_flashlight">Bûslampe</string>
+    <string name="notification_slider_for_brightness">Helderheid</string>
+    <string name="notification_slider_flashlight_off">Ut</string>
+    <string name="notification_slider_flashlight_on">Oan</string>
+    <string name="notification_slider_ringer_vibrate">Trille</string>
+    <string name="notification_slider_ringer_silent">Stil</string>
+    <string name="bypass_charging_enabled">Ynskeakele</string>
+    <string name="bypass_charging_disabled">Utskeakele</string>
+    <string name="game_bar_color_red">Read</string>
+    <string name="game_bar_color_green">Grien</string>
+    <string name="game_bar_color_blue">Blau</string>
+    <string name="hbm_warning_title">Warskôging</string>
+    <string name="hbm_btn_enable">Ynskeakelje</string>
+    <string name="ltpo_adaptive">Oanpasber</string>
+    <string name="delete">Fuortsmite</string>
+    <string name="delete_message">Selektearre item fuortsmite?</string>
+    <string name="on">Oan</string>
+    <string name="off">Ut</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Tindakan"</string>
+    <string name="notification_slider_top_position">Posisi atas</string>
+    <string name="notification_slider_middle_position">Posisi tengah</string>
+    <string name="notification_slider_bottom_position">Posisi bawah</string>
+    <string name="notification_slider_mode_total_silence">"Senyap total"</string>
+    <string name="notification_slider_mode_alarms_only">"Hanya alarm"</string>
+    <string name="notification_slider_mode_priority_only">"Hanya untuk prioritas"</string>
+    <string name="notification_slider_mode_none">"Semua"</string>
+    <string name="notification_slider_for_notification">"Notifikasi"</string>
+    <string name="notification_slider_for_flashlight">Senter</string>
+    <string name="notification_slider_for_brightness">"Kecerahan"</string>
+    <string name="notification_slider_for_rotation">"Rotasi"</string>
+    <string name="notification_slider_for_ringer">Dering</string>
+    <string name="notification_slider_app_none">Tidak ada aplikasi dipilih</string>
+    <string name="notification_slider_app_dialog_title">"Pilih aplikasi"</string>
+    <string name="notification_slider_flashlight_off">"Nonaktif"</string>
+    <string name="notification_slider_flashlight_on">"Aktif"</string>
+    <string name="notification_slider_brightness_auto">"Otomatis"</string>
+    <string name="notification_slider_rotation_auto">"Otomatis"</string>
+    <string name="notification_slider_ringer_vibrate">"Getar"</string>
+    <string name="notification_slider_ringer_silent">"Senyap"</string>
+    <string name="gaming_category_title">"Game"</string>
+    <string name="battery_category_title">"Baterai"</string>
+    <string name="fast_charging_title">"Pengisian daya cepat"</string>
+    <string name="night_charging_title">Mode malam</string>
+    <string name="bypass_charging_title">Pengisian Bypass</string>
+    <string name="bypass_charging_enabled">"Aktif"</string>
+    <string name="bypass_charging_disabled">"Nonaktif"</string>
+    <string name="custom_seekbar_value">Nilai: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">bawaan</string>
+    <string name="custom_seekbar_default_value_to_set">Nilai bawaan: <xliff:g id="v">%s</xliff:g>\nTekan lama untuk menerapkan</string>
+    <string name="custom_seekbar_default_value_is_set">Nilai bawaan telah diterapkan</string>
+    <string name="game_bar_applications">"Aplikasi"</string>
+    <string name="game_bar_color_white">"Putih"</string>
+    <string name="game_bar_color_black">"Hitam"</string>
+    <string name="game_bar_color_red">"Merah"</string>
+    <string name="game_bar_color_green">"Hijau"</string>
+    <string name="game_bar_color_blue">"Biru"</string>
+    <string name="game_bar_color_yellow">"Kuning"</string>
+    <string name="game_bar_color_cyan">"Sian"</string>
+    <string name="hbm_warning_title">Peringatan</string>
+    <string name="hbm_btn_enable">"Aktifkan"</string>
+    <string name="refresh_rate_title">"Kecepatan refresh"</string>
+    <string name="ltpo_adaptive">"Adaptif"</string>
+    <string name="ltpo_fixed">"Tetap"</string>
+    <string name="refresh_rate_auto">"Otomatis"</string>
+    <string name="delete">"Hapus"</string>
+    <string name="delete_message">Hapus item yang dipilih?</string>
+    <string name="on">"Aktif"</string>
+    <string name="off">"Nonaktif"</string>
+</resources>

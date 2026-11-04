@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Дзеянне"</string>
+    <string name="notification_slider_top_position">Верхняя пазіцыя</string>
+    <string name="notification_slider_middle_position">Сярэдняя пазіцыя</string>
+    <string name="notification_slider_bottom_position">Ніжняя пазіцыя</string>
+    <string name="notification_slider_mode_total_silence">"Поўная цішыня"</string>
+    <string name="notification_slider_mode_alarms_only">"Толькі будзільнікі"</string>
+    <string name="notification_slider_mode_priority_only">"Толькі прыярытэтныя"</string>
+    <string name="notification_slider_mode_none">"Усе"</string>
+    <string name="notification_slider_for_notification">"Апавяшчэнне"</string>
+    <string name="notification_slider_for_flashlight">Ліхтарык</string>
+    <string name="notification_slider_for_brightness">"Яркасць"</string>
+    <string name="notification_slider_for_rotation">"Паварот"</string>
+    <string name="notification_slider_app_none">Праграма не выбрана</string>
+    <string name="notification_slider_app_dialog_title">"Выберыце праграму"</string>
+    <string name="notification_slider_flashlight_off">"Выключана"</string>
+    <string name="notification_slider_flashlight_on">"Уключана"</string>
+    <string name="notification_slider_brightness_auto">"Аўтаматычна"</string>
+    <string name="notification_slider_rotation_auto">"Аўтаматычна"</string>
+    <string name="notification_slider_ringer_vibrate">"Вібрацыя"</string>
+    <string name="notification_slider_ringer_silent">"Бязгучны рэжым"</string>
+    <string name="gaming_category_title">Гульнявы</string>
+    <string name="battery_category_title">"Акумулятар"</string>
+    <string name="fast_charging_title">"Ідзе хуткая зарадка"</string>
+    <string name="night_charging_title">Начны рэжым</string>
+    <string name="bypass_charging_enabled">"Уключана"</string>
+    <string name="bypass_charging_disabled">Адключана</string>
+    <string name="custom_seekbar_value">Значэнне: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">па змаўчанні</string>
+    <string name="custom_seekbar_default_value_to_set">Значэнне па змаўчанні: <xliff:g id="v">%s</xliff:g>\nУтрымлівайце для ўсталёўкі</string>
+    <string name="custom_seekbar_default_value_is_set">Значэнне па змаўчанні ўжо ўсталявана</string>
+    <string name="game_bar_applications">"Праграмы"</string>
+    <string name="game_bar_color_white">"Белы"</string>
+    <string name="game_bar_color_black">"Чорны"</string>
+    <string name="game_bar_color_red">"Чырвоны"</string>
+    <string name="game_bar_color_green">"Зялёны"</string>
+    <string name="game_bar_color_blue">"Сіні"</string>
+    <string name="game_bar_color_yellow">"Жоўты"</string>
+    <string name="game_bar_color_cyan">"Блакітны"</string>
+    <string name="game_bar_color_magenta">"Пурпурны"</string>
+    <string name="hbm_warning_title">"Заўвага"</string>
+    <string name="hbm_btn_enable">"Уключыць"</string>
+    <string name="refresh_rate_title">"Частата абнаўлення"</string>
+    <string name="ltpo_adaptive">"Адаптыўныя"</string>
+    <string name="ltpo_fixed">"Замацавана"</string>
+    <string name="refresh_rate_auto">"Аўтаматычна"</string>
+    <string name="delete">"Выдаліць"</string>
+    <string name="delete_message">Выдаліць выбраны элемент?</string>
+    <string name="on">"Уключана"</string>
+    <string name="off">"Выключана"</string>
+</resources>

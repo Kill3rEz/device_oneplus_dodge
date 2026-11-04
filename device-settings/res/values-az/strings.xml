@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Xəbərdarlıq diyircəyi</string>
+    <string name="notification_slider_selection_dialog_title">"Əməliyyat"</string>
+    <string name="notification_slider_top_position">Üst mövqe</string>
+    <string name="notification_slider_middle_position">Orta mövqe</string>
+    <string name="notification_slider_bottom_position">Alt mövqe</string>
+    <string name="notification_slider_mode_total_silence">"Tam sakitlik"</string>
+    <string name="notification_slider_mode_alarms_only">"Bildirişlər"</string>
+    <string name="notification_slider_mode_priority_only">"İcazəli şəxslər"</string>
+    <string name="notification_slider_mode_none">"Bütün"</string>
+    <string name="notification_slider_for_notification">"Bildiriş"</string>
+    <string name="notification_slider_for_flashlight">Fənər</string>
+    <string name="notification_slider_for_brightness">"Parlaqlıq"</string>
+    <string name="notification_slider_for_rotation">"Fırlanma"</string>
+    <string name="notification_slider_app_none">Proqram seçilmədi</string>
+    <string name="notification_slider_app_dialog_title">"Tətbiq seçin"</string>
+    <string name="notification_slider_flashlight_off">"Deaktiv"</string>
+    <string name="notification_slider_flashlight_on">"Aktiv"</string>
+    <string name="notification_slider_flashlight_blink">Sayrışma</string>
+    <string name="notification_slider_brightness_auto">"Avto"</string>
+    <string name="notification_slider_rotation_auto">"Avto"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibrasiya"</string>
+    <string name="notification_slider_ringer_silent">"Səssiz"</string>
+    <string name="gaming_category_title">"Oyun"</string>
+    <string name="battery_category_title">"Batareya"</string>
+    <string name="fast_charging_title">"Sürətli şarj"</string>
+    <string name="night_charging_title">Gecə rejimi</string>
+    <string name="bypass_charging_enabled">Fəaldır</string>
+    <string name="bypass_charging_disabled">"Deaktiv"</string>
+    <string name="custom_seekbar_value">Dəyər: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">standart</string>
+    <string name="custom_seekbar_default_value_to_set">Standart dəyər: <xliff:g id="v">%s</xliff:g>\n Tətbiq etmək üçün uzun basın</string>
+    <string name="custom_seekbar_default_value_is_set">Standart ayarları tətbiq et</string>
+    <string name="game_bar_applications">"Tətbiqlər"</string>
+    <string name="game_bar_color_white">"Ağ"</string>
+    <string name="game_bar_color_black">"Qara"</string>
+    <string name="game_bar_color_red">"Qırmızı"</string>
+    <string name="game_bar_color_green">"Yaşıl"</string>
+    <string name="game_bar_color_blue">"Göy"</string>
+    <string name="game_bar_color_yellow">"Sarı"</string>
+    <string name="game_bar_color_cyan">"Mavi"</string>
+    <string name="game_bar_color_magenta">"Çəhrayı qırmızı"</string>
+    <string name="hbm_warning_title">Xəbərdarlıq</string>
+    <string name="hbm_btn_enable">"Aktiv edin"</string>
+    <string name="refresh_rate_title">"Yeniləmə dərəcəsi"</string>
+    <string name="ltpo_adaptive">"Adaptiv"</string>
+    <string name="ltpo_fixed">"Sabit"</string>
+    <string name="refresh_rate_auto">"Avto"</string>
+    <string name="delete">"Silin"</string>
+    <string name="delete_message">Seçilmiş element silinsin?</string>
+    <string name="on">"Aktiv"</string>
+    <string name="off">"Deaktiv"</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Thanh trượt cảnh báo</string>
+    <string name="notification_slider_selection_dialog_title">"Tác vụ"</string>
+    <string name="notification_slider_top_position">Vị trí trên cùng</string>
+    <string name="notification_slider_middle_position">Vị trí giữa</string>
+    <string name="notification_slider_bottom_position">Vị trí dưới cùng</string>
+    <string name="notification_slider_mode_total_silence">"Hoàn toàn tắt tiếng"</string>
+    <string name="notification_slider_mode_alarms_only">"Chỉ chuông báo"</string>
+    <string name="notification_slider_mode_priority_only">"Chỉ cho các mục ưu tiên"</string>
+    <string name="notification_slider_mode_none">"Tất cả"</string>
+    <string name="notification_slider_for_notification">"Thông báo"</string>
+    <string name="notification_slider_for_flashlight">Đèn pin</string>
+    <string name="notification_slider_for_brightness">"Độ sáng"</string>
+    <string name="notification_slider_for_rotation">"Góc xoay"</string>
+    <string name="notification_slider_app_none">Chưa chọn ứng dụng nào</string>
+    <string name="notification_slider_app_dialog_title">"Chọn ứng dụng"</string>
+    <string name="notification_slider_flashlight_off">"Đang tắt"</string>
+    <string name="notification_slider_flashlight_on">"Đang bật"</string>
+    <string name="notification_slider_flashlight_blink">Nhấp nháy</string>
+    <string name="notification_slider_brightness_auto">"Tự động"</string>
+    <string name="notification_slider_rotation_auto">"Tự động"</string>
+    <string name="notification_slider_rotation_landscape_90">Ngang (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Ngang (270°)</string>
+    <string name="notification_slider_ringer_vibrate">"Rung"</string>
+    <string name="notification_slider_ringer_silent">"Im lặng"</string>
+    <string name="gaming_category_title">"Trò chơi"</string>
+    <string name="battery_category_title">"Pin"</string>
+    <string name="fast_charging_title">"Đang sạc nhanh"</string>
+    <string name="night_charging_title">Chế độ ban đêm</string>
+    <string name="bypass_charging_title">Bỏ qua sạc</string>
+    <string name="bypass_charging_enabled">"Đã bật"</string>
+    <string name="bypass_charging_disabled">"Đã tắt"</string>
+    <string name="custom_seekbar_value">Giá trị: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">mặc định</string>
+    <string name="custom_seekbar_default_value_to_set">Giá trị mặc định: <xliff:g id="v">%s</xliff:g>\nNhấn giữ lâu để thiết lập</string>
+    <string name="game_bar_applications">"Ứng dụng"</string>
+    <string name="game_bar_color_white">"Trắng"</string>
+    <string name="game_bar_color_black">"Đen"</string>
+    <string name="game_bar_color_red">"Đỏ"</string>
+    <string name="game_bar_color_green">"Xanh lục"</string>
+    <string name="game_bar_color_blue">"Lam"</string>
+    <string name="game_bar_color_yellow">"Vàng"</string>
+    <string name="game_bar_color_cyan">"Lục lam"</string>
+    <string name="game_bar_color_magenta">"Đỏ tươi"</string>
+    <string name="hbm_warning_title">Cảnh báo</string>
+    <string name="hbm_btn_enable">"Bật"</string>
+    <string name="refresh_rate_title">"Tốc độ làm mới"</string>
+    <string name="ltpo_adaptive">"Thích ứng"</string>
+    <string name="ltpo_fixed">"Cố định"</string>
+    <string name="refresh_rate_auto">"Tự động"</string>
+    <string name="delete">"Xóa"</string>
+    <string name="delete_message">Xóa mục đã chọn?</string>
+    <string name="on">"Đang bật"</string>
+    <string name="off">"Đang tắt"</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Akcia"</string>
+    <string name="notification_slider_mode_total_silence">"Úplné ticho"</string>
+    <string name="notification_slider_mode_alarms_only">"Iba budíky"</string>
+    <string name="notification_slider_mode_priority_only">"Iba prioritné"</string>
+    <string name="notification_slider_mode_none">"Všetko"</string>
+    <string name="notification_slider_for_notification">"Upozornenie"</string>
+    <string name="notification_slider_for_flashlight">Baterka</string>
+    <string name="notification_slider_for_brightness">"Jas"</string>
+    <string name="notification_slider_for_rotation">"Otočenie"</string>
+    <string name="notification_slider_app_none">Nie je vybratá žiadna aplikácia</string>
+    <string name="notification_slider_app_dialog_title">"Výber aplikácie"</string>
+    <string name="notification_slider_flashlight_off">"Vypnuté"</string>
+    <string name="notification_slider_flashlight_on">"Zapnuté"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibrovať"</string>
+    <string name="notification_slider_ringer_silent">"Tiché"</string>
+    <string name="gaming_category_title">"Hranie hier"</string>
+    <string name="battery_category_title">"Batéria"</string>
+    <string name="fast_charging_title">"Nabíja sa rýchlo"</string>
+    <string name="night_charging_title">Nočný režim</string>
+    <string name="bypass_charging_enabled">"Zapnuté"</string>
+    <string name="bypass_charging_disabled">"Vypnuté"</string>
+    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">predvolená</string>
+    <string name="custom_seekbar_default_value_to_set">Predvolená hodnota: <xliff:g id="v">%s</xliff:g>\nPodržte pre nastavenie</string>
+    <string name="custom_seekbar_default_value_is_set">Predvolená hodnota je nastavená</string>
+    <string name="game_bar_text_size">Veľkosť textu</string>
+    <string name="game_bar_applications">"Aplikácie"</string>
+    <string name="game_bar_color_white">"Biela"</string>
+    <string name="game_bar_color_black">"Čierna"</string>
+    <string name="game_bar_color_red">"Červená"</string>
+    <string name="game_bar_color_green">"Zelená"</string>
+    <string name="game_bar_color_blue">"Modrá"</string>
+    <string name="game_bar_color_yellow">"Žltá"</string>
+    <string name="game_bar_color_cyan">"Azúrová"</string>
+    <string name="game_bar_color_magenta">"Ružovofialová"</string>
+    <string name="hbm_warning_title">Upozornenie</string>
+    <string name="hbm_btn_enable">"Povoliť"</string>
+    <string name="refresh_rate_title">"Frekvencia obnovenia"</string>
+    <string name="ltpo_adaptive">"Adaptívne"</string>
+    <string name="ltpo_fixed">"Pevné"</string>
+    <string name="delete">"Odstrániť"</string>
+    <string name="delete_message">Odstrániť vybranú položku?</string>
+    <string name="on">"Zapnuté"</string>
+    <string name="off">"Vypnuté"</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">"Радња"</string>
+    <string name="notification_slider_mode_total_silence">"Потпуна тишина"</string>
+    <string name="notification_slider_mode_alarms_only">"Само аларми"</string>
+    <string name="notification_slider_mode_priority_only">"Само приоритетни прекиди"</string>
+    <string name="notification_slider_mode_none">"Све"</string>
+    <string name="notification_slider_for_notification">"Обавештење"</string>
+    <string name="notification_slider_for_flashlight">"Лампа"</string>
+    <string name="notification_slider_for_brightness">"Осветљеност"</string>
+    <string name="notification_slider_for_rotation">"Ротација"</string>
+    <string name="notification_slider_app_dialog_title">"Изабери апликацију"</string>
+    <string name="notification_slider_flashlight_off">"Искључено"</string>
+    <string name="notification_slider_flashlight_on">"Укључено"</string>
+    <string name="notification_slider_brightness_auto">"Аутоматски"</string>
+    <string name="notification_slider_rotation_auto">"Аутоматски"</string>
+    <string name="notification_slider_ringer_vibrate">"Вибрирај"</string>
+    <string name="notification_slider_ringer_silent">"Нечујно"</string>
+    <string name="gaming_category_title">"Видео игре"</string>
+    <string name="battery_category_title">"Батерија"</string>
+    <string name="fast_charging_title">"Брзо пуњење"</string>
+    <string name="night_charging_title">Ноћни режим</string>
+    <string name="bypass_charging_enabled">"Омогућено"</string>
+    <string name="bypass_charging_disabled">"Онемогућено"</string>
+    <string name="custom_seekbar_value">Vrednost: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value_to_set">Podrazumevana vrednost: <xliff:g id="v">%s</xliff:g>\nDug pritisak kako bi primenio</string>
+    <string name="game_bar_applications">"Апликације"</string>
+    <string name="game_bar_color_white">"Бела"</string>
+    <string name="game_bar_color_black">"Црна"</string>
+    <string name="game_bar_color_red">"Црвена"</string>
+    <string name="game_bar_color_green">"Зелена"</string>
+    <string name="game_bar_color_blue">"Плава"</string>
+    <string name="game_bar_color_yellow">"Жута"</string>
+    <string name="game_bar_color_cyan">"Тиркизна"</string>
+    <string name="game_bar_color_magenta">"Магента"</string>
+    <string name="hbm_warning_title">"Упозорење"</string>
+    <string name="hbm_btn_enable">"Омогући"</string>
+    <string name="refresh_rate_title">"Учесталост освежавања"</string>
+    <string name="ltpo_adaptive">"Прилагодљиво"</string>
+    <string name="ltpo_fixed">"Фиксно"</string>
+    <string name="refresh_rate_auto">"Аутоматски"</string>
+    <string name="delete">"Избриши"</string>
+    <string name="delete_message">Уклонити изабрану ставку?</string>
+    <string name="on">"Укључено"</string>
+    <string name="off">"Искључено"</string>
+</resources>

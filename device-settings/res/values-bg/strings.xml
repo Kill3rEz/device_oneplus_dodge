@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Плъзгач за предупреждение</string>
+    <string name="notification_slider_selection_dialog_title">"Действие"</string>
+    <string name="notification_slider_top_position">Горна позиция </string>
+    <string name="notification_slider_middle_position">Средна позиция</string>
+    <string name="notification_slider_bottom_position">Долна позиция</string>
+    <string name="notification_slider_mode_total_silence">"Пълна тишина"</string>
+    <string name="notification_slider_mode_alarms_only">"Само будилници"</string>
+    <string name="notification_slider_mode_priority_only">"Само с приоритет"</string>
+    <string name="notification_slider_mode_none">"Всички"</string>
+    <string name="notification_slider_for_notification">"Известие"</string>
+    <string name="notification_slider_for_flashlight">Фенерче</string>
+    <string name="notification_slider_for_brightness">"Яркост"</string>
+    <string name="notification_slider_for_rotation">"Завъртане"</string>
+    <string name="notification_slider_app_none">Няма избрано приложение</string>
+    <string name="notification_slider_app_dialog_title">"Избиране на приложение"</string>
+    <string name="notification_slider_flashlight_off">"Изкл."</string>
+    <string name="notification_slider_flashlight_on">"Вкл."</string>
+    <string name="notification_slider_flashlight_blink">Премигване</string>
+    <string name="notification_slider_brightness_auto">"Автоматичен"</string>
+    <string name="notification_slider_rotation_auto">"Автоматичен"</string>
+    <string name="notification_slider_ringer_vibrate">"Вибриране"</string>
+    <string name="notification_slider_ringer_silent">"Тих режим"</string>
+    <string name="gaming_category_title">"Игри"</string>
+    <string name="battery_category_title">"Батерия"</string>
+    <string name="fast_charging_title">"Зарежда се бързо"</string>
+    <string name="night_charging_title">Нощен режим</string>
+    <string name="bypass_charging_enabled">"Активирано"</string>
+    <string name="bypass_charging_disabled">"Деактивирано"</string>
+    <string name="custom_seekbar_value">Стойност: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">по подразбиране</string>
+    <string name="custom_seekbar_default_value_to_set">Стойност по подразбиране: <xliff:g id="v">%s</xliff:g>\nПродължително натискане за задаване</string>
+    <string name="custom_seekbar_default_value_is_set">Стойността по подразбиране е зададена</string>
+    <string name="game_bar_applications">"Приложения"</string>
+    <string name="game_bar_color_white">"Бял"</string>
+    <string name="game_bar_color_black">"Черен"</string>
+    <string name="game_bar_color_red">"Червено"</string>
+    <string name="game_bar_color_green">"зелено"</string>
+    <string name="game_bar_color_blue">"Синьо"</string>
+    <string name="game_bar_color_yellow">"Жълто"</string>
+    <string name="game_bar_color_cyan">"Синьо-зелено"</string>
+    <string name="game_bar_color_magenta">"Пурпурно"</string>
+    <string name="hbm_warning_title">Внимание</string>
+    <string name="hbm_btn_enable">"Активиране"</string>
+    <string name="refresh_rate_title">"Честота на опресняване"</string>
+    <string name="ltpo_adaptive">"Адаптивни"</string>
+    <string name="ltpo_fixed">"Фиксирано"</string>
+    <string name="refresh_rate_auto">"Автоматичен"</string>
+    <string name="delete">"Изтриване"</string>
+    <string name="delete_message">Да премахна ли избраният елемент?</string>
+    <string name="on">"Вкл."</string>
+    <string name="off">"Изкл."</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_for_notification">Искәртү</string>
+    <string name="notification_slider_for_brightness">Яктылык</string>
+    <string name="game_bar_color_black">Кара</string>
+</resources>

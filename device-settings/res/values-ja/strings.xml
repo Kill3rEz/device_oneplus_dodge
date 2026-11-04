@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">アラートスライダー</string>
+    <string name="notification_slider_selection_dialog_title">"スポーツ"</string>
+    <string name="notification_slider_top_position">上部</string>
+    <string name="notification_slider_middle_position">中央</string>
+    <string name="notification_slider_bottom_position">下部</string>
+    <string name="notification_slider_mode_total_silence">"サイレント"</string>
+    <string name="notification_slider_mode_alarms_only">"アラームのみ"</string>
+    <string name="notification_slider_mode_priority_only">"優先的な通知のみ"</string>
+    <string name="notification_slider_mode_none">"すべて"</string>
+    <string name="notification_slider_for_notification">"通知"</string>
+    <string name="notification_slider_for_flashlight">"ライト"</string>
+    <string name="notification_slider_for_brightness">"明るさ"</string>
+    <string name="notification_slider_for_rotation">"回転"</string>
+    <string name="notification_slider_for_ringer">着信音</string>
+    <string name="notification_slider_app_none">アプリが選択されていません</string>
+    <string name="notification_slider_app_dialog_title">"アプリを選択"</string>
+    <string name="notification_slider_flashlight_off">"OFF"</string>
+    <string name="notification_slider_flashlight_on">"ON"</string>
+    <string name="notification_slider_flashlight_blink">点滅</string>
+    <string name="notification_slider_brightness_auto">"オート"</string>
+    <string name="notification_slider_rotation_auto">"オート"</string>
+    <string name="notification_slider_ringer_vibrate">"バイブレーション"</string>
+    <string name="notification_slider_ringer_silent">"マナー"</string>
+    <string name="gaming_category_title">"ゲーム"</string>
+    <string name="battery_category_title">"バッテリー"</string>
+    <string name="fast_charging_title">"急速充電中"</string>
+    <string name="night_charging_title">夜間モード</string>
+    <string name="bypass_charging_enabled">"有効"</string>
+    <string name="bypass_charging_disabled">"無効"</string>
+    <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">既定</string>
+    <string name="custom_seekbar_default_value_to_set">既定値: <xliff:g id="v">%s</xliff:g>\n長押しで設定</string>
+    <string name="game_bar_text_size">文字サイズ</string>
+    <string name="game_bar_applications">"アプリ"</string>
+    <string name="game_bar_color_white">"白"</string>
+    <string name="game_bar_color_black">"黒"</string>
+    <string name="game_bar_color_red">"赤"</string>
+    <string name="game_bar_color_green">"緑"</string>
+    <string name="game_bar_color_blue">"青"</string>
+    <string name="game_bar_color_yellow">"黄"</string>
+    <string name="game_bar_color_cyan">"シアン"</string>
+    <string name="game_bar_color_magenta">"マゼンタ"</string>
+    <string name="hbm_warning_title">警告</string>
+    <string name="hbm_btn_enable">"有効にする"</string>
+    <string name="refresh_rate_title">"リフレッシュ レート"</string>
+    <string name="ltpo_adaptive">"自動調整"</string>
+    <string name="ltpo_fixed">"固定"</string>
+    <string name="refresh_rate_auto">"オート"</string>
+    <string name="delete">"削除"</string>
+    <string name="delete_message">選択したアイテムを削除しますか？</string>
+    <string name="on">"ON"</string>
+    <string name="off">"OFF"</string>
+</resources>

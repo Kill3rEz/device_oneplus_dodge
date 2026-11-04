@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_selection_dialog_title">Aktioun</string>
+    <string name="notification_slider_for_notification">Notifikatioun</string>
+    <string name="notification_slider_for_flashlight">Täscheluucht</string>
+    <string name="notification_slider_for_brightness">Hellegkeet</string>
+    <string name="notification_slider_flashlight_off">Aus</string>
+    <string name="notification_slider_flashlight_on">Un</string>
+    <string name="notification_slider_brightness_auto">Automatesch</string>
+    <string name="notification_slider_rotation_auto">Automatesch</string>
+    <string name="notification_slider_ringer_vibrate">Vibréieren</string>
+    <string name="notification_slider_ringer_silent">Roueg</string>
+    <string name="battery_category_title">Akku</string>
+    <string name="night_charging_title">Nuetsmodus</string>
+    <string name="bypass_charging_enabled">Aktivéiert</string>
+    <string name="bypass_charging_disabled">Desaktivéiert</string>
+    <string name="game_bar_color_white">Wäiss</string>
+    <string name="game_bar_color_black">Schwaarz</string>
+    <string name="game_bar_color_red">Rout</string>
+    <string name="game_bar_color_green">Gréng</string>
+    <string name="game_bar_color_blue">Blo</string>
+    <string name="game_bar_color_yellow">Giel</string>
+    <string name="hbm_btn_enable">Aktivéieren</string>
+    <string name="ltpo_fixed">Fixéiert</string>
+    <string name="refresh_rate_auto">Automatesch</string>
+    <string name="delete">Läschen</string>
+    <string name="on">Un</string>
+    <string name="off">Aus</string>
+</resources>

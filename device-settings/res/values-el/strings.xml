@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Διακόπτης ειδοποιήσεων</string>
+    <string name="notification_slider_selection_dialog_title">"Ενέργεια"</string>
+    <string name="notification_slider_top_position">Πάνω θέση</string>
+    <string name="notification_slider_middle_position">Μεσαία θέση</string>
+    <string name="notification_slider_bottom_position">Κάτω θέση</string>
+    <string name="notification_slider_mode_total_silence">"Πλήρης σίγαση"</string>
+    <string name="notification_slider_mode_alarms_only">"Μόνο ειδοποιήσεις"</string>
+    <string name="notification_slider_mode_priority_only">"Μόνο προτεραιότητας"</string>
+    <string name="notification_slider_mode_none">"Όλα"</string>
+    <string name="notification_slider_for_notification">"Ειδοποίηση"</string>
+    <string name="notification_slider_for_flashlight">Φακός</string>
+    <string name="notification_slider_for_brightness">"Φωτεινότητα"</string>
+    <string name="notification_slider_for_rotation">"Περιστροφή"</string>
+    <string name="notification_slider_app_none">Δεν έχει επιλεγεί εφαρμογή</string>
+    <string name="notification_slider_app_dialog_title">"Επιλογή εφαρμογής"</string>
+    <string name="notification_slider_flashlight_off">"Ανενεργό"</string>
+    <string name="notification_slider_flashlight_on">"Ενεργό"</string>
+    <string name="notification_slider_flashlight_blink">Αναβόσβημα</string>
+    <string name="notification_slider_brightness_auto">"Αυτόματα"</string>
+    <string name="notification_slider_rotation_auto">"Αυτόματα"</string>
+    <string name="notification_slider_ringer_vibrate">"Δόνηση"</string>
+    <string name="notification_slider_ringer_silent">Αθόρυβο</string>
+    <string name="gaming_category_title">"Παιχνίδια"</string>
+    <string name="battery_category_title">"Μπαταρία"</string>
+    <string name="fast_charging_title">"Γρήγορη φόρτιση"</string>
+    <string name="night_charging_title">Λειτουργία νύχτας</string>
+    <string name="bypass_charging_enabled">Ενεργοποιημένο</string>
+    <string name="bypass_charging_disabled">"Απενεργοποιημένο"</string>
+    <string name="custom_seekbar_value">Τιμή: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">από προεπιλογή</string>
+    <string name="custom_seekbar_default_value_to_set">Προεπιλεγμένη τιμή: <xliff:g id="v">%s</xliff:g>\nΠατήστε παρατεταμένα για να ορίσετε</string>
+    <string name="game_bar_applications">"Εφαρμογές"</string>
+    <string name="game_bar_color_white">"Λευκό"</string>
+    <string name="game_bar_color_black">"Μαύρο"</string>
+    <string name="game_bar_color_red">"Κόκκινο"</string>
+    <string name="game_bar_color_green">"Πράσινο"</string>
+    <string name="game_bar_color_blue">"Μπλε"</string>
+    <string name="game_bar_color_yellow">"Κίτρινο"</string>
+    <string name="game_bar_color_cyan">"Κυανό"</string>
+    <string name="game_bar_color_magenta">"Ματζέντα"</string>
+    <string name="hbm_warning_title">Προσοχή</string>
+    <string name="hbm_btn_enable">"Ενεργοποίηση"</string>
+    <string name="refresh_rate_title">"Ρυθμός ανανέωσης"</string>
+    <string name="ltpo_adaptive">"Προσαρμοστικό"</string>
+    <string name="ltpo_fixed">"Σταθερός"</string>
+    <string name="refresh_rate_auto">"Αυτόματα"</string>
+    <string name="delete">"Διαγραφή"</string>
+    <string name="delete_message">Αφαίρεση επιλεγμένου αντικειμένου;</string>
+    <string name="on">"Ενεργό"</string>
+    <string name="off">"Ανενεργό"</string>
+</resources>

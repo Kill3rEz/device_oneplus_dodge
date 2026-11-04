@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">Drsnik za opozorila</string>
+    <string name="notification_slider_selection_dialog_title">"Dejanje"</string>
+    <string name="notification_slider_top_position">Zgornji položaj</string>
+    <string name="notification_slider_middle_position">Srednji položaj</string>
+    <string name="notification_slider_bottom_position">Spodnji položaj</string>
+    <string name="notification_slider_mode_total_silence">"Popolna tišina"</string>
+    <string name="notification_slider_mode_alarms_only">"Samo alarmi"</string>
+    <string name="notification_slider_mode_priority_only">"Samo prednostno"</string>
+    <string name="notification_slider_mode_none">"Vse"</string>
+    <string name="notification_slider_for_notification">"Obvestilo"</string>
+    <string name="notification_slider_for_flashlight">Svetilka</string>
+    <string name="notification_slider_for_brightness">"Svetlost"</string>
+    <string name="notification_slider_for_rotation">"Vrtenje"</string>
+    <string name="notification_slider_app_none">Ni izbrane aplikacije</string>
+    <string name="notification_slider_app_dialog_title">"Izbira aplikacije"</string>
+    <string name="notification_slider_flashlight_off">"Izklopljeno"</string>
+    <string name="notification_slider_flashlight_on">"Vklopljeno"</string>
+    <string name="notification_slider_flashlight_blink">Utrip</string>
+    <string name="notification_slider_brightness_auto">"Samodejno"</string>
+    <string name="notification_slider_rotation_auto">"Samodejno"</string>
+    <string name="notification_slider_ringer_vibrate">"Vibriranje"</string>
+    <string name="notification_slider_ringer_silent">"Tiho"</string>
+    <string name="gaming_category_title">"Igre"</string>
+    <string name="battery_category_title">"Baterija"</string>
+    <string name="fast_charging_title">"Hitro polnjenje"</string>
+    <string name="night_charging_title">Nočni način</string>
+    <string name="bypass_charging_enabled">"Omogočeno"</string>
+    <string name="bypass_charging_disabled">"Onemogočeno"</string>
+    <string name="custom_seekbar_value">Vrednost: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">privzeto</string>
+    <string name="custom_seekbar_default_value_to_set">Privzeta vrednost: <xliff:g id="v">%s</xliff:g>\nTapnite in pridžite, da nastavite</string>
+    <string name="custom_seekbar_default_value_is_set">Privzeta vrednost je nastavljena</string>
+    <string name="game_bar_applications">"Aplikacije"</string>
+    <string name="game_bar_color_white">"Bela"</string>
+    <string name="game_bar_color_black">"Črna"</string>
+    <string name="game_bar_color_red">"Rdeča"</string>
+    <string name="game_bar_color_green">"Zelena"</string>
+    <string name="game_bar_color_blue">"Modra"</string>
+    <string name="game_bar_color_yellow">"Rumena"</string>
+    <string name="game_bar_color_cyan">"Cijan"</string>
+    <string name="hbm_warning_title">Opozorilo</string>
+    <string name="hbm_btn_enable">"Omogoči"</string>
+    <string name="refresh_rate_title">"Hitrost osveževanja"</string>
+    <string name="ltpo_adaptive">"Prilagodljive"</string>
+    <string name="ltpo_fixed">"Fiksno"</string>
+    <string name="refresh_rate_auto">"Samodejno"</string>
+    <string name="delete">"Izbriši"</string>
+    <string name="delete_message">Odstrani izbrani predmet?</string>
+    <string name="on">"Vklopljeno"</string>
+    <string name="off">"Izklopljeno"</string>
+</resources>

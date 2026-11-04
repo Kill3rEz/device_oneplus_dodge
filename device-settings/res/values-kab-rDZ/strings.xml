@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_mode_total_silence">Tasusmi taččurant</string>
+    <string name="notification_slider_mode_alarms_only">Aṭenṭen kan</string>
+    <string name="notification_slider_mode_priority_only">Tazwart kan</string>
+    <string name="notification_slider_mode_none">Akk</string>
+    <string name="notification_slider_for_notification">Ilɣa</string>
+    <string name="notification_slider_for_flashlight">Taftilt n lǧib</string>
+    <string name="notification_slider_for_brightness">Abruṛeq</string>
+    <string name="notification_slider_flashlight_off">Insa</string>
+    <string name="notification_slider_flashlight_on">Irmed</string>
+    <string name="notification_slider_ringer_vibrate">Senhez</string>
+    <string name="notification_slider_ringer_silent">Ulac sut</string>
+    <string name="battery_category_title">Aẓru</string>
+    <string name="night_charging_title">Askar n yiḍ</string>
+    <string name="bypass_charging_enabled">Irmed</string>
+    <string name="bypass_charging_disabled">Insa</string>
+    <string name="game_bar_applications">Isnasen</string>
+    <string name="game_bar_color_white">Amellal</string>
+    <string name="game_bar_color_black">Aberkan</string>
+    <string name="game_bar_color_red">Azeggaɣ</string>
+    <string name="game_bar_color_green">Adal</string>
+    <string name="game_bar_color_blue">Azegzaw</string>
+    <string name="game_bar_color_yellow">Awraɣ</string>
+    <string name="game_bar_color_magenta">_Magenta:</string>
+    <string name="hbm_warning_title">Ɣur-k</string>
+    <string name="hbm_btn_enable">Rmed</string>
+    <string name="delete">Kkes</string>
+    <string name="delete_message">Kkes aferdis ittwafernen?</string>
+    <string name="on">Irmed</string>
+    <string name="off">Insa</string>
+</resources>

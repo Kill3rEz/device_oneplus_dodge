@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_slider_category_title">警示滑桿</string>
+    <string name="notification_slider_selection_dialog_title">"快捷操作鍵"</string>
+    <string name="notification_slider_top_position">頂部位置</string>
+    <string name="notification_slider_middle_position">中間位置</string>
+    <string name="notification_slider_bottom_position">底部位置</string>
+    <string name="notification_slider_mode_total_silence">"完全靜音"</string>
+    <string name="notification_slider_mode_alarms_only">"僅限鬧鐘"</string>
+    <string name="notification_slider_mode_priority_only">"僅限優先通知"</string>
+    <string name="notification_slider_mode_none">"全部"</string>
+    <string name="notification_slider_for_notification">"通知"</string>
+    <string name="notification_slider_for_flashlight">手電筒</string>
+    <string name="notification_slider_for_brightness">"亮度"</string>
+    <string name="notification_slider_for_rotation">"旋轉"</string>
+    <string name="notification_slider_for_ringer">鈴聲</string>
+    <string name="notification_slider_app_none">尚未選擇應用程式</string>
+    <string name="notification_slider_app_dialog_title">"選取應用程式"</string>
+    <string name="notification_slider_flashlight_off">"關閉"</string>
+    <string name="notification_slider_flashlight_on">"已開啟"</string>
+    <string name="notification_slider_brightness_auto">"自動"</string>
+    <string name="notification_slider_rotation_auto">"自動"</string>
+    <string name="notification_slider_rotation_landscape_90">橫向 (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">橫向 (270°)</string>
+    <string name="notification_slider_ringer_vibrate">"震動"</string>
+    <string name="notification_slider_ringer_silent">"靜音"</string>
+    <string name="gaming_category_title">"遊戲"</string>
+    <string name="battery_category_title">"電池"</string>
+    <string name="fast_charging_title">"快速充電"</string>
+    <string name="night_charging_title">夜間模式</string>
+    <string name="bypass_charging_title">旁路充電</string>
+    <string name="bypass_charging_enabled">"已啟用"</string>
+    <string name="bypass_charging_disabled">"已停用"</string>
+    <string name="custom_seekbar_value">數值： <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">預設</string>
+    <string name="custom_seekbar_default_value_to_set">預設值：<xliff:g id="v">%s</xliff:g>\n長按以設定</string>
+    <string name="custom_seekbar_default_value_is_set">已設定為預設值</string>
+    <string name="game_bar_applications">"應用程式"</string>
+    <string name="game_bar_color_white">"白色"</string>
+    <string name="game_bar_color_black">"黑色"</string>
+    <string name="game_bar_color_red">"紅色"</string>
+    <string name="game_bar_color_green">"綠色"</string>
+    <string name="game_bar_color_blue">"藍色"</string>
+    <string name="game_bar_color_yellow">"黃色"</string>
+    <string name="game_bar_color_cyan">"青色"</string>
+    <string name="game_bar_color_magenta">"洋紅色"</string>
+    <string name="hbm_warning_title">警告</string>
+    <string name="hbm_btn_enable">"啟用"</string>
+    <string name="refresh_rate_title">"刷新率"</string>
+    <string name="ltpo_adaptive">"自動調整"</string>
+    <string name="ltpo_fixed">"固定"</string>
+    <string name="refresh_rate_auto">"自動"</string>
+    <string name="delete">"刪除"</string>
+    <string name="delete_message">移除已選擇的項目？</string>
+    <string name="on">"已開啟"</string>
+    <string name="off">"關閉"</string>
+</resources>
