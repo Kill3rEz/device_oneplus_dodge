@@ -51,4 +51,11 @@
     <string name="delete_message">Ausgewähltes Element entfernen?</string>
     <string name="on">"An"</string>
     <string name="off">"Aus"</string>
+    <string name="notification_slider_app_clear">Löschen</string>
+    <string name="notification_slider_rotation_portrait">Hochformat</string>
+    <string name="notification_slider_rotation_landscape_90">Querformat (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Querformat (270°)</string>
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="game_bar_color_cyan">Cyan</string>
+    <string name="display_category_title">Display</string>
 </resources>

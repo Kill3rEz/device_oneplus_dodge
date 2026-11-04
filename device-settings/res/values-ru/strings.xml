@@ -62,4 +62,8 @@
     <string name="delete_message">Удалить выбранный элемент?</string>
     <string name="on">"Вкл."</string>
     <string name="off">"Отключено"</string>
+    <string name="notification_slider_app_clear">Очистить</string>
+    <string name="notification_slider_rotation_portrait">Портретная</string>
+    <string name="notification_slider_ringer_normal">Обычная</string>
+    <string name="display_category_title">Display</string>
 </resources>

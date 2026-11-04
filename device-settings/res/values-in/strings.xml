@@ -50,4 +50,10 @@
     <string name="delete_message">Hapus item yang dipilih?</string>
     <string name="on">"Aktif"</string>
     <string name="off">"Nonaktif"</string>
+    <string name="notification_slider_app_clear">Hapus</string>
+    <string name="notification_slider_rotation_portrait">Potret</string>
+    <string name="notification_slider_rotation_landscape_90">Lanskap (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Lanskap (270°)</string>
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="display_category_title">Display</string>
 </resources>
