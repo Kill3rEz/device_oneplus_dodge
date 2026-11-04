@@ -53,4 +53,10 @@
     <string name="delete_message">Seçili öge silinsin mi?</string>
     <string name="on">"Açık"</string>
     <string name="off">"Kapalı"</string>
+    <string name="notification_slider_app_clear">Temizle</string>
+    <string name="notification_slider_rotation_portrait">Dikey</string>
+    <string name="notification_slider_rotation_landscape_90">Yatay (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Yatay (270°)</string>
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="display_category_title">Display</string>
 </resources>

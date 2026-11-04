@@ -46,4 +46,9 @@
     <string name="delete_message">Supprimer l\'élément sélectionné ?</string>
     <string name="on">"Activé"</string>
     <string name="off">"Désactivé"</string>
+    <string name="notification_slider_app_clear">Effacer</string>
+    <string name="notification_slider_rotation_portrait">Portrait</string>
+    <string name="notification_slider_ringer_normal">Normale</string>
+    <string name="game_bar_color_cyan">Cyan</string>
+    <string name="display_category_title">Display</string>
 </resources>

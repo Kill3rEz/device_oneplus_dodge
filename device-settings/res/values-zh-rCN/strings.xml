@@ -55,4 +55,8 @@
     <string name="delete_message">移除选中的项目？</string>
     <string name="on">"已开启"</string>
     <string name="off">"已关闭"</string>
+    <string name="notification_slider_app_clear">清除</string>
+    <string name="notification_slider_rotation_portrait">竖屏</string>
+    <string name="notification_slider_ringer_normal">正常</string>
+    <string name="display_category_title">展示</string>
 </resources>
