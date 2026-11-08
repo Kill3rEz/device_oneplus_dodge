@@ -88,6 +88,10 @@
     <string name="add_bypass_charging_package_title">Add app to the bypass list</string>
     <string name="bypass_app_monitor_title">Bypass charging monitor service</string>
     <string name="bypass_app_monitor_desc">Checking if bypass charging should be enabled for currently active app</string>
+    <string name="bypass_notification_title">Bypass charging on</string>
+    <string name="bypass_notification_text">Running on the charger. The battery stays at %1$d%%.</string>
+    <string name="bypass_notification_app">Running on the charger while %1$s is open.</string>
+    <string name="bypass_notification_turn_off">Turn off</string>
     <!-- Bypass notification text -->
     <string name="bypass_notif_idle">Status: idle</string>
     <!-- Global ON -->

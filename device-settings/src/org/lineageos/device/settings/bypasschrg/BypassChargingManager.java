@@ -11,11 +11,17 @@
 
 package org.lineageos.device.settings.bypasschrg;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.Icon;
 import android.os.BatteryManager;
 import android.os.Handler;
 import android.os.IBinder;
@@ -26,20 +32,30 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.device.settings.Constants;
+import org.lineageos.device.settings.R;
 import org.lineageos.device.settings.utils.ForegroundAppDetector;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class BypassChargingManager extends Service {
 
     private static final String TAG = "BypassChargingManager";
 
+    private static final String ACTION_TURN_OFF =
+            "org.lineageos.device.settings.bypasschrg.TURN_OFF";
+    private static final String CHANNEL_ID = "bypass_charging";
+    private static final int NOTIFICATION_ID = 1;
+
     private static volatile BypassChargingManager sInstance;
 
     private Handler mHandler;
     private ForegroundAppDetector mForegroundDetector;
     private boolean mAppMonitoringActive = false;
+    private NotificationManager mNotificationManager;
+    // The text of the notification on screen, null while none is shown.
+    private String mNotificationText;
 
     private BroadcastReceiver mBatteryReceiver;
 
@@ -51,6 +67,9 @@ public class BypassChargingManager extends Service {
         sInstance = this;
         mHandler = new Handler();
         mForegroundDetector = ForegroundAppDetector.getInstance(this);
+        mNotificationManager = getSystemService(NotificationManager.class);
+        mNotificationManager.createNotificationChannel(new NotificationChannel(CHANNEL_ID,
+                getString(R.string.bypass_charging_title), NotificationManager.IMPORTANCE_LOW));
         if (Constants.DEBUG) Log.i(TAG, "Created");
     }
 
@@ -59,6 +78,7 @@ public class BypassChargingManager extends Service {
         super.onDestroy();
         unregisterBatteryReceiver();
         stopAppMonitoring();
+        mNotificationManager.cancel(NOTIFICATION_ID);
         sInstance = null;
         if (Constants.DEBUG) Log.i(TAG, "Destroyed");
     }
@@ -70,7 +90,11 @@ public class BypassChargingManager extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mHandler.post(this::handleStateChanged);
+        if (intent != null && ACTION_TURN_OFF.equals(intent.getAction())) {
+            mHandler.post(() -> BypassChargingController.getInstance(this).disableBypassCharging());
+        } else {
+            mHandler.post(this::handleStateChanged);
+        }
         return START_STICKY;
     }
 
@@ -102,6 +126,7 @@ public class BypassChargingManager extends Service {
         BypassChargingController.BypassState state = controller.getState();
 
         if (Constants.DEBUG) Log.i(TAG, "State: " + (state != null ? state.toString() : "null"));
+        updateNotification(controller, state);
 
         if (state != null) {
             boolean globalActive = state.globalStatus != Constants.BYPASS_OFF;
@@ -132,6 +157,59 @@ public class BypassChargingManager extends Service {
                 if (Constants.DEBUG) Log.i(TAG, "Stopping app monitoring");
                 stopAppMonitoring();
             }
+        }
+    }
+
+    // ===== Notification =====
+
+    /** Shows a notification while the phone runs on the charger, and removes it after. */
+    private void updateNotification(BypassChargingController controller,
+            BypassChargingController.BypassState state) {
+        String text = null;
+        if (state != null && controller.isBypassActive()) {
+            text = state.activeApp != null
+                    ? getString(R.string.bypass_notification_app, getAppLabel(state.activeApp))
+                    : getString(R.string.bypass_notification_text, state.currentLevel);
+        }
+        if (Objects.equals(text, mNotificationText)) return;
+        mNotificationText = text;
+        if (text == null) {
+            mNotificationManager.cancel(NOTIFICATION_ID);
+            return;
+        }
+
+        Intent open = new Intent(this, BypassChargingActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Notification.Builder builder = new Notification.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_bypass_charging)
+                .setContentTitle(getString(R.string.bypass_notification_title))
+                .setContentText(text)
+                .setCategory(Notification.CATEGORY_STATUS)
+                .setOngoing(true)
+                .setOnlyAlertOnce(true)
+                .setShowWhen(false)
+                .setContentIntent(
+                        PendingIntent.getActivity(this, 0, open, PendingIntent.FLAG_IMMUTABLE));
+        // An app's bypass comes back each time the app opens, so only the global one gets
+        // a switch here.
+        if (state.activeApp == null) {
+            Intent turnOff = new Intent(this, BypassChargingManager.class)
+                    .setAction(ACTION_TURN_OFF);
+            builder.addAction(new Notification.Action.Builder(
+                    Icon.createWithResource(this, R.drawable.ic_bypass_charging),
+                    getString(R.string.bypass_notification_turn_off),
+                    PendingIntent.getService(this, 0, turnOff, PendingIntent.FLAG_IMMUTABLE))
+                    .build());
+        }
+        mNotificationManager.notify(NOTIFICATION_ID, builder.build());
+    }
+
+    private CharSequence getAppLabel(String packageName) {
+        PackageManager pm = getPackageManager();
+        try {
+            return pm.getApplicationLabel(pm.getApplicationInfo(packageName, 0));
+        } catch (PackageManager.NameNotFoundException e) {
+            return packageName;
         }
     }
 

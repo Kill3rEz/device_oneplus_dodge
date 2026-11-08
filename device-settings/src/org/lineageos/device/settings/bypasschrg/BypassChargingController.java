@@ -139,6 +139,12 @@ public class BypassChargingController {
         }
     }
 
+    /** Whether the phone runs on the charger right now, with charging paused. */
+    public boolean isBypassActive() {
+        return isPlugged()
+                && BYPASS_ENABLED.equals(FileUtils.readLine(Constants.NODE_BYPASS_CHARGING));
+    }
+
     public boolean isBypassChargingSupported() {
         // readLine returns null (instead of throwing) when the node is missing or unreadable
         return FileUtils.readLine(Constants.NODE_BYPASS_CHARGING) != null;
