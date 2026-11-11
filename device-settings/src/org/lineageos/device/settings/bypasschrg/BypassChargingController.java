@@ -450,5 +450,15 @@ public class BypassChargingController {
     private void notifyStateChanged() {
         BypassState state = getState();
         BypassChargingManager.notifyStateChanged(mContext, state);
+        Runnable tile = mTileRefresh;
+        if (tile != null) tile.run();
+    }
+
+    // Set by the QS tile while it shows, so a change made elsewhere (the
+    // notification's Turn off, the screen) reaches it at once.
+    private Runnable mTileRefresh;
+
+    public void setTileRefresh(Runnable refresh) {
+        mTileRefresh = refresh;
     }
 }

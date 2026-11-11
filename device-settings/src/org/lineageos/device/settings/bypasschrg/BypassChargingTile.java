@@ -16,7 +16,6 @@ public class BypassChargingTile extends TileService {
 
 
     private BypassChargingController mBypassController;
-    private boolean mEnabled;
 
     @Override
     public void onCreate() {
@@ -26,27 +25,26 @@ public class BypassChargingTile extends TileService {
 
     @Override
     public void onStartListening() {
-        int status = mBypassController.getBypassChargingStatus();
-        mEnabled = status != Constants.BYPASS_OFF;
-        updateTileState(status);
+        mBypassController.setTileRefresh(
+                () -> updateTileState(mBypassController.getBypassChargingStatus()));
+        updateTileState(mBypassController.getBypassChargingStatus());
+    }
+
+    @Override
+    public void onStopListening() {
+        mBypassController.setTileRefresh(null);
     }
 
     @Override
     public void onClick() {
-        boolean enabled = mBypassController.getBypassChargingStatus() != Constants.BYPASS_OFF;
-        if (mEnabled == enabled) {
-            boolean success;
-            if (mEnabled) {
-                success = mBypassController.disableBypassCharging() ? true : false;
-            }
-            else {
-                success = mBypassController.enableBypassCharging() ? true : false;
-            }
-            if (success) {
-                mEnabled = !mEnabled;
-                updateTileState(mBypassController.getBypassChargingStatus());
-            }
+        // Toggle from the real state. A cached copy went stale whenever bypass was
+        // changed elsewhere or the service was rebound, and taps were then dropped.
+        if (mBypassController.getBypassChargingStatus() != Constants.BYPASS_OFF) {
+            mBypassController.disableBypassCharging();
+        } else {
+            mBypassController.enableBypassCharging();
         }
+        updateTileState(mBypassController.getBypassChargingStatus());
     }
 
     private void updateTileState(int status) {
