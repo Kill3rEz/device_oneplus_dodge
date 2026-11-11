@@ -1943,9 +1943,16 @@ static void try_install() {
     qj_guard_refresh();
 }
 
+// cameraserver loads libAlgoProcess, and us with it, but never libAlgoInterface,
+// cmd-jni or the fusion lib, so it never met the exit test and parsed maps for
+// the whole poll: ~19 minutes at ~45% of a core after every boot. Everything it
+// can hook is in place within the first passes.
+static bool g_cameraserver = false;
+
 static void* poller(void*) {
     for (int i = 0; i < 24000; i++) {
         try_install();
+        if (g_cameraserver && i >= 200) break;
         uint64_t fusion = 0;
         bool have_fusion = module_base("libarcsoft_turbo_fusion_raw_super_night.so", &fusion);
         if (g_p010_done && g_dlsym_iface_done && g_dlsym_proc_done && g_proc_req_hooked &&
@@ -1954,13 +1961,14 @@ static void* poller(void*) {
             break;
         usleep(25 * 1000);
     }
-    if (!g_p010_done || !g_dlsym_iface_done)
+    if (!g_p010_done || (!g_dlsym_iface_done && !g_cameraserver))
         LOGW("install incomplete: p010=%d iface_dlsym=%d proc_dlsym=%d tfrsn=%d", g_p010_done,
              g_dlsym_iface_done, g_dlsym_proc_done, g_tfrsn_patched);
     return nullptr;
 }
 
 __attribute__((constructor)) static void apsfixup_init() {
+    g_cameraserver = strstr(getprogname(), "cameraserver") != nullptr;
     LOGI("libapsfixup loaded (pid %d) RAW/HDR/DCIR wrap, TFRSN, qj-uv", getpid());
     try_install();
     pthread_t t;
