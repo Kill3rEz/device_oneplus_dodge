@@ -206,24 +206,55 @@ static bool range_of(uint64_t addr, uint64_t* out_base, uint64_t* out_size) {
     return range_of_perms(addr, out_base, out_size, nullptr);
 }
 
+// The poller looks up a dozen modules and GOT slots every pass. Each maps read
+// costs ~9 ms and holds mmap_lock, so ask the linker, which answers in
+// microseconds. A module's base is its lowest PT_LOAD page, the same address
+// its first maps line starts at.
+struct ModuleQuery {
+    const char* name;
+    uint64_t base;
+};
+
+static int module_base_cb(struct dl_phdr_info* info, size_t, void* data) {
+    ModuleQuery* q = static_cast<ModuleQuery*>(data);
+    if (!info->dlpi_name || !strstr(info->dlpi_name, q->name)) return 0;
+    uint64_t lo = UINT64_MAX;
+    for (int i = 0; i < info->dlpi_phnum; i++) {
+        const ElfW(Phdr)& ph = info->dlpi_phdr[i];
+        if (ph.p_type == PT_LOAD && ph.p_vaddr < lo) lo = ph.p_vaddr;
+    }
+    if (lo == UINT64_MAX) return 0;
+    const uint64_t page = (uint64_t)sysconf(_SC_PAGESIZE);
+    uint64_t base = (info->dlpi_addr + lo) & ~(page - 1);
+    if (q->base == 0 || base < q->base) q->base = base;
+    return 0;
+}
+
 static bool module_base(const char* name, uint64_t* out_base) {
-    FILE* f = fopen("/proc/self/maps", "re");
-    if (!f) return false;
-    char line[512];
-    uint64_t best = 0;
-    while (fgets(line, sizeof(line), f)) {
-        if (strstr(line, name)) {
-            uint64_t lo;
-            if (sscanf(line, "%" SCNx64, &lo) == 1)
-                if (best == 0 || lo < best) best = lo;
+    ModuleQuery q{name, 0};
+    dl_iterate_phdr(module_base_cb, &q);
+    if (!q.base) return false;
+    *out_base = q.base;
+    return true;
+}
+
+struct SlotQuery {
+    uint64_t addr;
+    bool hit;
+};
+
+static int slot_in_module_cb(struct dl_phdr_info* info, size_t, void* data) {
+    SlotQuery* q = static_cast<SlotQuery*>(data);
+    for (int i = 0; i < info->dlpi_phnum; i++) {
+        const ElfW(Phdr)& ph = info->dlpi_phdr[i];
+        if (ph.p_type != PT_LOAD) continue;
+        uint64_t lo = info->dlpi_addr + ph.p_vaddr;
+        if (q->addr >= lo && q->addr + sizeof(void*) <= lo + ph.p_memsz) {
+            q->hit = true;
+            return 1;
         }
     }
-    fclose(f);
-    if (best) {
-        *out_base = best;
-        return true;
-    }
-    return false;
+    return 0;
 }
 
 static bool got_redirect(uint64_t slot, void* newval, void** old) {
@@ -768,16 +799,18 @@ static bool elf_find_jmpslot(uint64_t base, uint64_t map_hint, const char* want,
     return false;
 }
 
+// GOT slots sit in a loaded module's segments, so the linker can vouch for them.
 static bool got_slot_mapped(uint64_t slot, void** cur) {
-    uint64_t mb, ms;
-    if (!range_of(slot, &mb, &ms) || slot + sizeof(void*) > mb + ms) return false;
+    SlotQuery q{slot, false};
+    dl_iterate_phdr(slot_in_module_cb, &q);
+    if (!q.hit) return false;
     if (cur) *cur = *(void**)slot;
     return true;
 }
 
 static bool same_module(uint64_t a, uint64_t b) {
-    uint64_t ab, as_, bb, bs;
-    return range_of(a, &ab, &as_) && range_of(b, &bb, &bs) && ab == bb;
+    Dl_info ia{}, ib{};
+    return dladdr((void*)a, &ia) && dladdr((void*)b, &ib) && ia.dli_fbase == ib.dli_fbase;
 }
 
 static bool g_p010_done = false;
@@ -1949,8 +1982,12 @@ static void try_install() {
 // can hook is in place within the first passes.
 static bool g_cameraserver = false;
 
+// Poll every 25 ms for the first minute, when the camera opens and loads its
+// libraries, then every 250 ms. A camera process can sit in the background with
+// hooks pending, and late loads like night mode still get hooked in time.
 static void* poller(void*) {
-    for (int i = 0; i < 24000; i++) {
+    const uint64_t start_ns = aps_now_ns();
+    for (int i = 0;; i++) {
         try_install();
         if (g_cameraserver && i >= 200) break;
         uint64_t fusion = 0;
@@ -1959,7 +1996,9 @@ static void* poller(void*) {
             g_hwjpeg_hooked && (g_mapfind_done || i > 2400) && ((g_setres.done && g_yuv2rgba.done) || i > 2400) &&
             (g_tfrsn_patched || g_tfrsn_gaveup || (!have_fusion && i > 200)))
             break;
-        usleep(25 * 1000);
+        const uint64_t elapsed_ms = (aps_now_ns() - start_ns) / 1000000ull;
+        if (elapsed_ms >= 600 * 1000) break;
+        usleep(elapsed_ms < 60 * 1000 ? 25 * 1000 : 250 * 1000);
     }
     if (!g_p010_done || (!g_dlsym_iface_done && !g_cameraserver))
         LOGW("install incomplete: p010=%d iface_dlsym=%d proc_dlsym=%d tfrsn=%d", g_p010_done,
