@@ -79,7 +79,6 @@ public class DeviceSettingsService extends Service {
         initializeBypassCharging();
         initializeFastCharging();
         initializePwm();
-        initializeTestTe();
         initializeSunlightBoost();
         initializeAodBrightness();
         initializeGameBar();
@@ -139,22 +138,6 @@ public class DeviceSettingsService extends Service {
             if (Constants.DEBUG) Log.i(TAG, "PWM initialized");
         } catch (Exception e) {
             Log.e(TAG, "Failed to initialize PWM", e);
-        }
-    }
-
-    private void initializeTestTe() {
-        // Enable the panel test-TE irq so the node reports the real DDIC
-        // self-refresh rate, consumed by the SurfaceFlinger "Show refresh rate"
-        // overlay via ro.surface_flinger.panel_refresh_rate_node
-        try {
-            if (FileUtils.isFileWritable(Constants.NODE_TEST_TE)) {
-                FileUtils.writeLine(Constants.NODE_TEST_TE, "1");
-                if (Constants.DEBUG) Log.i(TAG, "Test-TE counter enabled");
-            } else {
-                Log.w(TAG, "Test-TE node is not writable");
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to enable test-TE counter", e);
         }
     }
 

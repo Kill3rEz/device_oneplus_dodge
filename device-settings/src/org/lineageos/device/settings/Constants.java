@@ -158,7 +158,6 @@ public class Constants {
      *  measured rate, or 0 until two TE pulses have been observed. Consumed by the
      *  SurfaceFlinger "Show refresh rate" overlay via
      *  ro.surface_flinger.panel_refresh_rate_node, not by device-settings. */
-    public static final String NODE_TEST_TE = "/sys/kernel/oplus_display/test_te";
 
     /** CRTC frame-done counter = SurfaceFlinger composition rate (NOT the panel
      *  self-refresh rate). This is what the crDroid FPS Info tile shows
