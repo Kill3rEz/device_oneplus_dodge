@@ -12,20 +12,21 @@
 
 package org.lineageos.device.settings.display;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.ContentObserver;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.PowerManager;
+import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Display;
 
 import androidx.preference.PreferenceManager;
 
@@ -51,13 +52,15 @@ public class SunlightBoostController {
     private final SharedPreferences mPrefs;
     private final SensorManager mSensorManager;
     private final Sensor mLightSensor;
-    private final PowerManager mPowerManager;
+    private final DisplayManager mDisplayManager;
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
 
     private boolean mListening = false;
     private boolean mAutoEngaged = false;
     private long mEnterSince = 0;
     private long mExitSince = 0;
-    private boolean mReceiverRegistered = false;
+    private boolean mRegistered = false;
+    private boolean mDisplayOn = true;
 
     public static synchronized SunlightBoostController getInstance(Context context) {
         if (sInstance == null) {
@@ -72,7 +75,7 @@ public class SunlightBoostController {
         mSensorManager = context.getSystemService(SensorManager.class);
         mLightSensor = mSensorManager != null
                 ? mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT) : null;
-        mPowerManager = context.getSystemService(PowerManager.class);
+        mDisplayManager = context.getSystemService(DisplayManager.class);
     }
 
     private final SensorEventListener mLightListener = new SensorEventListener() {
@@ -86,31 +89,51 @@ public class SunlightBoostController {
         }
     };
 
-    private final BroadcastReceiver mScreenReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (Intent.ACTION_SCREEN_OFF.equals(intent.getAction())) {
-                // The panel resets on power cycle, so a latched boost must not
-                // leave stale settings backups behind
-                if (mAutoEngaged) {
-                    disengage("screen off");
+    // The display state, not interactivity: a proximity screen-off in a call
+    // keeps the device interactive while the panel is dark
+    private final DisplayManager.DisplayListener mDisplayListener =
+            new DisplayManager.DisplayListener() {
+                @Override
+                public void onDisplayAdded(int displayId) {
                 }
-                stopListening();
-            } else if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())) {
-                updateState();
-            }
+
+                @Override
+                public void onDisplayRemoved(int displayId) {
+                }
+
+                @Override
+                public void onDisplayChanged(int displayId) {
+                    if (displayId != Display.DEFAULT_DISPLAY) {
+                        return;
+                    }
+                    // Refresh rate switches land here too; act on state changes only
+                    boolean on = isDisplayOn();
+                    if (on != mDisplayOn) {
+                        mDisplayOn = on;
+                        updateState();
+                    }
+                }
+            };
+
+    private final ContentObserver mBrightnessModeObserver = new ContentObserver(mHandler) {
+        @Override
+        public void onChange(boolean selfChange) {
+            updateState();
         }
     };
 
     /** Called once from DeviceSettingsService at boot / service start */
     public void init() {
-        if (!mReceiverRegistered) {
-            IntentFilter filter = new IntentFilter();
-            filter.addAction(Intent.ACTION_SCREEN_ON);
-            filter.addAction(Intent.ACTION_SCREEN_OFF);
-            mContext.registerReceiver(mScreenReceiver, filter);
-            mReceiverRegistered = true;
+        if (!mRegistered) {
+            if (mDisplayManager != null) {
+                mDisplayManager.registerDisplayListener(mDisplayListener, mHandler);
+            }
+            mContext.getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE),
+                    false, mBrightnessModeObserver, UserHandle.USER_ALL);
+            mRegistered = true;
         }
+        mDisplayOn = isDisplayOn();
 
         // Reconcile a boost left latched by a crash or service restart: if the
         // node no longer reads enabled the user (or a reboot) already cleared it
@@ -124,20 +147,25 @@ public class SunlightBoostController {
         if (Constants.DEBUG) Log.i(TAG, "Initialized, autoEngaged=" + mAutoEngaged);
     }
 
-    /** Re-evaluate after the preference toggles or the screen comes on */
+    /** Re-evaluate after the preference, the display state or the brightness mode changes */
     public void updateState() {
         boolean featureEnabled = mPrefs.getBoolean(Constants.KEY_SUNLIGHT_BOOST, true);
 
-        if (!featureEnabled) {
+        if (!featureEnabled || !isDisplayOn()) {
+            // The panel resets on power cycle, so a latched boost must not
+            // leave stale settings backups behind
             if (mAutoEngaged) {
-                disengage("feature disabled");
+                disengage(featureEnabled ? "display off" : "feature disabled");
             }
             stopListening();
             return;
         }
 
-        boolean screenOn = mPowerManager == null || mPowerManager.isInteractive();
-        if (screenOn && FileUtils.isFileWritable(Constants.NODE_HBM)) {
+        // The boost only takes over from auto brightness, so with manual
+        // brightness the sensor has nothing to do. While engaged, HbmController
+        // has parked auto brightness itself, so keep watching for the exit lux.
+        boolean wanted = mAutoEngaged || isAutoBrightnessEnabled();
+        if (wanted && FileUtils.isFileWritable(Constants.NODE_HBM)) {
             startListening();
         } else {
             stopListening();
@@ -148,10 +176,10 @@ public class SunlightBoostController {
         if (mListening || mLightSensor == null) {
             return;
         }
-        // The ALS is already powered for auto-brightness; batching keeps this a
-        // passenger on the existing sensor traffic
+        // The light sensor can't batch: a batched request comes back BAD_VALUE
+        // and SensorService registers it unbatched anyway
         mSensorManager.registerListener(mLightListener, mLightSensor,
-                SensorManager.SENSOR_DELAY_NORMAL, 2_000_000 /* maxReportLatencyUs */);
+                SensorManager.SENSOR_DELAY_NORMAL);
         mListening = true;
         mEnterSince = 0;
         mExitSince = 0;
@@ -232,6 +260,12 @@ public class SunlightBoostController {
         mExitSince = 0;
         mPrefs.edit().putBoolean(KEY_AUTO_ENGAGED, false).apply();
         Log.i(TAG, "Sunlight boost disengaged: " + reason);
+    }
+
+    private boolean isDisplayOn() {
+        Display display = mDisplayManager != null
+                ? mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY) : null;
+        return display == null || display.getState() == Display.STATE_ON;
     }
 
     private boolean isHbmNodeOn() {
