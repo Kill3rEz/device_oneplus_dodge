@@ -148,6 +148,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'odm/etc/init/init.camera_process.rc': blob_fixup()
         .regex_replace('    delete_recursion', '    #delete_recursion'),
+    'odm/etc/sensor/config/pakala_mtp_oplus_shaking.json': blob_fixup()
+        .regex_replace(r'("shaking_timeout":\{ "type": "int", "ver": )"0",(\s*"data": )"60"',
+                       r'\g<1>"1",\g<2>"3600"'),
     'odm/firmware/fastchg/23821/charging_hyper_mode_config.txt': blob_fixup()
         .regex_replace(r"(PROJECT:=)23893", r"\g<1>23821"),
     'odm/lib64/soundfx/libOplusSpatializerAidl_DKY.so': blob_fixup()
