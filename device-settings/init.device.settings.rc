@@ -28,3 +28,9 @@ on boot
     # RefreshRateMonitorService alongside the MIN/PEAK refresh rate settings
     chown system system /sys/kernel/oplus_display/min_fps
     chmod 0664 /sys/kernel/oplus_display/min_fps
+
+# A framework restart brings back cameraserver and audioserver but not the
+# camera provider. Its shake detector keeps a dead sensorservice connection
+# and spins a prime core until the next reboot, so restart it with zygote.
+on property:init.svc.zygote=restarting
+    restart vendor.camera-provider
