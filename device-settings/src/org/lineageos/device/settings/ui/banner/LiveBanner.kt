@@ -63,7 +63,6 @@ import java.util.Locale
 private const val DESIGN_W = 358f
 
 private const val RR_MARK_W = 716f
-private const val RR_MARK_H = 523f
 private const val RR_MARK =
     "M430.4 0L703.1 0A12.2 12.2 0 0 1 714.6 16.2C697.7 65.5 668.3 118 632.3 118L437.3 118" +
         "C372 118 321.8 173.6 321.5 174L137.5 398C132.6 404 84.6 442 3.7 390.8A8 8 0 0 1 1.8 379" +
@@ -135,12 +134,11 @@ fun LiveBanner(
         val ts = { n: Float -> with(density) { (u * n).toSp() } }
         Canvas(Modifier.fillMaxSize()) {
             drawMarkOutline(
-                left = size.width - (u * 120).toPx(),
-                top = (u * 10).toPx(),
-                width = (u * 104).toPx(),
-                stroke = (u * 1.4f).toPx(),
+                left = size.width - (u * 130).toPx(),
+                top = -(u * 34).toPx(),
+                width = (u * 180).toPx(),
                 color = colors.accent,
-                alpha = 0.6f,
+                alpha = 0.45f,
             )
         }
         Column(
@@ -271,12 +269,11 @@ fun CollapsedBanner(
         val ts = { n: Float -> with(density) { (u * n).toSp() } }
         Canvas(Modifier.fillMaxSize()) {
             drawMarkOutline(
-                left = size.width - (u * 132).toPx(),
-                top = (size.height - (u * 66 * RR_MARK_H / RR_MARK_W).toPx()) / 2f,
-                width = (u * 66).toPx(),
-                stroke = (u * 1.2f).toPx(),
+                left = size.width - (u * 102).toPx(),
+                top = -(u * 16).toPx(),
+                width = (u * 120).toPx(),
                 color = colors.accent,
-                alpha = 0.55f,
+                alpha = 0.45f,
             )
         }
         Row(
@@ -447,7 +444,6 @@ private fun DrawScope.drawMarkOutline(
     left: Float,
     top: Float,
     width: Float,
-    stroke: Float,
     color: Color,
     alpha: Float,
 ) {
@@ -456,8 +452,8 @@ private fun DrawScope.drawMarkOutline(
         translate(left, top)
         scale(k, k, pivot = Offset.Zero)
     }) {
-        drawPath(rrMark, color.copy(alpha = alpha * 0.25f), style = Stroke(width = stroke * 3.5f / k))
-        drawPath(rrMark, color.copy(alpha = alpha), style = Stroke(width = stroke / k))
+        drawPath(rrMark, color.copy(alpha = alpha * 0.2f), style = Stroke(width = 12f))
+        drawPath(rrMark, color.copy(alpha = alpha), style = Stroke(width = 4f))
     }
 }
 
