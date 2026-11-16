@@ -61,9 +61,6 @@ TARGET_ENABLE_BLUR := true
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1
 
-# Enable AxionFX
-TARGET_INCLUDE_AXFX := true
-
 # Keep the display stack on Scudo (dual_allocator flag defaults ON in bionic).
 # The Oplus gralloc/composer blobs bootloop under jemalloc, so opt this device
 # out of DISPLAY_STACK_USE_JEMALLOC.
