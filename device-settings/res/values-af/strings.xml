@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Hoë-helderheidsmodus word nie op hierdie toestel ondersteun nie</string>
     <string name="hbm_warning_summary">HBM versnel kumulatiewe paneelveroudering. Gebruik dit dus slegs wanneer nodig en vir kort tydperke.\n</string>
     <string name="hbm_warning_dont_show_again">Wys hierdie waarskuwing nie weer nie</string>
-    <string name="aod_high_brightness_title">Hoë-helderheid AOD</string>
-    <string name="aod_high_brightness_summary">Gebruik 50 nits vir Altyd-aan-vertoning in plaas van die verstek 10 nits</string>
     <string name="refresh_rate_app_title">Per-program verversingstempo</string>
     <string name="refresh_rate_app_summary">Pasmaak verversingstempo per program</string>
     <string name="refresh_rate_settings">Vertoon verversingstempo</string>

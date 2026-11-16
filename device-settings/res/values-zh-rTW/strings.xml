@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">此裝置不支援高亮模式</string>
     <string name="hbm_warning_summary">HBM 會加速面板的累積老化，因此請僅在必要時短時間使用。\n</string>
     <string name="hbm_warning_dont_show_again">不再顯示此警告</string>
-    <string name="aod_high_brightness_title">高亮螢幕保持開啟</string>
-    <string name="aod_high_brightness_summary">螢幕保持開啟使用 50 尼特亮度，而非預設的 10 尼特</string>
     <string name="refresh_rate_app_title">分應用程式重新整理率</string>
     <string name="refresh_rate_app_summary">為每個應用程式自定義重新整理率</string>
     <string name="refresh_rate_settings">顯示重新整理率</string>

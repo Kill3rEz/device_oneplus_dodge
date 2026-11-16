@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Hábirtustilling er ekki studd í þessu tæki</string>
     <string name="hbm_warning_summary">HBM flýtir fyrir uppsafnaðri rýrnun skjásins. Notaðu hana því aðeins þegar þörf er á og í stuttan tíma.\n</string>
     <string name="hbm_warning_dont_show_again">Ekki sýna þessa aðvörun aftur</string>
-    <string name="aod_high_brightness_title">Há birta í AOD</string>
-    <string name="aod_high_brightness_summary">Nota 50 nit fyrir sífellt kveikt skjá í stað sjálfgefinna 10 nit</string>
     <string name="refresh_rate_app_title">Endurnýjunartíðni eftir forritum</string>
     <string name="refresh_rate_app_summary">Sérsníða endurnýjunartíðni fyrir hvert forrit</string>
     <string name="refresh_rate_settings">Endurnýjunartíðni skjás</string>

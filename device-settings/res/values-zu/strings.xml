@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Imodi Yokukhanya Okuphezulu ayisekelwa kule divayisi</string>
     <string name="hbm_warning_summary">I-HBM isheshisa ukonakala okuqongelelekile kwephaneli. Ngakho-ke yisebenzisa kuphela uma kudingeka nangezikhathi ezifushane.\n</string>
     <string name="hbm_warning_dont_show_again">Ungabonisi lesi sexwayiso futhi</string>
-    <string name="aod_high_brightness_title">Ukukhanya okuphezulu kwe-AOD</string>
-    <string name="aod_high_brightness_summary">Sebenzisa ama-nits angu-50 ye-Always On Display esikhundleni se-10 nits ezenzakalelayo</string>
     <string name="refresh_rate_app_title">Izinga lokuvuselela ngohlelo lokusebenza</string>
     <string name="refresh_rate_app_summary">Lungisa izinga lokuvuselela ngohlelo ngalunye lokusebenza</string>
     <string name="refresh_rate_settings">Izinga lokuvuselela isikrini</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Η λειτουργία υψηλής φωτεινότητας δεν υποστηρίζεται σε αυτή τη συσκευή</string>
     <string name="hbm_warning_summary">Η λειτουργία υψηλής φωτεινότητας επιταχύνει τη σωρευτική φθορά του πάνελ. Χρησιμοποιήστε την μόνο όταν είναι απαραίτητο και για σύντομα χρονικά διαστήματα.\n</string>
     <string name="hbm_warning_dont_show_again">Να μην εμφανιστεί ξανά αυτή η προειδοποίηση</string>
-    <string name="aod_high_brightness_title">Υψηλή φωτεινότητα AOD</string>
-    <string name="aod_high_brightness_summary">Χρήση 50 nits για την Οθόνη πάντα ενεργή αντί των προεπιλεγμένων 10 nits</string>
     <string name="refresh_rate_app_title">Ρυθμός ανανέωσης ανά εφαρμογή</string>
     <string name="refresh_rate_app_summary">Προσαρμογή ρυθμού ανανέωσης ανά εφαρμογή</string>
     <string name="refresh_rate_settings">Ρυθμός ανανέωσης οθόνης</string>

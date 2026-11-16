@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Энэ төхөөрөмж дээр Өндөр гэрэлтүүлгийн горим дэмжигдэхгүй</string>
     <string name="hbm_warning_summary">HBM нь дэлгэцийн элэгдлийг хурдасгадаг тул шаардлагатай үед, богино хугацаанд л ашиглана уу.\n</string>
     <string name="hbm_warning_dont_show_again">Энэ анхааруулгыг дахин харуулахгүй</string>
-    <string name="aod_high_brightness_title">Өндөр гэрэлтүүлгийн AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display-д анхдагч 10 nits-ийн оронд 50 nits ашиглах</string>
     <string name="refresh_rate_app_title">Аппын тусгай дэлгэцийн давтамж</string>
     <string name="refresh_rate_app_summary">Апп тус бүрт дэлгэцийн давтамжийг тохируулах</string>
     <string name="refresh_rate_settings">Дэлгэцийн давтамж</string>

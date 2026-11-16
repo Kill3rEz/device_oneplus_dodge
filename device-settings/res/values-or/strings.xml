@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ଏହି ଡିଭାଇସରେ ହାଇ ବ୍ରାଇଟନେସ ମୋଡ ସମର୍ଥିତ ନୁହେଁ</string>
     <string name="hbm_warning_summary">HBM ଯୋଗୁଁ ପ୍ୟାନେଲ କ୍ରମେ କ୍ଷୟ ଦ୍ରୁତ ହୁଏ। ତେଣୁ ଅତ୍ୟାବଶ୍ୟକ ହେଲେ ଓ ସଂକ୍ଷିପ୍ତ ସମୟ ପାଇଁ ହିଁ ବ୍ୟବହାର କରନ୍ତୁ।\n</string>
     <string name="hbm_warning_dont_show_again">ଏହି ଚେତାବନୀ ପୁଣି ଦେଖାନ୍ତୁ ନାହିଁ</string>
-    <string name="aod_high_brightness_title">ହାଇ ବ୍ରାଇଟନେସ AOD</string>
-    <string name="aod_high_brightness_summary">ଆଲୱେଜ ଅନ ଡିସପ୍ଲେ ପାଇଁ ଡିଫଲ୍ଟ 10 ନିଟ୍ସ ବଦଳରେ 50 ନିଟ୍ସ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="refresh_rate_app_title">ପ୍ରତି-ଆପ ରିଫ୍ରେଶ ରେଟ</string>
     <string name="refresh_rate_app_summary">ପ୍ରତ୍ୟେକ ଆପ ପାଇଁ ରିଫ୍ରେଶ ରେଟ କଷ୍ଟମାଇଜ କରନ୍ତୁ</string>
     <string name="refresh_rate_settings">ଡିସପ୍ଲେ ରିଫ୍ରେଶ ରେଟ</string>

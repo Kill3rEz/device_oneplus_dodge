@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ဤစက်တွင် High Brightness Mode ကို မပံ့ပိုးပါ</string>
     <string name="hbm_warning_summary">HBM သည် ဖန်သားပြင် ပျက်စီးမှုကို အရှိန်မြှင့်သည်။ ထို့ကြောင့် လိုအပ်မှသာ၊ အချိန်တိုအတွင်းသာ အသုံးပြုပါ။\n</string>
     <string name="hbm_warning_dont_show_again">ဤသတိပေးချက်ကို နောက်တစ်ကြိမ် မပြပါနှင့်</string>
-    <string name="aod_high_brightness_title">အလင်းပြတ်ဖွင့်ထားသော AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display အတွက် မူရင်း 10 nits အစား 50 nits ကို အသုံးပြုရန်</string>
     <string name="refresh_rate_app_title">အက်ပ်အလိုက် Refresh Rate</string>
     <string name="refresh_rate_app_summary">အက်ပ်တစ်ခုချင်းစီအတွက် refresh rate ကို စိတ်ကြိုက်ပြင်ရန်</string>
     <string name="refresh_rate_settings">ဖန်သားပြင် Refresh Rate</string>

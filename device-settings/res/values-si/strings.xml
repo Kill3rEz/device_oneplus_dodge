@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">මෙම උපාංගයේ ඉහළ දීප්ති ප්‍රකාරය සහාය නොදක්වයි</string>
     <string name="hbm_warning_summary">HBM මගින් තිරයේ සමුච්චිත පිරිහීම වේගවත් කරයි. එබැවින් අවශ්‍ය විට පමණක්, කෙටි කාලයකට පමණක් භාවිතා කරන්න.\n</string>
     <string name="hbm_warning_dont_show_again">මෙම අනතුරු ඇඟවීම නැවත නොපෙන්වන්න</string>
-    <string name="aod_high_brightness_title">ඉහළ දීප්ති AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display සඳහා පෙරනිමි nits 10 වෙනුවට nits 50 භාවිතා කරන්න</string>
     <string name="refresh_rate_app_title">යෙදුම් අනුව තිර නැවුම් වේගය</string>
     <string name="refresh_rate_app_summary">යෙදුමකට තිර නැවුම් වේගය අභිරුචිකරණය කරන්න</string>
     <string name="refresh_rate_settings">තිර නැවුම් වේගය</string>

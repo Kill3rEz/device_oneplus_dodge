@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">इस डिवाइस पर हाई ब्राइटनेस मोड समर्थित नहीं है</string>
     <string name="hbm_warning_summary">HBM से पैनल पर समय के साथ घिसावट तेज़ होती है। इसलिए इसे केवल ज़रूरत होने पर और थोड़े समय के लिए ही इस्तेमाल करें।\n</string>
     <string name="hbm_warning_dont_show_again">यह चेतावनी दोबारा न दिखाएं</string>
-    <string name="aod_high_brightness_title">हाई ब्राइटनेस AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display के लिए डिफ़ॉल्ट 10 nits की जगह 50 nits का उपयोग करें</string>
     <string name="refresh_rate_app_title">ऐप के अनुसार रीफ़्रेश रेट</string>
     <string name="refresh_rate_app_summary">हर ऐप के लिए रीफ़्रेश रेट कस्टमाइज़ करें</string>
     <string name="refresh_rate_settings">डिस्प्ले रीफ़्रेश रेट</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">此设备不支持高亮模式</string>
     <string name="hbm_warning_summary">HBM 会加速面板的累积老化，因此请仅在必要时短时间使用。\n</string>
     <string name="hbm_warning_dont_show_again">不再显示此警告</string>
-    <string name="aod_high_brightness_title">高亮息屏显示</string>
-    <string name="aod_high_brightness_summary">息屏显示使用 50 尼特亮度，而非默认的 10 尼特</string>
     <string name="refresh_rate_app_title">分应用刷新率</string>
     <string name="refresh_rate_app_summary">为每个应用自定义刷新率</string>
     <string name="refresh_rate_settings">显示刷新率</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Način visoke svetlosti ni podprt na tej napravi</string>
     <string name="hbm_warning_summary">HBM pospešuje kumulativno obrabo zaslona, zato ga uporabljajte le, kadar je to nujno, in za kratka obdobja.\n</string>
     <string name="hbm_warning_dont_show_again">Ne prikazuj tega opozorila znova</string>
-    <string name="aod_high_brightness_title">Visoka svetlost za AOD</string>
-    <string name="aod_high_brightness_summary">Za zaslon, ki je vedno vklopljen (AOD), uporabi 50 nitov namesto privzetih 10 nitov</string>
     <string name="refresh_rate_app_title">Osveževalna frekvenca po aplikacijah</string>
     <string name="refresh_rate_app_summary">Prilagodi osveževalno frekvenco za posamezno aplikacijo</string>
     <string name="refresh_rate_settings">Osveževalna frekvenca zaslona</string>

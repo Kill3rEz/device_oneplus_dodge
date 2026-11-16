@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Thiết bị này không hỗ trợ chế độ độ sáng cao</string>
     <string name="hbm_warning_summary">Chế độ độ sáng cao làm màn hình xuống cấp nhanh hơn. Chỉ nên dùng khi cần thiết và trong thời gian ngắn.\n</string>
     <string name="hbm_warning_dont_show_again">Không hiện cảnh báo này nữa</string>
-    <string name="aod_high_brightness_title">Độ sáng cao cho AOD</string>
-    <string name="aod_high_brightness_summary">Dùng 50 nit cho Màn hình luôn bật thay vì mức mặc định 10 nit</string>
     <string name="refresh_rate_app_title">Tần số quét theo từng ứng dụng</string>
     <string name="refresh_rate_app_summary">Tùy chỉnh tần số quét cho từng ứng dụng</string>
     <string name="refresh_rate_settings">Tần số quét màn hình</string>

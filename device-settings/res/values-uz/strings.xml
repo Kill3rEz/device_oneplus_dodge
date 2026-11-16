@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Yuqori yorqinlik rejimi bu qurilmada qo‘llab-quvvatlanmaydi</string>
     <string name="hbm_warning_summary">Yuqori yorqinlik rejimi panelning to‘planuvchi eskirishini tezlashtiradi. Shu sababli uni faqat zarur bo‘lganda va qisqa muddat ishlating.\n</string>
     <string name="hbm_warning_dont_show_again">Bu ogohlantirishni boshqa ko‘rsatmaslik</string>
-    <string name="aod_high_brightness_title">Yuqori yorqinlikdagi AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display uchun standart 10 nit o‘rniga 50 nit ishlatish</string>
     <string name="refresh_rate_app_title">Ilovaga xos yangilanish chastotasi</string>
     <string name="refresh_rate_app_summary">Har bir ilova uchun yangilanish chastotasini sozlash</string>
     <string name="refresh_rate_settings">Ekran yangilanish chastotasi</string>

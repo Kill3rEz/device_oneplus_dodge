@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Distira handiko modua ez dago onartuta gailu honetan</string>
     <string name="hbm_warning_summary">HBMak panelaren degradazio metaketa bizkortzen du. Beraz, erabili beharrezkoa denean eta denbora laburrez soilik.\n</string>
     <string name="hbm_warning_dont_show_again">Ez erakutsi berriro abisu hau</string>
-    <string name="aod_high_brightness_title">Distira handiko AOD</string>
-    <string name="aod_high_brightness_summary">Erabili 50 nits Beti Piztuta pantailarako, lehenetsitako 10 nits-en ordez</string>
     <string name="refresh_rate_app_title">Aplikazioko freskatze-tasa</string>
     <string name="refresh_rate_app_summary">Pertsonalizatu freskatze-tasa aplikazio bakoitzeko</string>
     <string name="refresh_rate_settings">Pantailaren freskatze-tasa</string>

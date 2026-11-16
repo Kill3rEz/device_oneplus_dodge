@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Режим високої яскравості не підтримується на цьому пристрої</string>
     <string name="hbm_warning_summary">HBM прискорює накопичувану деградацію панелі, тож використовуйте його лише за потреби й протягом коротких проміжків часу.\n</string>
     <string name="hbm_warning_dont_show_again">Більше не показувати це попередження</string>
-    <string name="aod_high_brightness_title">Висока яскравість у режимі AOD</string>
-    <string name="aod_high_brightness_summary">Використовувати 50 нітів для екрана завжди ввімкненого замість стандартних 10 нітів</string>
     <string name="refresh_rate_app_title">Частота оновлення для окремих застосунків</string>
     <string name="refresh_rate_app_summary">Налаштування частоти оновлення для кожного застосунку</string>
     <string name="refresh_rate_settings">Частота оновлення дисплея</string>

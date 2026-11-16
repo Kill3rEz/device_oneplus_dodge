@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">מצב בהירות גבוהה אינו נתמך במכשיר זה</string>
     <string name="hbm_warning_summary">מצב HBM מאיץ בלאי מצטבר של הפאנל. לכן יש להשתמש בו רק כשצריך ולפרקי זמן קצרים.\n</string>
     <string name="hbm_warning_dont_show_again">אל תציג אזהרה זו שוב</string>
-    <string name="aod_high_brightness_title">בהירות גבוהה ל-AOD</string>
-    <string name="aod_high_brightness_summary">שימוש ב-50 ניט לתצוגה תמיד פעילה במקום ברירת המחדל של 10 ניט</string>
     <string name="refresh_rate_app_title">קצב רענון לפי יישום</string>
     <string name="refresh_rate_app_summary">התאמה אישית של קצב הרענון לכל יישום</string>
     <string name="refresh_rate_settings">קצב רענון התצוגה</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Le mode haute luminosité n\'est pas pris en charge sur cet appareil</string>
     <string name="hbm_warning_summary">Le mode HBM accélère la dégradation cumulative du panneau. Utilisez-le donc uniquement si nécessaire et pendant de courtes périodes.\n</string>
     <string name="hbm_warning_dont_show_again">Ne plus afficher cet avertissement</string>
-    <string name="aod_high_brightness_title">AOD haute luminosité</string>
-    <string name="aod_high_brightness_summary">Utiliser 50 nits pour l\'écran toujours allumé au lieu de 10 nits par défaut</string>
     <string name="refresh_rate_app_title">Taux de rafraîchissement par application</string>
     <string name="refresh_rate_app_summary">Personnaliser le taux de rafraîchissement pour chaque application</string>
     <string name="refresh_rate_settings">Taux de rafraîchissement de l\'écran</string>

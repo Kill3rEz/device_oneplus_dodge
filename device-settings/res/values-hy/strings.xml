@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Բարձր պայծառության ռեժիմը այս սարքում չի աջակցվում</string>
     <string name="hbm_warning_summary">HBM-ն արագացնում է էկրանի կուտակային դեգրադացիան։ Օգտագործեք այն միայն անհրաժեշտության դեպքում և կարճ ժամանակով։\n</string>
     <string name="hbm_warning_dont_show_again">Այլևս ցույց չտալ այս զգուշացումը</string>
-    <string name="aod_high_brightness_title">Բարձր պայծառության AOD</string>
-    <string name="aod_high_brightness_summary">Օգտագործել 50 նիտ Always On Display-ի համար՝ կանխադրված 10 նիտի փոխարեն</string>
     <string name="refresh_rate_app_title">Հավելվածի առ հավելված թարմացման հաճախականություն</string>
     <string name="refresh_rate_app_summary">Անհատականացնել թարմացման հաճախականությունը յուրաքանչյուր հավելվածի համար</string>
     <string name="refresh_rate_settings">Էկրանի թարմացման հաճախականություն</string>

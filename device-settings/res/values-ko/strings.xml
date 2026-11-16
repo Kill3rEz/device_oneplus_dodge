@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">이 기기에서는 고휘도 모드를 지원하지 않습니다</string>
     <string name="hbm_warning_summary">HBM은 패널의 누적 열화를 가속합니다. 꼭 필요할 때만, 짧은 시간 동안 사용하세요.\n</string>
     <string name="hbm_warning_dont_show_again">이 경고를 다시 표시하지 않음</string>
-    <string name="aod_high_brightness_title">고휘도 상시 표시(AOD)</string>
-    <string name="aod_high_brightness_summary">상시 표시(AOD)에 기본 10니트 대신 50니트를 사용합니다</string>
     <string name="refresh_rate_app_title">앱별 주사율</string>
     <string name="refresh_rate_app_summary">앱마다 주사율을 맞춤 설정합니다</string>
     <string name="refresh_rate_settings">디스플레이 주사율</string>

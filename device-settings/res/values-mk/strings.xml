@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Режимот на висока светлина не е поддржан на овој уред</string>
     <string name="hbm_warning_summary">HBM го забрзува кумулативното абење на панелот. Затоа користете го само кога е потребно и за кратки периоди.\n</string>
     <string name="hbm_warning_dont_show_again">Не прикажувај го ова предупредување повторно</string>
-    <string name="aod_high_brightness_title">Висока светлина за AOD</string>
-    <string name="aod_high_brightness_summary">Користи 50 nits за Always On Display наместо стандардните 10 nits</string>
     <string name="refresh_rate_app_title">Освежување по апликација</string>
     <string name="refresh_rate_app_summary">Приспособете ја фреквенцијата на освежување по апликација</string>
     <string name="refresh_rate_settings">Фреквенција на освежување на екранот</string>

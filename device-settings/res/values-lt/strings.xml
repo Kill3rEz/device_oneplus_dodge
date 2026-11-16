@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Šiame įrenginyje didelio ryškumo režimas nepalaikomas</string>
     <string name="hbm_warning_summary">DRR sparčiau nusidėvi ekranas. Naudokite jį tik būtinai ir trumpam.\n</string>
     <string name="hbm_warning_dont_show_again">Neberodyti šio įspėjimo</string>
-    <string name="aod_high_brightness_title">Didelis AOD ryškumas</string>
-    <string name="aod_high_brightness_summary">Naudoti 50 nitų ryškumą visada įjungtam ekranui vietoj numatytųjų 10 nitų</string>
     <string name="refresh_rate_app_title">Atnaujinimo dažnis pagal programą</string>
     <string name="refresh_rate_app_summary">Pritaikykite atnaujinimo dažnį kiekvienai programai</string>
     <string name="refresh_rate_settings">Ekrano atnaujinimo dažnis</string>

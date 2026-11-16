@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">この端末では高輝度モードはサポートされていません</string>
     <string name="hbm_warning_summary">HBM はパネルの劣化を早めます。必要なときに、短時間だけ使用してください。\n</string>
     <string name="hbm_warning_dont_show_again">今後この警告を表示しない</string>
-    <string name="aod_high_brightness_title">高輝度 AOD</string>
-    <string name="aod_high_brightness_summary">常時表示ディスプレイに既定の 10 nits ではなく 50 nits を使用する</string>
     <string name="refresh_rate_app_title">アプリごとのリフレッシュレート</string>
     <string name="refresh_rate_app_summary">アプリごとにリフレッシュレートを設定する</string>
     <string name="refresh_rate_settings">ディスプレイのリフレッシュレート</string>

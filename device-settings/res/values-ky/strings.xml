@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Жогорку жарык режими бул түзмөктө колдоого алынбайт</string>
     <string name="hbm_warning_summary">HBM панелдин бышыктыгын тездетет. Ошондуктан аны зарыл болгондо гана жана кыска убакытка колдонуңуз.\n</string>
     <string name="hbm_warning_dont_show_again">Бул эскертүүнү кайра көрсөтпөө</string>
-    <string name="aod_high_brightness_title">Жогорку жарык AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display үчүн демейки 10 нитдин ордуна 50 нит колдонуу</string>
     <string name="refresh_rate_app_title">Колдонмо боюнча жаңыртуу жыштыгы</string>
     <string name="refresh_rate_app_summary">Ар бир колдонмо үчүн жаңыртуу жыштыгын жөнгө салуу</string>
     <string name="refresh_rate_settings">Экрандын жаңыртуу жыштыгы</string>

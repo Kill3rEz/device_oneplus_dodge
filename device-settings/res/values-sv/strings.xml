@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Läge för hög ljusstyrka stöds inte på den här enheten</string>
     <string name="hbm_warning_summary">HBM påskyndar det kumulativa slitaget på skärmen. Använd det därför bara när det behövs och under korta perioder.\n</string>
     <string name="hbm_warning_dont_show_again">Visa inte den här varningen igen</string>
-    <string name="aod_high_brightness_title">Hög ljusstyrka för AOD</string>
-    <string name="aod_high_brightness_summary">Använd 50 nit för skärmen i alltid-på-läge i stället för standardvärdet 10 nit</string>
     <string name="refresh_rate_app_title">Uppdateringsfrekvens per app</string>
     <string name="refresh_rate_app_summary">Anpassa uppdateringsfrekvensen för varje app</string>
     <string name="refresh_rate_settings">Skärmens uppdateringsfrekvens</string>

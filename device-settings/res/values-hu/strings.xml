@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">A nagy fényerő mód nem támogatott ezen az eszközön</string>
     <string name="hbm_warning_summary">A nagy fényerő mód felgyorsítja a panel fokozatos elhasználódását, ezért csak szükség esetén és rövid ideig használd.\n</string>
     <string name="hbm_warning_dont_show_again">Ne jelenjen meg újra ez a figyelmeztetés</string>
-    <string name="aod_high_brightness_title">Nagy fényerejű AOD</string>
-    <string name="aod_high_brightness_summary">50 nit használata az Always On Display képernyőn az alapértelmezett 10 nit helyett</string>
     <string name="refresh_rate_app_title">Alkalmazásonkénti frissítési frekvencia</string>
     <string name="refresh_rate_app_summary">Frissítési frekvencia testreszabása alkalmazásonként</string>
     <string name="refresh_rate_settings">Kijelző frissítési frekvenciája</string>

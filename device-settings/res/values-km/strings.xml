@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">របៀបពន្លឺខ្ពស់មិនត្រូវបានគាំទ្រលើឧបករណ៍នេះទេ</string>
     <string name="hbm_warning_summary">HBM បង្កើនការខូចខាតអេក្រង់បន្តិចម្តងៗ។ ដូច្នេះប្រើវាតែពេលចាំបាច់ និងរយៈពេលខ្លី។\n</string>
     <string name="hbm_warning_dont_show_again">កុំបង្ហាញការព្រមាននេះម្ដងទៀត</string>
-    <string name="aod_high_brightness_title">AOD ពន្លឺខ្ពស់</string>
-    <string name="aod_high_brightness_summary">ប្រើ 50 nits សម្រាប់ Always On Display ជំនួសឱ្យ 10 nits លំនាំដើម</string>
     <string name="refresh_rate_app_title">អត្រាធ្វើឱ្យស្រស់ក្នុងមួយកម្មវិធី</string>
     <string name="refresh_rate_app_summary">កំណត់អត្រាធ្វើឱ្យស្រស់តាមកម្មវិធីនីមួយៗ</string>
     <string name="refresh_rate_settings">អត្រាធ្វើឱ្យស្រស់អេក្រង់</string>

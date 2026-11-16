@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">ಈ ಸಾಧನದಲ್ಲಿ ಹೆಚ್ಚಿನ ಹೊಳಪು ಮೋಡ್ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ</string>
     <string name="hbm_warning_summary">HBM ಪ್ಯಾನೆಲ್‌ನ ಸಂಚಿತ ಹಾನಿಯನ್ನು ವೇಗಗೊಳಿಸುತ್ತದೆ. ಆದ್ದರಿಂದ ಅಗತ್ಯವಿದ್ದಾಗ ಮಾತ್ರ, ಕಡಿಮೆ ಅವಧಿಗೆ ಬಳಸಿ.\n</string>
     <string name="hbm_warning_dont_show_again">ಈ ಎಚ್ಚರಿಕೆಯನ್ನು ಮತ್ತೆ ತೋರಿಸಬೇಡ</string>
-    <string name="aod_high_brightness_title">ಹೆಚ್ಚಿನ ಹೊಳಪಿನ AOD</string>
-    <string name="aod_high_brightness_summary">ಡೀಫಾಲ್ಟ್ 10 nits ಬದಲು Always On Display ಗೆ 50 nits ಬಳಸಿ</string>
     <string name="refresh_rate_app_title">ಆ್ಯಪ್‌ವಾರು ರಿಫ್ರೆಶ್ ದರ</string>
     <string name="refresh_rate_app_summary">ಪ್ರತಿ ಆ್ಯಪ್‌ಗೆ ರಿಫ್ರೆಶ್ ದರವನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ</string>
     <string name="refresh_rate_settings">ಡಿಸ್ಪ್ಲೇ ರಿಫ್ರೆಶ್ ದರ</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">وضع السطوع العالي غير مدعوم على هذا الجهاز</string>
     <string name="hbm_warning_summary">يسرّع وضع السطوع العالي تدهور الشاشة مع الاستخدام. لذا استخدمه فقط عند الحاجة ولفترات قصيرة.\n</string>
     <string name="hbm_warning_dont_show_again">عدم إظهار هذا التحذير مرة أخرى</string>
-    <string name="aod_high_brightness_title">سطوع عالٍ لشاشة العرض الدائم</string>
-    <string name="aod_high_brightness_summary">استخدام 50 نيت لشاشة العرض الدائم بدلاً من 10 نيت الافتراضية</string>
     <string name="refresh_rate_app_title">معدل التحديث لكل تطبيق</string>
     <string name="refresh_rate_app_summary">تخصيص معدل التحديث لكل تطبيق</string>
     <string name="refresh_rate_settings">معدل تحديث الشاشة</string>

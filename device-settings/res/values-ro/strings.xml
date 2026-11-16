@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Modul luminozitate ridicată nu este acceptat pe acest dispozitiv</string>
     <string name="hbm_warning_summary">Modul HBM accelerează degradarea cumulativă a panoului. Folosește-l doar când este necesar și pentru perioade scurte.\n</string>
     <string name="hbm_warning_dont_show_again">Nu mai afișa acest avertisment</string>
-    <string name="aod_high_brightness_title">Luminozitate ridicată pentru AOD</string>
-    <string name="aod_high_brightness_summary">Folosește 50 nits pentru ecranul Always On în loc de valoarea implicită de 10 nits</string>
     <string name="refresh_rate_app_title">Rată de reîmprospătare per aplicație</string>
     <string name="refresh_rate_app_summary">Personalizează rata de reîmprospătare pentru fiecare aplicație</string>
     <string name="refresh_rate_settings">Rată de reîmprospătare a ecranului</string>

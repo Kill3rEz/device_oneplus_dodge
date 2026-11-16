@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Рэжым высокай яркасці не падтрымліваецца на гэтай прыладзе</string>
     <string name="hbm_warning_summary">Рэжым высокай яркасці паскарае накопленую дэградацыю панэлі. Таму выкарыстоўвайце яго толькі пры неабходнасці і на кароткі час.\n</string>
     <string name="hbm_warning_dont_show_again">Не паказваць гэта папярэджанне зноў</string>
-    <string name="aod_high_brightness_title">Высокая яркасць AOD</string>
-    <string name="aod_high_brightness_summary">Выкарыстоўваць 50 нітаў для заўсёды ўключанага экрана замест стандартных 10 нітаў</string>
     <string name="refresh_rate_app_title">Частата абнаўлення для кожнай праграмы</string>
     <string name="refresh_rate_app_summary">Наладзьце частату абнаўлення для кожнай праграмы</string>
     <string name="refresh_rate_settings">Частата абнаўлення экрана</string>

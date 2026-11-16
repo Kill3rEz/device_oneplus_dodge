@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ഈ ഉപകരണത്തിൽ ഹൈ ബ്രൈറ്റ്നസ് മോഡ് പിന്തുണയ്ക്കുന്നില്ല</string>
     <string name="hbm_warning_summary">HBM പാനലിന്റെ സഞ്ചിത തേയ്മാനം വേഗത്തിലാക്കുന്നു. അതിനാൽ ആവശ്യമുള്ളപ്പോൾ മാത്രം, കുറഞ്ഞ സമയത്തേക്ക് മാത്രം ഉപയോഗിക്കുക.\n</string>
     <string name="hbm_warning_dont_show_again">ഈ മുന്നറിയിപ്പ് വീണ്ടും കാണിക്കരുത്</string>
-    <string name="aod_high_brightness_title">ഉയർന്ന ബ്രൈറ്റ്നസ് AOD</string>
-    <string name="aod_high_brightness_summary">സ്ഥിരസ്ഥിതിയായ 10 nits-ന് പകരം ആൽവേയ്സ് ഓൺ ഡിസ്പ്ലേയ്ക്ക് 50 nits ഉപയോഗിക്കുക</string>
     <string name="refresh_rate_app_title">ആപ്പ് അനുസരിച്ചുള്ള റിഫ്രഷ് റേറ്റ്</string>
     <string name="refresh_rate_app_summary">ഓരോ ആപ്പിനും റിഫ്രഷ് റേറ്റ് ഇഷ്ടാനുസൃതമാക്കുക</string>
     <string name="refresh_rate_settings">ഡിസ്പ്ലേ റിഫ്രഷ് റേറ്റ്</string>

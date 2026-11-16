@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Tryb wysokiej jasności nie jest obsługiwany na tym urządzeniu</string>
     <string name="hbm_warning_summary">HBM przyspiesza kumulacyjne zużycie panelu, dlatego używaj go tylko w razie potrzeby i przez krótkie okresy.\n</string>
     <string name="hbm_warning_dont_show_again">Nie pokazuj tego ostrzeżenia ponownie</string>
-    <string name="aod_high_brightness_title">Wysoka jasność AOD</string>
-    <string name="aod_high_brightness_summary">Używaj 50 nitów dla wyświetlacza Always On zamiast domyślnych 10 nitów</string>
     <string name="refresh_rate_app_title">Odświeżanie ekranu dla aplikacji</string>
     <string name="refresh_rate_app_summary">Dostosuj częstotliwość odświeżania dla każdej aplikacji</string>
     <string name="refresh_rate_settings">Częstotliwość odświeżania ekranu</string>

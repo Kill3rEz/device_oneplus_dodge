@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Højlysstyrke-tilstand understøttes ikke på denne enhed</string>
     <string name="hbm_warning_summary">HBM fremskynder den samlede slitage af panelet. Brug den derfor kun når det er nødvendigt og i korte perioder.\n</string>
     <string name="hbm_warning_dont_show_again">Vis ikke denne advarsel igen</string>
-    <string name="aod_high_brightness_title">Høj lysstyrke til AOD</string>
-    <string name="aod_high_brightness_summary">Brug 50 nits til Always On Display i stedet for standardens 10 nits</string>
     <string name="refresh_rate_app_title">Opdateringsfrekvens pr. app</string>
     <string name="refresh_rate_app_summary">Tilpas opdateringsfrekvensen for hver app</string>
     <string name="refresh_rate_settings">Skærmens opdateringsfrekvens</string>

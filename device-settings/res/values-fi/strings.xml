@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Korkean kirkkauden tila ei ole tuettu tällä laitteella</string>
     <string name="hbm_warning_summary">HBM nopeuttaa paneelin kumulatiivista heikkenemistä. Käytä sitä siksi vain tarvittaessa ja lyhyissä jaksoissa.\n</string>
     <string name="hbm_warning_dont_show_again">Älä näytä tätä varoitusta uudelleen</string>
-    <string name="aod_high_brightness_title">Kirkas AOD</string>
-    <string name="aod_high_brightness_summary">Käytä 50 nitiä Always On Display -tilassa oletuksen 10 nitin sijaan</string>
     <string name="refresh_rate_app_title">Sovelluskohtainen virkistystaajuus</string>
     <string name="refresh_rate_app_summary">Mukauta virkistystaajuus sovelluksittain</string>
     <string name="refresh_rate_settings">Näytön virkistystaajuus</string>
