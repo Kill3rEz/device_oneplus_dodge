@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Mode Kecerahan Tinggi tidak didukung di perangkat ini</string>
     <string name="hbm_warning_summary">HBM mempercepat degradasi panel secara kumulatif. Gunakan hanya bila perlu dan dalam waktu singkat.\n</string>
     <string name="hbm_warning_dont_show_again">Jangan tampilkan peringatan ini lagi</string>
-    <string name="aod_high_brightness_title">AOD kecerahan tinggi</string>
-    <string name="aod_high_brightness_summary">Gunakan 50 nit untuk Always On Display, bukan default 10 nit</string>
     <string name="refresh_rate_app_title">Refresh Rate Per Aplikasi</string>
     <string name="refresh_rate_app_summary">Sesuaikan refresh rate untuk setiap aplikasi</string>
     <string name="refresh_rate_settings">Refresh Rate Layar</string>

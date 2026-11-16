@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Modaliteti i ndriçimit të lartë nuk mbështetet në këtë pajisje</string>
     <string name="hbm_warning_summary">HBM e përshpejton degradimin kumulativ të panelit. Përdore vetëm kur është e nevojshme dhe për periudha të shkurtra.\n</string>
     <string name="hbm_warning_dont_show_again">Mos e shfaq këtë paralajmërim përsëri</string>
-    <string name="aod_high_brightness_title">AOD me ndriçim të lartë</string>
-    <string name="aod_high_brightness_summary">Përdor 50 nits për ekranin gjithmonë aktiv në vend të 10 nits të parazgjedhura</string>
     <string name="refresh_rate_app_title">Shpejtësia e rifreskimit për aplikacion</string>
     <string name="refresh_rate_app_summary">Personalizo shpejtësinë e rifreskimit për çdo aplikacion</string>
     <string name="refresh_rate_settings">Shpejtësia e rifreskimit të ekranit</string>

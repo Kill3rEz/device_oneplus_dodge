@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ਇਹ ਡਿਵਾਈਸ \'ਤੇ ਹਾਈ ਬ੍ਰਾਈਟਨੈੱਸ ਮੋਡ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ</string>
     <string name="hbm_warning_summary">HBM ਪੈਨਲ ਦੀ ਉਮਰ ਤੇਜ਼ੀ ਨਾਲ ਘਟਾਉਂਦਾ ਹੈ। ਇਸ ਲਈ ਇਸਨੂੰ ਸਿਰਫ਼ ਲੋੜ ਪੈਣ \'ਤੇ ਅਤੇ ਥੋੜ੍ਹੇ ਸਮੇਂ ਲਈ ਵਰਤੋ।\n</string>
     <string name="hbm_warning_dont_show_again">ਇਹ ਚੇਤਾਵਨੀ ਦੁਬਾਰਾ ਨਾ ਦਿਖਾਓ</string>
-    <string name="aod_high_brightness_title">ਹਾਈ ਬ੍ਰਾਈਟਨੈੱਸ AOD</string>
-    <string name="aod_high_brightness_summary">ਐਲਵੇਜ਼ ਆਨ ਡਿਸਪਲੇ ਲਈ ਡਿਫਾਲਟ 10 nits ਦੀ ਥਾਂ 50 nits ਵਰਤੋ</string>
     <string name="refresh_rate_app_title">ਪ੍ਰਤੀ-ਐਪ ਰਿਫ੍ਰੈਸ਼ ਰੇਟ</string>
     <string name="refresh_rate_app_summary">ਹਰ ਐਪ ਲਈ ਰਿਫ੍ਰੈਸ਼ ਰੇਟ ਕਸਟਮਾਈਜ਼ ਕਰੋ</string>
     <string name="refresh_rate_settings">ਡਿਸਪਲੇ ਰਿਫ੍ਰੈਸ਼ ਰੇਟ</string>

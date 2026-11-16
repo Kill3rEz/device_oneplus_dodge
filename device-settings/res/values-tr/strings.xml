@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Yüksek parlaklık modu bu cihazda desteklenmiyor</string>
     <string name="hbm_warning_summary">HBM, panelin kümülatif olarak bozulmasını hızlandırır. Bu yüzden yalnızca gerektiğinde ve kısa süreler için kullanın.\n</string>
     <string name="hbm_warning_dont_show_again">Bu uyarıyı bir daha gösterme</string>
-    <string name="aod_high_brightness_title">Yüksek parlaklıkta AOD</string>
-    <string name="aod_high_brightness_summary">Her zaman açık ekran için varsayılan 10 nit yerine 50 nit kullan</string>
     <string name="refresh_rate_app_title">Uygulama başına yenileme hızı</string>
     <string name="refresh_rate_app_summary">Yenileme hızını uygulama başına özelleştir</string>
     <string name="refresh_rate_settings">Ekran yenileme hızı</string>

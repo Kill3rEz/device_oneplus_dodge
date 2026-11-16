@@ -202,8 +202,6 @@
     <string name="hbm_unavailable">Hindi suportado ang High Brightness Mode sa device na ito</string>
     <string name="hbm_warning_summary">Pinabibilis ng HBM ang cumulative na pagkasira ng panel. Gamitin lamang ito kung kinakailangan at sa maikling panahon.\n</string>
     <string name="hbm_warning_dont_show_again">Huwag nang ipakita muli ang babalang ito</string>
-    <string name="aod_high_brightness_title">High brightness AOD</string>
-    <string name="aod_high_brightness_summary">Gumamit ng 50 nits para sa Always On Display sa halip na default na 10 nits</string>
     <string name="refresh_rate_app_title">Per-App Refresh Rate</string>
     <string name="refresh_rate_app_summary">I-customize ang refresh rate bawat application</string>
     <string name="refresh_rate_settings">Display Refresh Rate</string>

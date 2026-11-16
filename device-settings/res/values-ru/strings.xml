@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Режим высокой яркости не поддерживается на этом устройстве</string>
     <string name="hbm_warning_summary">HBM ускоряет накопительную деградацию панели, поэтому используйте его только при необходимости и на короткое время.\n</string>
     <string name="hbm_warning_dont_show_again">Больше не показывать это предупреждение</string>
-    <string name="aod_high_brightness_title">Высокая яркость AOD</string>
-    <string name="aod_high_brightness_summary">Использовать 50 нит для экрана постоянного отображения вместо стандартных 10 нит</string>
     <string name="refresh_rate_app_title">Частота обновления для каждого приложения</string>
     <string name="refresh_rate_app_summary">Настройка частоты обновления для каждого приложения</string>
     <string name="refresh_rate_settings">Частота обновления экрана</string>

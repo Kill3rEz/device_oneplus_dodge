@@ -203,8 +203,6 @@
     <string name="hbm_unavailable">Mod Kecerahan Tinggi tidak disokong pada peranti ini</string>
     <string name="hbm_warning_summary">HBM mempercepat degradasi panel terkumpul. Gunakannya hanya apabila perlu dan untuk tempoh yang singkat.\n</string>
     <string name="hbm_warning_dont_show_again">Jangan tunjukkan amaran ini lagi</string>
-    <string name="aod_high_brightness_title">AOD kecerahan tinggi</string>
-    <string name="aod_high_brightness_summary">Gunakan 50 nit untuk Paparan Sentiasa Hidup dan bukannya 10 nit lalai</string>
     <string name="refresh_rate_app_title">Kadar Muat Semula Setiap Apl</string>
     <string name="refresh_rate_app_summary">Sesuaikan kadar muat semula bagi setiap aplikasi</string>
     <string name="refresh_rate_settings">Kadar Muat Semula Paparan</string>

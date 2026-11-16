@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">આ ઉપકરણ પર હાઇ બ્રાઇટનેસ મોડ સપોર્ટેડ નથી</string>
     <string name="hbm_warning_summary">HBM પેનલના સંચિત ઘસારાને ઝડપી બનાવે છે. તેથી જરૂર હોય ત્યારે જ અને ટૂંકા સમય માટે વાપરો.\n</string>
     <string name="hbm_warning_dont_show_again">આ ચેતવણી ફરી ન બતાવો</string>
-    <string name="aod_high_brightness_title">હાઇ બ્રાઇટનેસ AOD</string>
-    <string name="aod_high_brightness_summary">ડિફૉલ્ટ 10 nits ને બદલે Always On Display માટે 50 nits વાપરો</string>
     <string name="refresh_rate_app_title">ઍપ દીઠ રિફ્રેશ રેટ</string>
     <string name="refresh_rate_app_summary">દરેક ઍપ માટે રિફ્રેશ રેટ કસ્ટમાઇઝ કરો</string>
     <string name="refresh_rate_settings">ડિસ્પ્લે રિફ્રેશ રેટ</string>

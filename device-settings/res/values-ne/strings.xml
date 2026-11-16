@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">यो यन्त्रमा उच्च चमक मोड समर्थित छैन</string>
     <string name="hbm_warning_summary">HBM ले प्यानलमा सञ्चित क्षय छिटो बनाउँछ। त्यसैले आवश्यक परेमा र छोटो अवधिका लागि मात्र प्रयोग गर्नुहोस्।\n</string>
     <string name="hbm_warning_dont_show_again">यो चेतावनी फेरि नदेखाउनुहोस्</string>
-    <string name="aod_high_brightness_title">उच्च चमक AOD</string>
-    <string name="aod_high_brightness_summary">पूर्वनिर्धारित 10 nits को सट्टा Always On Display का लागि 50 nits प्रयोग गर्नुहोस्</string>
     <string name="refresh_rate_app_title">एपअनुसार रिफ्रेस दर</string>
     <string name="refresh_rate_app_summary">प्रत्येक एपका लागि रिफ्रेस दर अनुकूलन गर्नुहोस्</string>
     <string name="refresh_rate_settings">डिस्प्ले रिफ्रेस दर</string>

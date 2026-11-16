@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Der Hohe-Helligkeit-Modus wird auf diesem Gerät nicht unterstützt</string>
     <string name="hbm_warning_summary">HBM beschleunigt die dauerhafte Alterung des Panels. Verwende ihn daher nur bei Bedarf und für kurze Zeit.\n</string>
     <string name="hbm_warning_dont_show_again">Diese Warnung nicht mehr anzeigen</string>
-    <string name="aod_high_brightness_title">Hohe Helligkeit für AOD</string>
-    <string name="aod_high_brightness_summary">50 Nits für das Always-On-Display statt der Standard-10-Nits verwenden</string>
     <string name="refresh_rate_app_title">Bildwiederholrate pro App</string>
     <string name="refresh_rate_app_summary">Bildwiederholrate für jede App anpassen</string>
     <string name="refresh_rate_settings">Bildwiederholrate des Displays</string>

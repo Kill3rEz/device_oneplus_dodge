@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Kõrge heleduse režiim ei ole selles seadmes toetatud</string>
     <string name="hbm_warning_summary">HBM kiirendab paneeli kumulatiivset kulumist. Kasuta seda seetõttu ainult vajadusel ja lühikeste ajavahemike kaupa.\n</string>
     <string name="hbm_warning_dont_show_again">Ära kuva seda hoiatust uuesti</string>
-    <string name="aod_high_brightness_title">Kõrge heledusega AOD</string>
-    <string name="aod_high_brightness_summary">Kasuta ooterežiimi ekraanil 50 nitti vaikimisi 10 nitti asemel</string>
     <string name="refresh_rate_app_title">Rakendusepõhine värskendussagedus</string>
     <string name="refresh_rate_app_summary">Kohanda värskendussagedust rakenduse kaupa</string>
     <string name="refresh_rate_settings">Ekraani värskendussagedus</string>

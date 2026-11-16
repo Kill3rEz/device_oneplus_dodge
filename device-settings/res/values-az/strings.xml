@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Yüksək parlaqlıq rejimi bu cihazda dəstəklənmir</string>
     <string name="hbm_warning_summary">Yüksək parlaqlıq rejimi ekranın yığılmış degradasiyasını sürətləndirir. Ona görə yalnız lazım olduqda və qısa müddət üçün istifadə edin.\n</string>
     <string name="hbm_warning_dont_show_again">Bu xəbərdarlığı bir daha göstərməyin</string>
-    <string name="aod_high_brightness_title">Yüksək parlaqlıqlı AOD</string>
-    <string name="aod_high_brightness_summary">Həmişə açıq ekran (AOD) üçün standart 10 nits əvəzinə 50 nits istifadə edin</string>
     <string name="refresh_rate_app_title">Tətbiq üzrə yeniləmə tezliyi</string>
     <string name="refresh_rate_app_summary">Hər tətbiq üçün yeniləmə tezliyini fərdiləşdirin</string>
     <string name="refresh_rate_settings">Ekranın yeniləmə tezliyi</string>

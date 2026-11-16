@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">El mode d\'alta brillantor no és compatible amb aquest dispositiu</string>
     <string name="hbm_warning_summary">El mode d\'alta brillantor (HBM) accelera el desgast acumulatiu del panell. Utilitza\'l només quan sigui necessari i durant períodes curts.\n</string>
     <string name="hbm_warning_dont_show_again">No tornis a mostrar aquest avís</string>
-    <string name="aod_high_brightness_title">AOD d\'alta brillantor</string>
-    <string name="aod_high_brightness_summary">Usa 50 nits per a la pantalla sempre activa en lloc dels 10 nits per defecte</string>
     <string name="refresh_rate_app_title">Taxa de refresc per aplicació</string>
     <string name="refresh_rate_app_summary">Personalitza la taxa de refresc per aplicació</string>
     <string name="refresh_rate_settings">Taxa de refresc de la pantalla</string>

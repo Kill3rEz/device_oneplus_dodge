@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">এই ডিভাইচত উচ্চ উজ্জ্বলতা মোড সমৰ্থিত নহয়</string>
     <string name="hbm_warning_summary">HBM য়ে প্ৰেনেলৰ সঞ্চিত ক্ষয়ক্ষতি দ্ৰুত কৰে। গতিকে প্ৰয়োজন হ’লেহে আৰু অল্প সময়ৰ বাবে ব্যৱহাৰ কৰক।\n</string>
     <string name="hbm_warning_dont_show_again">এই সতৰ্কবাণী পুনৰ নেদেখুৱাব</string>
-    <string name="aod_high_brightness_title">উচ্চ উজ্জ্বলতাৰ AOD</string>
-    <string name="aod_high_brightness_summary">পূর্বনির্ধাৰিত 10 nits ৰ সলনি Always On Display ৰ বাবে 50 nits ব্যৱহাৰ কৰক</string>
     <string name="refresh_rate_app_title">এপ অনুযায়ী ৰিফ্ৰেশ্ব হাৰ</string>
     <string name="refresh_rate_app_summary">প্ৰতিটো এপৰ বাবে ৰিফ্ৰেশ্ব হাৰ কাষ্টমাইজ কৰক</string>
     <string name="refresh_rate_settings">ডিছপ্লে ৰিফ্ৰেশ্ব হাৰ</string>

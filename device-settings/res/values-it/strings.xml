@@ -203,8 +203,6 @@
     <string name="hbm_unavailable">La modalità Alta luminosità non è supportata su questo dispositivo</string>
     <string name="hbm_warning_summary">La HBM accelera il degrado cumulativo del pannello. Usala solo quando necessario e per brevi periodi.\n</string>
     <string name="hbm_warning_dont_show_again">Non mostrare più questo avviso</string>
-    <string name="aod_high_brightness_title">Alta luminosità AOD</string>
-    <string name="aod_high_brightness_summary">Usa 50 nit per Always On Display invece dei 10 nit predefiniti</string>
     <string name="refresh_rate_app_title">Frequenza di aggiornamento per app</string>
     <string name="refresh_rate_app_summary">Personalizza la frequenza di aggiornamento per ogni applicazione</string>
     <string name="refresh_rate_settings">Frequenza di aggiornamento del display</string>

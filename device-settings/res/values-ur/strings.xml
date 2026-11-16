@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">اس ڈیوائس پر ہائی برائٹ نس موڈ سپورٹ نہیں ہے</string>
     <string name="hbm_warning_summary">HBM پینل کو وقت کے ساتھ زیادہ خراب کرتا ہے۔ اس لیے اسے صرف ضرورت کے وقت اور مختصر مدت کے لیے استعمال کریں۔\n</string>
     <string name="hbm_warning_dont_show_again">یہ انتباہ دوبارہ نہ دکھائیں</string>
-    <string name="aod_high_brightness_title">ہائی برائٹ نس AOD</string>
-    <string name="aod_high_brightness_summary">ڈیفالٹ 10 nits کے بجائے ہمیشہ آن ڈسپلے کے لیے 50 nits استعمال کریں</string>
     <string name="refresh_rate_app_title">ایپ کے مطابق ریفریش ریٹ</string>
     <string name="refresh_rate_app_summary">ہر ایپ کے لیے ریفریش ریٹ حسبِ ضرورت بنائیں</string>
     <string name="refresh_rate_settings">ڈسپلے ریفریش ریٹ</string>

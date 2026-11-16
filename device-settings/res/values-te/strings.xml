@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ఈ పరికరంలో హై బ్రైట్‌నెస్ మోడ్ మద్దతు లేదు</string>
     <string name="hbm_warning_summary">HBM వల్ల ప్యానెల్ క్రమంగా ఎక్కువగా దెబ్బతింటుంది. కాబట్టి అవసరమైనప్పుడు మాత్రమే, తక్కువ సమయం పాటు ఉపయోగించండి.\n</string>
     <string name="hbm_warning_dont_show_again">ఈ హెచ్చరికను మళ్లీ చూపవద్దు</string>
-    <string name="aod_high_brightness_title">హై బ్రైట్‌నెస్ AOD</string>
-    <string name="aod_high_brightness_summary">డిఫాల్ట్ 10 nits బదులుగా ఆల్వేస్ ఆన్ డిస్‌ప్లేకు 50 nits ఉపయోగించండి</string>
     <string name="refresh_rate_app_title">యాప్‌కు వేరుగా రిఫ్రెష్ రేట్</string>
     <string name="refresh_rate_app_summary">ప్రతి అప్లికేషన్ కోసం రిఫ్రెష్ రేట్‌ను అనుకూలీకరించండి</string>
     <string name="refresh_rate_settings">డిస్‌ప్లే రిఫ్రెష్ రేట్</string>

@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Šajā ierīcē augstā spilgtuma režīms netiek atbalstīts</string>
     <string name="hbm_warning_summary">Augstais spilgtums paātrina paneļa kumulatīvo nolietojumu. Tāpēc izmantojiet to tikai vajadzības gadījumā un īsos periodos.\n</string>
     <string name="hbm_warning_dont_show_again">Vairs nerādīt šo brīdinājumu</string>
-    <string name="aod_high_brightness_title">Augsts spilgtums AOD režīmā</string>
-    <string name="aod_high_brightness_summary">Izmantot 50 nitus Always On Display režīmam 10 nitu vietā, kas ir noklusējums</string>
     <string name="refresh_rate_app_title">Atsevišķas lietotnes atsvaidzes ātrums</string>
     <string name="refresh_rate_app_summary">Pielāgot atsvaidzes ātrumu katrai lietotnei</string>
     <string name="refresh_rate_settings">Ekrāna atsvaidzes ātrums</string>

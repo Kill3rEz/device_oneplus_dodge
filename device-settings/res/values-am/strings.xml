@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ከፍተኛ ብሩህነት ሁነታ በዚህ መሣሪያ ላይ አይደገፍም</string>
     <string name="hbm_warning_summary">HBM የፓናሉን ቀስ በቀስ መበላሸት ያፋጥናል። ስለዚህ አስፈላጊ ሲሆን እና ለአጭር ጊዜ ብቻ ይጠቀሙበት።\n</string>
     <string name="hbm_warning_dont_show_again">ይህን ማስጠንቀቂያ እንደገና አታሳይ</string>
-    <string name="aod_high_brightness_title">ከፍተኛ ብሩህነት AOD</string>
-    <string name="aod_high_brightness_summary">ለማያ ገጽ ሁልጊዜ በርቶ (AOD) ከነባሪው 10 nits ይልቅ 50 nits ተጠቀም</string>
     <string name="refresh_rate_app_title">በመተግበሪያ የማደስ ፍጥነት</string>
     <string name="refresh_rate_app_summary">የማደስ ፍጥነትን ለእያንዳንዱ መተግበሪያ አብጅ</string>
     <string name="refresh_rate_settings">የማሳያ ማደስ ፍጥነት</string>

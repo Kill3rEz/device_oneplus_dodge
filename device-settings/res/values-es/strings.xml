@@ -206,8 +206,6 @@ Mantén presionado para establecer</string>
     <string name="hbm_unavailable">El modo de brillo alto no es compatible con este dispositivo</string>
     <string name="hbm_warning_summary">El HBM acelera el desgaste acumulado del panel. Úsalo solo cuando sea necesario y durante periodos cortos.\n</string>
     <string name="hbm_warning_dont_show_again">No volver a mostrar esta advertencia</string>
-    <string name="aod_high_brightness_title">Brillo alto en AOD</string>
-    <string name="aod_high_brightness_summary">Usa 50 nits para la pantalla siempre activa en lugar de los 10 nits predeterminados</string>
     <string name="refresh_rate_app_title">Frecuencia de actualización por aplicación</string>
     <string name="refresh_rate_app_summary">Personaliza la frecuencia de actualización para cada aplicación</string>
     <string name="refresh_rate_settings">Frecuencia de actualización de la pantalla</string>

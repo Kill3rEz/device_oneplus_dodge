@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">இந்தச் சாதனத்தில் உயர் பிரகாச பயன்முறை ஆதரிக்கப்படவில்லை</string>
     <string name="hbm_warning_summary">HBM திரை சிதைவை விரைவுபடுத்தும். எனவே தேவைப்படும்போது மட்டும், குறுகிய நேரத்திற்கு மட்டும் பயன்படுத்தவும்.\n</string>
     <string name="hbm_warning_dont_show_again">இந்த எச்சரிக்கையை மீண்டும் காட்டாதே</string>
-    <string name="aod_high_brightness_title">உயர் பிரகாச AOD</string>
-    <string name="aod_high_brightness_summary">இயல்புநிலை 10 nits-க்குப் பதிலாக எப்போதும் காட்சியில் (AOD) 50 nits பயன்படுத்து</string>
     <string name="refresh_rate_app_title">ஆப்புக்கு ஏற்ற புதுப்பிப்பு விகிதம்</string>
     <string name="refresh_rate_app_summary">ஒவ்வொரு ஆப்புக்கும் புதுப்பிப்பு விகிதத்தைத் தனிப்பயனாக்கு</string>
     <string name="refresh_rate_settings">திரை புதுப்பிப்பு விகிதம்</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">উচ্চ উজ্জ্বলতা মোড এই ডিভাইসে সমর্থিত নয়</string>
     <string name="hbm_warning_summary">HBM প্যানেলের ক্ষয় দ্রুত বাড়ায়। তাই শুধু প্রয়োজনে এবং অল্প সময়ের জন্য ব্যবহার করুন।\n</string>
     <string name="hbm_warning_dont_show_again">এই সতর্কতা আর দেখাবেন না</string>
-    <string name="aod_high_brightness_title">উচ্চ উজ্জ্বলতা AOD</string>
-    <string name="aod_high_brightness_summary">ডিফল্ট ১০ nits-এর পরিবর্তে Always On Display-এর জন্য ৫০ nits ব্যবহার করুন</string>
     <string name="refresh_rate_app_title">প্রতি-অ্যাপ রিফ্রেশ রেট</string>
     <string name="refresh_rate_app_summary">প্রতিটি অ্যাপের জন্য রিফ্রেশ রেট কাস্টমাইজ করুন</string>
     <string name="refresh_rate_settings">ডিসপ্লে রিফ্রেশ রেট</string>

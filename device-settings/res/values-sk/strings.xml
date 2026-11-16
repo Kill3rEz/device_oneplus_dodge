@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Režim vysokého jasu nie je na tomto zariadení podporovaný</string>
     <string name="hbm_warning_summary">HBM urýchľuje kumulatívne opotrebovanie panela. Používajte ho preto len v nevyhnutných prípadoch a na krátke obdobia.\n</string>
     <string name="hbm_warning_dont_show_again">Toto upozornenie už nezobrazovať</string>
-    <string name="aod_high_brightness_title">Vysoký jas AOD</string>
-    <string name="aod_high_brightness_summary">Použiť 50 nitov pre Always On Display namiesto predvolených 10 nitov</string>
     <string name="refresh_rate_app_title">Obnovovacia frekvencia pre jednotlivé aplikácie</string>
     <string name="refresh_rate_app_summary">Prispôsobiť obnovovaciu frekvenciu pre každú aplikáciu</string>
     <string name="refresh_rate_settings">Obnovovacia frekvencia displeja</string>

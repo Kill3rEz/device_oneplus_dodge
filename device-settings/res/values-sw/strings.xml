@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Hali ya Mwangaza wa Juu haitumiki kwenye kifaa hiki</string>
     <string name="hbm_warning_summary">HBM huharakisha uharibifu wa skrini kwa muda. Kwa hivyo itumie tu inapohitajika na kwa muda mfupi.\n</string>
     <string name="hbm_warning_dont_show_again">Usionyeshe onyo hili tena</string>
-    <string name="aod_high_brightness_title">Mwangaza wa juu wa AOD</string>
-    <string name="aod_high_brightness_summary">Tumia nits 50 kwa Onyesho Linalowashwa Kila Wakati badala ya nits 10 za kawaida</string>
     <string name="refresh_rate_app_title">Kiwango cha Kuonyesha kwa Kila Programu</string>
     <string name="refresh_rate_app_summary">Badilisha kiwango cha kuonyesha kwa kila programu</string>
     <string name="refresh_rate_settings">Kiwango cha Kuonyesha</string>

@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Режимът на висока яркост не се поддържа на това устройство</string>
     <string name="hbm_warning_summary">Режимът на висока яркост ускорява натрупваното износване на панела. Използвайте го само когато е необходимо и за кратко време.\n</string>
     <string name="hbm_warning_dont_show_again">Да не се показва това предупреждение отново</string>
-    <string name="aod_high_brightness_title">Висока яркост при AOD</string>
-    <string name="aod_high_brightness_summary">Използване на 50 nits за дисплея в режим на постоянно включен екран вместо стандартните 10 nits</string>
     <string name="refresh_rate_app_title">Честота на обновяване за всяко приложение</string>
     <string name="refresh_rate_app_summary">Персонализиране на честотата на обновяване за всяко приложение</string>
     <string name="refresh_rate_settings">Честота на обновяване на дисплея</string>

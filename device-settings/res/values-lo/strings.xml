@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">ໂໝດຄວາມສະຫວ່າງສູງບໍ່ຮອງຮັບໃນອຸປະກອນນີ້</string>
     <string name="hbm_warning_summary">HBM ເລັ່ງການເສື່ອມຂອງຈໍສະສົມ ສະນັ້ນໃຊ້ສະເພາະເວລາຈຳເປັນ ແລະ ເປັນໄລຍະສັ້ນໆ\n</string>
     <string name="hbm_warning_dont_show_again">ບໍ່ຕ້ອງສະແດງຄຳເຕືອນນີ້ອີກ</string>
-    <string name="aod_high_brightness_title">ຄວາມສະຫວ່າງສູງ AOD</string>
-    <string name="aod_high_brightness_summary">ໃຊ້ 50 nits ສຳລັບ Always On Display ແທນຄ່າເລີ່ມຕົ້ນ 10 nits</string>
     <string name="refresh_rate_app_title">ອັດຕາຣີເຟຣຊຕໍ່ແອັບ</string>
     <string name="refresh_rate_app_summary">ປັບອັດຕາຣີເຟຣຊສຳລັບແຕ່ລະແອັບ</string>
     <string name="refresh_rate_settings">ອັດຕາຣີເຟຣຊຈໍ</string>

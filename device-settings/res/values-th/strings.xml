@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">อุปกรณ์นี้ไม่รองรับโหมดความสว่างสูง</string>
     <string name="hbm_warning_summary">โหมดความสว่างสูง (HBM) ทำให้แผงเสื่อมสภาพสะสมได้เร็วขึ้น จึงควรใช้เฉพาะเมื่อจำเป็นและในระยะเวลาสั้นๆ\n</string>
     <string name="hbm_warning_dont_show_again">ไม่ต้องแสดงคำเตือนนี้อีก</string>
-    <string name="aod_high_brightness_title">ความสว่างสูงสำหรับ AOD</string>
-    <string name="aod_high_brightness_summary">ใช้ 50 nits สำหรับ Always On Display แทนค่าเริ่มต้น 10 nits</string>
     <string name="refresh_rate_app_title">อัตรารีเฟรชรายแอป</string>
     <string name="refresh_rate_app_summary">ปรับอัตรารีเฟรชของแต่ละแอป</string>
     <string name="refresh_rate_settings">อัตรารีเฟรชของจอแสดงผล</string>

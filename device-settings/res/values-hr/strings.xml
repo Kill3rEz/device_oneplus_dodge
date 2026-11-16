@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Način visoke svjetline nije podržan na ovom uređaju</string>
     <string name="hbm_warning_summary">HBM ubrzava kumulativno trošenje zaslona. Zato ga koristite samo kada je potrebno i kratko vrijeme.\n</string>
     <string name="hbm_warning_dont_show_again">Ne prikazuj ovo upozorenje ponovno</string>
-    <string name="aod_high_brightness_title">Visoka svjetlina AOD-a</string>
-    <string name="aod_high_brightness_summary">Koristi 50 nita za stalni zaslon umjesto zadanih 10 nita</string>
     <string name="refresh_rate_app_title">Brzina osvježavanja po aplikaciji</string>
     <string name="refresh_rate_app_summary">Prilagodi brzinu osvježavanja za svaku aplikaciju</string>
     <string name="refresh_rate_settings">Brzina osvježavanja zaslona</string>

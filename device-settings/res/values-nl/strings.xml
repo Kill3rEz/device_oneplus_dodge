@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">Modus hoge helderheid wordt niet ondersteund op dit apparaat</string>
     <string name="hbm_warning_summary">HBM versnelt de cumulatieve slijtage van het paneel. Gebruik de modus daarom alleen wanneer nodig en voor korte tijd.\n</string>
     <string name="hbm_warning_dont_show_again">Deze waarschuwing niet meer tonen</string>
-    <string name="aod_high_brightness_title">Hoge helderheid AOD</string>
-    <string name="aod_high_brightness_summary">50 nits gebruiken voor Always On Display in plaats van de standaard 10 nits</string>
     <string name="refresh_rate_app_title">Vernieuwingssnelheid per app</string>
     <string name="refresh_rate_app_summary">Vernieuwingssnelheid per app aanpassen</string>
     <string name="refresh_rate_settings">Vernieuwingssnelheid scherm</string>

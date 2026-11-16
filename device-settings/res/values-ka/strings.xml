@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">მაღალი სიკაშკაშის რეჟიმი ამ მოწყობილობაზე არ არის მხარდაჭერილი</string>
     <string name="hbm_warning_summary">HBM აჩქარებს პანელის დეგრადაციას. ამიტომ გამოიყენეთ მხოლოდ საჭიროებისას და მოკლე ხნით.\n</string>
     <string name="hbm_warning_dont_show_again">ეს გაფრთხილება აღარ გამოჩნდეს</string>
-    <string name="aod_high_brightness_title">მაღალი სიკაშკაშის AOD</string>
-    <string name="aod_high_brightness_summary">ჩართული ეკრანისთვის (AOD) 10 ნიტის ნაცვლად 50 ნიტის გამოყენება</string>
     <string name="refresh_rate_app_title">აპის მიხედვით განახლების სიხშირე</string>
     <string name="refresh_rate_app_summary">განახლების სიხშირის მორგება თითოეული აპლიკაციისთვის</string>
     <string name="refresh_rate_settings">ეკრანის განახლების სიხშირე</string>

@@ -204,8 +204,6 @@
     <string name="hbm_unavailable">Бұл құрылғыда жоғары жарықтық режимі қолдау таппайды</string>
     <string name="hbm_warning_summary">HBM панельдің жиынтық деградациясын жылдамдатады. Сондықтан оны тек қажет болғанда және қысқа уақыт ішінде пайдаланыңыз.\n</string>
     <string name="hbm_warning_dont_show_again">Бұл ескертуді қайта көрсетпеу</string>
-    <string name="aod_high_brightness_title">Жоғары жарықтықтағы AOD</string>
-    <string name="aod_high_brightness_summary">Always On Display үшін әдепкі 10 нитнің орнына 50 нит пайдалану</string>
     <string name="refresh_rate_app_title">Қолданбаға бөлек жаңарту жиілігі</string>
     <string name="refresh_rate_app_summary">Әр қолданба үшін жаңарту жиілігін теңшеу</string>
     <string name="refresh_rate_settings">Экран жаңарту жиілігі</string>

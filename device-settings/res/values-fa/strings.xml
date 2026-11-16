@@ -205,8 +205,6 @@
     <string name="hbm_unavailable">حالت روشنایی بالا روی این دستگاه پشتیبانی نمی‌شود</string>
     <string name="hbm_warning_summary">HBM فرسودگی تجمعی پنل را تسریع می‌کند. پس فقط در صورت لزوم و برای مدت کوتاه از آن استفاده کنید.\n</string>
     <string name="hbm_warning_dont_show_again">این هشدار را دوباره نشان نده</string>
-    <string name="aod_high_brightness_title">روشنایی بالای AOD</string>
-    <string name="aod_high_brightness_summary">استفاده از ۵۰ نیت برای نمایش همیشه روشن به‌جای ۱۰ نیت پیش‌فرض</string>
     <string name="refresh_rate_app_title">نرخ نوسازی به تفکیک برنامه</string>
     <string name="refresh_rate_app_summary">نرخ نوسازی را برای هر برنامه شخصی‌سازی کنید</string>
     <string name="refresh_rate_settings">نرخ نوسازی نمایشگر</string>
