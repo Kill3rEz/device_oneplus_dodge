@@ -50,9 +50,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.em
@@ -83,13 +81,6 @@ private val COL_TRACK = Color.White.copy(alpha = 0.09f)
 private val CARD_BASE = Color(0xFF0A0A0C)
 
 private val Poppins = FontFamily(Font(R.font.poppins_semibold, FontWeight.SemiBold))
-
-private val Tight = TextStyle(
-    lineHeightStyle = LineHeightStyle(
-        alignment = LineHeightStyle.Alignment.Center,
-        trim = LineHeightStyle.Trim.Both,
-    ),
-)
 
 @Immutable
 private class BannerColors(
@@ -134,32 +125,30 @@ fun LiveBanner(
         val ts = { n: Float -> with(density) { (u * n).toSp() } }
         Canvas(Modifier.fillMaxSize()) {
             drawMarkOutline(
-                left = size.width - (u * 130).toPx(),
-                top = -(u * 34).toPx(),
-                width = (u * 180).toPx(),
+                left = size.width - (u * 196).toPx(),
+                top = -(u * 22).toPx(),
+                width = (u * 236).toPx(),
                 color = colors.accent,
-                alpha = 0.45f,
+                alpha = 0.55f,
             )
         }
         Column(
-            modifier = Modifier.padding(start = u * 18, top = u * 54),
+            modifier = Modifier.padding(start = u * 18, top = u * 62),
             verticalArrangement = Arrangement.spacedBy(u * 6),
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(u * 7),
             ) {
-                OnePlusGlyph(size = u * 14, color = colors.bright)
+                OnePlusGlyph(size = u * 15, color = colors.bright)
                 Text(
                     text = "SETTINGS",
                     color = colors.text,
                     fontFamily = Poppins,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = ts(10f),
-                    lineHeight = ts(10f),
                     letterSpacing = 0.2.em,
                     maxLines = 1,
-                    style = Tight,
                 )
             }
             Row(
@@ -171,11 +160,10 @@ fun LiveBanner(
                     color = COL_VALUE,
                     fontFamily = Poppins,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = ts(24f),
-                    lineHeight = ts(26f),
+                    fontSize = ts(25f),
+                    lineHeight = ts(29f),
                     maxLines = 1,
                     softWrap = false,
-                    style = Tight,
                 )
                 if (sku != "--") {
                     Text(
@@ -184,13 +172,11 @@ fun LiveBanner(
                         fontFamily = Poppins,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = ts(10f),
-                        lineHeight = ts(10f),
                         maxLines = 1,
-                        style = Tight,
                         modifier = Modifier
                             .border(u * 1, colors.accent.copy(alpha = 0.5f), CircleShape)
                             .background(Color.Black.copy(alpha = 0.25f), CircleShape)
-                            .padding(horizontal = u * 8, vertical = u * 5),
+                            .padding(horizontal = u * 8, vertical = u * 4),
                     )
                 }
             }
@@ -199,7 +185,7 @@ fun LiveBanner(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .padding(start = u * 14, end = u * 14, bottom = u * 14),
+                .padding(start = u * 14, end = u * 14, bottom = u * 13),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Gauge(
@@ -290,10 +276,8 @@ fun CollapsedBanner(
                 fontFamily = Poppins,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = ts(17f),
-                lineHeight = ts(17f),
                 maxLines = 1,
                 softWrap = false,
-                style = Tight,
             )
         }
         Box(
@@ -339,7 +323,7 @@ private fun Gauge(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
-            modifier = Modifier.size(u * 58),
+            modifier = Modifier.size(u * 60),
             contentAlignment = Alignment.Center,
         ) {
             Canvas(Modifier.fillMaxSize()) {
@@ -351,30 +335,25 @@ private fun Gauge(
                     track = COL_TRACK,
                 )
             }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(u * 3),
-            ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = big,
                     color = COL_VALUE,
                     fontFamily = Poppins,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = ts(14f),
-                    lineHeight = ts(14f),
+                    lineHeight = ts(15f),
                     maxLines = 1,
                     softWrap = false,
-                    style = Tight,
                 )
                 if (small.isNotEmpty()) {
                     Text(
                         text = small,
                         color = COL_LABEL,
                         fontSize = ts(8.5f),
-                        lineHeight = ts(9f),
+                        lineHeight = ts(11f),
                         maxLines = 1,
                         softWrap = false,
-                        style = Tight,
                     )
                 }
             }
@@ -386,10 +365,8 @@ private fun Gauge(
             fontFamily = Poppins,
             fontWeight = FontWeight.SemiBold,
             fontSize = ts(9f),
-            lineHeight = ts(9f),
             letterSpacing = 0.14.em,
             maxLines = 1,
-            style = Tight,
         )
     }
 }
@@ -452,8 +429,8 @@ private fun DrawScope.drawMarkOutline(
         translate(left, top)
         scale(k, k, pivot = Offset.Zero)
     }) {
-        drawPath(rrMark, color.copy(alpha = alpha * 0.2f), style = Stroke(width = 12f))
-        drawPath(rrMark, color.copy(alpha = alpha), style = Stroke(width = 4f))
+        drawPath(rrMark, color.copy(alpha = alpha * 0.3f), style = Stroke(width = 16f))
+        drawPath(rrMark, color.copy(alpha = alpha), style = Stroke(width = 5f))
     }
 }
 
