@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Fri, 25 Sep 2026 19:05:10 +0200
+Subject: [PATCH] dodge: Drop the display commonsys-intf namespace import
+
+vendor/qcom/opensource/commonsys-intf/display is not a soong namespace on
+PenguinOS (CLO), so importing it fails. Its modules live in the root
+namespace there.
+---
+ Android.bp | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/Android.bp b/Android.bp
+index 377249f..0d6eb6d 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -7,7 +7,6 @@ soong_namespace {
+         "hardware/oplus",
+         "hardware/qcom-caf/sm8750",
+         "vendor/oneplus/sm8750-common",
+-        "vendor/qcom/opensource/commonsys-intf/display",
+         "device/oneplus/dodge",
+     ],
+ }
+-- 
+2.53.0
+
