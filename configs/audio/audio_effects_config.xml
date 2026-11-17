@@ -24,6 +24,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <!-- Liang.Xu@MULTIMEDIA.AUDIOSERVER.EFFECT, 2023/04/18, add for oplus spatializer -->
         <library name="spatializersw" path="libOplusSpatializerAidl_DKY.so"/>
         <!-- OPLUS SPATIALIZER END -->
+        <library name="dap" path="libswdapaidl.so"/>
     </libraries>
 
     <effects>
@@ -79,6 +80,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <!-- Liang.Xu@MULTIMEDIA.AUDIOSERVER.EFFECT, 2023/04/18, add for oplus spatializer -->
         <effect name="spatializer" library="spatializersw" uuid="de4d6aaf-4e9d-473d-8168-4ce92d50a637"/>
         <!-- OPLUS SPATIALIZER END -->
+        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
     </effects>
 
     <postprocess>
