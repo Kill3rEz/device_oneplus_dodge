@@ -48,12 +48,12 @@ fun DeviceSettingsApp(
             modifier = Modifier.fillMaxSize(),
             // The banner stays put. A 700ms crossfade, or predictive back scaling
             // the list to 70% under that banner, reads as the page falling apart.
+            // This navigation-compose has no predictivePop* parameters; predictive
+            // back runs the pop transitions below.
             enterTransition = { PageIn },
             exitTransition = { PageOut },
             popEnterTransition = { PageIn },
             popExitTransition = { PageOut },
-            predictivePopEnterTransition = { _ -> PageIn },
-            predictivePopExitTransition = { _ -> PageOut },
         ) {
             composable(DeviceSettingsDest.Main.route) {
                 MainScreen(
