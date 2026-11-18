@@ -1,0 +1,177 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Kill3rEz <98993017+Kill3rEz@users.noreply.github.com>
+Date: Wed, 18 Nov 2026 10:15:00 +0100
+Subject: [PATCH] dodge: Drop the stock perfd modules
+
+PenguinOS ships perf from the QTI perf component, which defines
+vendor.qti.hardware.perf2-hal-service too. With both namespaces exported
+the name is ambiguous for the vendor partition.
+---
+ qti-perfd/Android.bp | 155 -------------------------------------------
+ 1 file changed, 155 deletions(-)
+ delete mode 100644 qti-perfd/Android.bp
+
+diff --git a/qti-perfd/Android.bp b/qti-perfd/Android.bp
+deleted file mode 100644
+index 2c34058..0000000
+--- a/qti-perfd/Android.bp
++++ /dev/null
+@@ -1,155 +0,0 @@
+-cc_prebuilt_binary {
+-    name: "vendor.qti.hardware.perf2-hal-service",
+-    vendor: true,
+-    proprietary: true,
+-    srcs: ["proprietary/vendor/bin/hw/vendor.qti.hardware.perf2-hal-service"],
+-    relative_install_path: "hw",
+-    init_rc: [
+-        "proprietary/vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc",
+-        "vendor.qti.hardware.perf2-hal-service-data.rc",
+-    ],
+-    vintf_fragments: ["proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml"],
+-    check_elf_files: false,
+-    prefer: true,
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-perfd-client.stock",
+-    stem: "libqti-perfd-client",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: {
+-        none: true,
+-    },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libqti-perfd-client.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-perfd.stock",
+-    stem: "libqti-perfd",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libqti-perfd.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libq-perflog.stock",
+-    stem: "libq-perflog",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libq-perflog.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-scenariod.stock",
+-    stem: "libqti-scenariod",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libqti-scenariod.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libperfconfig.stock",
+-    stem: "libperfconfig",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libperfconfig.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-util.stock",
+-    stem: "libqti-util",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libqti-util.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-s3tf.stock",
+-    stem: "libqti-s3tf",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libqti-s3tf.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libperfioctl.stock",
+-    stem: "libperfioctl",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/libperfioctl.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "qti_perfd_perf2_ndk.vendor",
+-    stem: "vendor.qti.hardware.perf2-V1-ndk",
+-    vendor: true,
+-    proprietary: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti_performance.stock",
+-    stem: "libqti_performance",
+-    system_ext_specific: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/system/lib64/libqti_performance.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "libqti-perfd-client_system.stock",
+-    stem: "libqti-perfd-client_system",
+-    system_ext_specific: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/system/lib64/libqti-perfd-client_system.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "qti_perfd_iop_2_0.stock",
+-    stem: "vendor.qti.hardware.iop@2.0",
+-    system_ext_specific: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/system/lib64/vendor.qti.hardware.iop@2.0.so"],
+-}
+-
+-cc_prebuilt_library_shared {
+-    name: "qti_perfd_perf2_ndk.system",
+-    stem: "vendor.qti.hardware.perf2-V1-ndk",
+-    system_ext_specific: true,
+-    compile_multilib: "64",
+-    strip: { none: true },
+-    check_elf_files: false,
+-    srcs: ["proprietary/system/lib64/vendor.qti.hardware.perf2-V1-ndk.so"],
+-}
+-- 
+2.53.0
+
