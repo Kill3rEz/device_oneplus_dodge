@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Unofficial dodge builds: OTA feed on the penguinos-dodge SourceForge project web -->
+    <string name="updater_server_url" translatable="false">https://penguinos-dodge.sourceforge.io/ota/{device}.json</string>
+</resources>
